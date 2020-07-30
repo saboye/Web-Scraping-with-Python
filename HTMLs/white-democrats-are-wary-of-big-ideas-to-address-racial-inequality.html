@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f6169b8cc4",applicationID:"100041457"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>White Democrats Are Wary Of Big Ideas To Address Racial Inequality | FiveThirtyEight</title>
+<!-- Jetpack Site Verification Tags -->
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/decimamonopro-webfont.woff2"
+			crossorigin="anonymous">
+				<link rel='dns-prefetch' href='//cdn.registerdisney.go.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.googleadservices.com' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='stylesheet' id='all-css-0' href='https://fivethirtyeight.com/_static/??-eJxtzVEKwjAQBNALmS5SiuRDPEuabpPFZBO6W0tub0AEKX7PzBs4qiH2aV9QwIvAQqIwp+KfJtG8ua2BaEs4ZOKhFy7QF76wIivUtAdigUCrqck1M++qhcGJoH68U/SX0Yi536NUNiu9UCNt2pBC1F/qFH2pR75fJzuNo7XT7Q0xNE29' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script>
+var DisneyOneID = {"config":{"clientId":"DATG-FIVETHIRTYEIGHT.WEB-PROD","langPref":"en-US","debug":false,"responderPage":"https:\/\/fivethirtyeight.com\/oneid-responder","campaignName":"FiveThirtyEight"}};
+</script>
+<script src='https://cdn.registerdisney.go.com/v2/outer/DisneyID.js'></script>
+<script>
+var ESPNTaboola = {"publisher":"abcnews-fivethirtyeight","type":"article"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJydkdFOwzAMRX+ILGJoTDwgviUkt61L6oTYadW/pxsTFASd4MmS7XNtX9spG59YwWpzrC2x2EDCmM0AEbckWutEoGJ7sYlBYTcQ73q5sQtL7GMNOBf714oyX8LVBjNQW5xirfZ9E0hmo+45pehWW1wyV0lJnlxcgY3zWNCXv5M6kSqKySUNWbf4qhRJabn4kx4pIG1BG5aP4JCKzbVQM/9TgzFJxOmA335XOaCIT+XHf2iHRfbdmoZGaEdFZ1Db6drdrxXTwYWPiU/D4+3h4e6wvz8e9/0bMvTu1w=='></script>
+<script async="async" defer="defer" src='https://platform.twitter.com/widgets.js?ver=1.0.23'></script>
+<script>
+var ABCAnalytics = {"nielsen":{"asset_id":275330,"section":"politics:black-lives-matter","seg_a":"","seg_b":"","seg_c":"","debug":""},"chartbeat":{"uid":"12240","domain":"fivethirtyeight.com","path":"\/features\/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality\/","sections":"politics,features","authors":"Meredith Conroy","title":"White Democrats Are Wary Of Big Ideas To Address Racial Inequality","loadPubJS":false,"loadVidJS":true},"gtm":{"id":"GTM-KLHT6T2"},"omniture":{"pageName":"politics:features:white-democrats-are-wary-of-big-ideas-to-address-racial-inequality","prop1":"fivethirtyeight","prop2":"","prop5":"features","prop6":"Meredith Conroy","prop7":"politics","prop8":"politics:black-lives-matter","prop12":"White Democrats Are Wary Of Big Ideas To Address Racial Inequality","prop13":"275330:White Democrats Are Wary Of Big Ideas To Address Racial Inequality","prop14":"","prop15":"https:\/\/fivethirtyeight.com\/features\/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality\/","prop16":"https:\/\/fivethirtyeight.com\/features\/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality\/","prop20":"Desktop","prop23":"2020 Police Protests, Affirmative Action, Black Lives Matter, Criminal Justice, Education, Employment, George Floyd, Housing, Race, Race and Ethnicity, Race Relations, Taxes","eVar5":"features","eVar6":"Meredith Conroy","eVar7":"politics","eVar8":"politics:black-lives-matter","eVar9":"2020-07-14","eVar10":"06:00","eVar12":"White Democrats Are Wary Of Big Ideas To Address Racial Inequality","eVar13":"275330:White Democrats Are Wary Of Big Ideas To Address Racial Inequality","eVar14":"","eVar15":"https:\/\/fivethirtyeight.com\/features\/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality\/","eVar16":"https:\/\/fivethirtyeight.com\/features\/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality\/","eVar20":"Desktop","eVar21":null,"eVar22":null,"prop35":"2020-07-14"},"account":"wdgnewfivethirtyeight"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/wp-content/plugins/abc-analytics/assets/js/analytics.min.js?m=1595339957g'></script>
+<link rel='https://api.w.org/' href='https://fivethirtyeight.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fivethirtyeight.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fivethirtyeight.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='https://53eig.ht/3iH54H6' />
+<link rel="alternate" type="application/json+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fwhite-democrats-are-wary-of-big-ideas-to-address-racial-inequality%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fwhite-democrats-are-wary-of-big-ideas-to-address-racial-inequality%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="amphtml" href="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="White Democrats Are Wary Of Big Ideas To Address Racial Inequality" />
+<meta property="og:url" content="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/" />
+<meta property="og:description" content="Even before a Minneapolis police officer killed George Floyd, leading to a renewed national conversation about racial inequality, white Democrats were already p&#8230;" />
+<meta property="article:published_time" content="2020-07-14T10:00:03+00:00" />
+<meta property="article:modified_time" content="2020-07-14T10:00:03+00:00" />
+<meta property="og:site_name" content="FiveThirtyEight" />
+<meta property="og:image" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-16x9-1.jpg?w=575" />
+<meta property="og:image:width" content="575" />
+<meta property="og:image:height" content="323" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://fivethirtyeight.com/contributors/meredith-conroy/" />
+<meta property="article:publisher" content="https://www.facebook.com/fivethirtyeight" />
+<meta property="fb:app_id" content="797620670264818" />
+<meta property="fb:pages" content="687958677914631" />
+<meta name="twitter:site" content="FiveThirtyEight" />
+<meta name="twitter:site:id" content="2303751216" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="sidney_b" />
+<meta name="twitter:creator:id" content="25256728" />
+<meta name="twitter:image:src" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-16x9-1.jpg?w=575" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Meredith Conroy and Perry Bacon Jr." />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="2020 Police Protests, Affirmative Action, Black Lives Matter, Criminal Justice, Education, Employment, George Floyd, Housing, Race, Race and Ethnicity, Race Relations, Taxes" />
+
+<!-- End Jetpack Open Graph Tags -->
+<meta name="DC.date.issued" content="2020-07-14T10:00:03+00:00" />
+<meta name="description" content="Even before a Minneapolis police officer killed George Floyd, leading to a renewed national conversation about racial inequality, white Democrats were already p&#8230;" />
+<meta name='author' content='Meredith Conroy' />
+<link rel='author' href='https://fivethirtyeight.com/contributors/meredith-conroy/' />
+<link rel="alternate" type="application/rss+xml" title="Posts feed for Meredith Conroy" href="https://fivethirtyeight.com/contributors/meredith-conroy/feed/">
+<link type="text/plain" rel="author" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/humans.txt" /><link rel='canonical' href='https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/' />
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/"},"headline":"White Democrats Are Wary Of Big Ideas To Address Racial Inequality","datePublished":"2020-07-14T06:00:03-04:00","dateModified":"2020-07-14T11:19:31-04:00","publisher":{"@type":"Organization","name":"FiveThirtyEight","logo":{"url":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rich-snippets.png","height":60,"width":546,"@type":"ImageObject"}},"author":{"@type":"Person","name":"Meredith Conroy and Perry Bacon Jr."},"articleSection":"Politics","image":{"@type":"ImageObject","url":"https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=1024","width":1024,"height":768}}
+</script>
+	<link rel="mask-icon" color="#ed713a" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-black.svg?v=1.0.23">
+	<link rel="shortcut icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/favicon.ico?v=1.0.23">
+	<link rel="apple-touch-icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-touch.png?v=1.0.23">
+</head>
+<body class="fte_features-template-default single single-fte_features postid-275330 vertical-politics slug-white-democrats-are-wary-of-big-ideas-to-address-racial-inequality topic-slug-black-lives-matter">
+<div id="ad-OutStream" class="ad-outstream" data-defer="none"></div>
+<a href="#content" class="skip-to-content-link visually-hidden">Skip to main content</a>
+<div id="masterad" class="master-ad">
+	<div id="ad-Banner" class="ad-banner" data-defer="none"></div></div><!-- #masterad -->
+<i class="header-global-bground"></i>
+<header class="header-global" id="header-global">
+	<div class="site-wrapper header-global-top">
+							<h2 class="header-global-logo">
+							<a href="/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Home" class="header-global-logo-link">
+					<span class="visually-hidden">FiveThirtyEight</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="163.451" viewBox="0 318.275 1280 163.451" class="site-logo"><path d="M0 318.275h76.009v24.323H27.363v30.403h45.606v24.323H27.363v51.687H0zm94.252 109.453h15.202v-54.727H94.252v-24.323h39.525v79.05h12.162v21.283H94.252v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm434.774 109.453h15.202v-54.727h-15.202v-24.323h39.525v79.05h12.162v21.283h-51.686v-21.283zm15.202-109.453h24.323v24.323H559.43v-24.323zm401.33 109.453h15.202v-54.727H960.76v-24.323h39.525v79.05h12.161v21.283H960.76v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm-811.781 82.09v-51.687h24.323v45.606l12.161 30.343h3.04l12.162-30.343v-45.606h24.323v51.687l-21.283 48.646h-33.444zm173.301 48.646h-41.288c-24.901 0-37.762-11.584-37.762-35.968v-27.88c0-23.016 13.074-39.525 39.525-39.525 28.367 0 39.525 15.415 39.525 42.565v21.283h-51.686v5.29c0 7.966 3.04 12.952 10.398 12.952h41.288v21.283zm-51.686-60.808h24.323v-4.713c0-7.966-3.223-16.57-12.557-16.57-8.483 0-11.766 6.689-11.766 16.57v4.713zm94.251-45.605h-30.403v-24.323h88.171v24.323h-30.404v106.413h-27.364zm234.11 106.413V348.678h24.323v12.161c3.466-7.449 11.401-12.161 21.952-12.161h8.452v24.323h-18.242c-8.635 0-12.161 2.858-12.161 11.857v64.152h-24.324zm130.736 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283h21.283v24.323H723.61l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374h10.368v21.282zm535.107 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283H1280v24.323h-21.283l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374H1280v21.282zm-506.953 32.714l14.016-28.883-23.928-52.477v-51.687h24.323v45.606l12.162 30.404h3.04l12.162-30.404v-45.606h24.323v51.687l-37.397 81.36zm90.421-163.45h76.009v24.323h-48.646v27.363h45.606v24.323h-45.606v30.404h48.646v24.323h-76.009zm161.14 145.938v-6.081h48.95c6.081 0 8.817-.547 8.817-3.861v-1.034c0-3.284-2.767-4.226-8.817-4.226h-39.829v-15.202l15.202-15.202c-16.084-4.5-24.323-16.509-24.323-33.444v-3.04c0-22.985 13.499-36.485 42.565-36.485a66.672 66.672 0 0 1 18.09 3.04l12.313-18.242 15.202 9.121-12.161 18.242c4.165 5.868 9.121 14.989 9.121 24.323v3.04c0 21.283-10.033 32.41-36.484 33.444l-9.121 12.161h18.242c17.999 0 27.363 7.966 27.363 23.35v.334c0 15.384-8.239 24.962-26.208 24.962h-39.525c-13.043.002-19.397-5.593-19.397-15.2zm57.767-76.01v-9.121c0-10.033-4.044-12.161-15.202-12.161-11.158 0-15.202 2.128-15.202 12.161v9.121c0 10.033 4.226 12.162 15.202 12.162s15.202-2.128 15.202-12.162zm72.969 60.808h-24.323V318.275h24.323v42.565c3.466-8.118 10.337-12.161 21.283-12.161 19.033 0 27.363 9.364 27.363 32.714v67.618h-24.323v-63.848c0-9.516-3.253-15.202-12.162-15.202-8.908 0-12.161 5.686-12.161 15.202v63.848zm-678.004 0h-24.323V318.275h24.323v42.565c3.466-8.118 11.888-12.161 22.772-12.161 19.033 0 25.874 9.516 25.874 32.867v67.466h-24.323v-66.888c0-9.516-3.253-13.499-12.161-13.499s-12.162 6.871-12.162 16.388v63.998z"/></svg>					<img src="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-color.svg" alt="FiveThirtyEight" width="57" height="55" class="site-logo-small" id="site-logo-small" />
+				</a>
+							</h2>
+			
+			<form action="https://fivethirtyeight.com/" method="get" id="searchform" class="search-form">
+				<label for="search-field" class="search-form-label">Search</label>
+				<div class="search-form-input-wrapper"><input type="search" name="s" id="search-field" class="search-form-input" placeholder="Search" tabindex="-1"></div>
+				<input type="submit" value="Search" class="search-form-submit" tabindex="-1">
+				<button aria-label="Search" class="search-button" id="search-button">
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+
+			<a href="https://abcnews.go.com/" rel="noopener" title="ABC News" target="_blank" class="header-espn-link" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+				<svg width="65" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M25.089 6.709c-.47-.496-.974-.798-1.322-.798h-.313v-.275h.261c.121 0 1.548.058 1.687.058.227 0 .886-.058 1.026-.058h.278l6.618 7.345V7.187c0-.921-.4-1.276-1.407-1.276h-.296v-.275h.313c.035 0 1.529.058 1.65.058.173 0 1.164-.058 1.355-.058h.192l.017.275c-.922.071-1.165.32-1.165 1.135v9.16h-.312l-7.904-8.77v6.6c0 1.384.314 1.756 1.46 1.756h.295v.296h-.331c-.243 0-1.441-.06-1.72-.06-.156 0-1.269.06-1.512.06h-.279v-.296c1.166-.107 1.41-.302 1.41-1.153v-7.93h-.001zm11.98.106c0-.691-.261-.904-1.079-.904h-.26v-.275h.678c.47 0 3.008.058 3.026.058.364 0 2.777-.058 3.296-.058h.695l.035 2.277h-.27c-.053-1.188-.58-1.667-1.795-1.667h-2.43v4.026h2.1c.816 0 1.268-.39 1.389-1.225l.31.018v3.178h-.293c-.138-.993-.642-1.383-1.857-1.383h-1.666v3.672c0 .603.296.905.885.905h1.736c1.126 0 1.944-.515 2.43-1.58h.314l-.731 2.23c-.505 0-2.898-.058-3.696-.058-.539 0-3.13.04-3.722.058h-.452v-.295h.278c.818-.017 1.08-.23 1.08-.923V6.815zm16.701 9.41h-.487l-1.984-5.511-2.035 5.512h-.47L45.4 6.975c-.26-.71-.505-.993-.957-1.08v-.26h.296c.191 0 1.149.059 1.375.059.191 0 1.182-.058 1.391-.058h.314v.275c-.505.019-.714.16-.714.443 0 .16.052.39.14.639l2.383 6.557 1.357-3.74-.887-2.516c-.383-1.081-.714-1.364-1.55-1.383v-.275h.28c.243 0 1.496.058 1.793.058.242 0 1.495-.058 1.773-.058h.417v.275h-.417c-.574 0-.852.142-.852.443 0 .16.07.444.174.727l2.314 6.522 1.827-5.53c.226-.709.33-1.17.33-1.453 0-.496-.243-.71-.782-.71h-.313v-.274h.087c.243 0 .851.058 1.217.058.173 0 .851-.058 1.18-.058h.123v.275c-.436.125-.66.443-1.007 1.525l-2.923 8.79zm4.01-2.563c.278.688.52 1.008.988 1.361.59.46 1.37.69 2.237.69 1.491 0 2.497-.796 2.497-1.946 0-.85-.486-1.31-2.282-2.175-1.74-.85-2.174-1.274-2.538-1.628-.537-.584-.762-1.114-.762-1.822 0-1.627 1.3-2.704 3.265-2.704.592 0 1.236.088 1.933.264.278.07.557.106.714.106.138 0 .209-.035.26-.153h.3l.034 2.229h-.247c-.156-.531-.26-.76-.487-1.05-.488-.585-1.254-.903-2.237-.903-1.248 0-2.064.601-2.064 1.504 0 .778.47 1.22 2.134 1.998 2.134 1.008 3.426 1.911 3.426 3.573 0 1.91-1.537 3.2-3.807 3.2a8.04 8.04 0 0 1-1.838-.229 3.676 3.676 0 0 0-.624-.089c-.209 0-.277.036-.415.2h-.295l-.035-.248c-.118-.7-.258-1.398-.418-2.09l.261-.089zM3.97 9.732c-.262 0-.51.06-.73.168-.587.291-.957.89-.955 1.546 0 .946.755 1.714 1.684 1.714.931 0 1.684-.768 1.684-1.714 0-.947-.753-1.715-1.684-1.715zm7.259 0c-.93 0-1.685.767-1.685 1.714 0 .946.754 1.714 1.685 1.714.93 0 1.684-.768 1.684-1.714 0-.947-.755-1.715-1.684-1.715z"/><path d="M18.47 14.875c-1.862 0-3.37-1.535-3.37-3.43 0-1.893 1.508-3.428 3.37-3.428 1.596 0 2.932 1.132 3.28 2.65h-1.78a1.68 1.68 0 0 0-1.5-.936c-.932 0-1.686.768-1.686 1.715 0 .946.754 1.714 1.685 1.714a1.68 1.68 0 0 0 1.502-.94l1.783-.017c-.339 1.53-1.68 2.672-3.285 2.672zm-7.241 0c-1.853 0-3.356-1.522-3.369-3.405l-.04-6.016h1.704l.01 3.228c.499-.396 1.077-.665 1.695-.665 1.86 0 3.368 1.535 3.368 3.429s-1.509 3.429-3.368 3.429zm-5.546 0l-.007-.859c-.382.389-1.043.859-1.824.859-1.86 0-3.251-1.535-3.251-3.43 0-1.893 1.508-3.428 3.368-3.428.29 0 .573.037.843.108 1.453.38 2.526 1.723 2.526 3.32v.01l.02 3.42H5.682zM11.229.017C5.027.017 0 5.134 0 11.446s5.027 11.43 11.229 11.43c6.2 0 11.228-5.118 11.228-11.43 0-6.312-5.028-11.429-11.228-11.429z"/></svg>			</a>
+
+			<span class="nav-global-toggle" id="nav-global-toggle">Menu</span>
+
+	</div>
+			<div class="single-sticky">
+									<div class="single-sticky-vertical"></div>
+				<div class="single-sticky-title">
+											White Democrats Are Wary Of Big Ideas To Address Racial Inequality									</div>
+				<a href="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/?share=facebook" class="button share-sticky sticky-facebook">Share on Facebook</a>
+				<a href="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/?share=twitter"  class="button share-sticky sticky-twitter">Share on Twitter</a>
+						</div>
+			<div class="site-wrapper header-global-bottom">
+		<nav class="nav-global" id="nav-global">
+			<ul class="nav-global-menu">
+				<li class="nav-global-menu-item menu-politics -current-vertical">
+					<a href="https://fivethirtyeight.com/politics/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Politics">
+						Politics					</a>
+				</li>
+				<li class="nav-global-menu-item menu-sports">
+					<a href="https://fivethirtyeight.com/sports/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Sports">
+						Sports					</a>
+				</li>
+				<li class="nav-global-menu-item menu-science">
+					<a href="https://fivethirtyeight.com/science/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Science">
+						Science					</a>
+				</li>
+				<li class="nav-global-menu-item menu-podcast">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Podcasts">
+						Podcasts					</a>
+				</li>
+				<li class="nav-global-menu-item menu-video">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Video">
+						Video					</a>
+				</li>
+				<li class="nav-global-menu-item menu-abcn -mobile-only">
+					<a href="https://abcnews.go.com/" rel="noopener" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+						ABC News					</a>
+				</li>
+			</ul>
+
+			
+	
+		</nav><!-- #nav-global -->
+		</div><!-- .site-wrapper -->
+</header><!-- #header-global -->
+
+
+<div class="site-main">
+	<div id="wrapper" class="site-wrapper">
+
+		
+	<div id="content" class="single single-feature" data-col="2">
+
+		
+		<div class="single-feature__row">
+			<div id="primary" class="single-feature__col">
+				<div id="article-main">
+					<article id="post-275330" class="post-275330 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-2020-police-protests tag-affirmative-action tag-black-lives-matter tag-criminal-justice tag-education tag-employment tag-george-floyd tag-housing tag-race tag-race-and-ethnicity tag-race-relations tag-taxes espn_verticals-politics vertical-politics topic-slug-black-lives-matter">
+
+						
+												<header class="post-info single-post-header">
+														<p class="topic single-topic">
+								<time class="datetime">Jul. 14, 2020</time>,
+								at
+								<time class="datetime updated" title="2020-07-14T10:00:03+00:00">6:00 AM</time>
+
+							</p>
+							
+							<div class="single-header">
+								<h1 class="article-title article-title-single entry-title">
+									White Democrats Are Wary Of Big Ideas To Address Racial Inequality								</h1>
+
+															</div>
+
+							<div class="single-header-metadata-and-share-wrap">
+								<div class="single-header-metadata-wrap">
+																			<p class="single-metadata single-byline vcard">By <a href="https://fivethirtyeight.com/contributors/meredith-conroy/" title="" class="author url fn" rel="author">Meredith Conroy</a> and <a href="https://fivethirtyeight.com/contributors/perry-bacon-jr/" title="" class="author url fn" rel="author">Perry Bacon Jr.</a></p>
+										
+																		<p class="single-metadata single-topic">Filed under <a href="https://fivethirtyeight.com/tag/black-lives-matter/" class="term " name="">Black Lives Matter</a></p>
+										
+										
+																	</div>
+								<div class="share">
+									<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-275330" class="share-facebook sd-button share-icon" href="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-275330" class="share-twitter sd-button share-icon" href="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="fte-email-share sd-button share-icon" href="mailto:?subject=I thought you’d like this article from FiveThirtyEight&body=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fwhite-democrats-are-wary-of-big-ideas-to-address-racial-inequality%2F?ex_cid=538email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>								</div> <!-- .share -->
+							</div>
+
+						</header><!-- .post-info -->
+
+
+							
+<figure id="single-featured-image" class="single-featured-image">
+	<span class="has-bugs post-thumbnail">
+					<div class="bug-container">
+				<picture class="featured-picture">
+											<source media="(min-width: 768px)" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=1150 2x">
+					
+											<source srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=1150 2x">
+						<img alt="Chicago Area Drag Queens March In Protest Over Police Killing Of George Floyd, Tony McDade and Breonna Taylor" src="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=575" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/GettyImages-1249747474-4x3-1.jpg?w=1150 2x" class="" sizes="(max-width: 768px) 100vw, (max-width: 1080px) 66vw, 684px" />
+									</picture>
+
+				
+			</div>
+
+		
+		
+	</span><!-- .has-bugs -->
+
+	
+				<figcaption class="caption featured-image-caption">
+				A protester holds a sign in support of Black Lives Matter during a march in Chicago on June 14, 2020.									<p class="credits">Natasha Moustache / Getty Images</p>
+							</figcaption>
+			
+</figure><!-- .single-featured-image -->
+						
+						<div class="entry-content single-post-content">
+							<p>Even before a Minneapolis police officer <a href="https://www.nytimes.com/2020/05/31/us/george-floyd-investigation.html">killed George Floyd</a>, leading to a <a href="https://abcnews.go.com/US/george-floyd-protest-updates-cop-arrested-video-shows/story?id=71118017">renewed national conversation about racial inequality</a>, white Democrats were already pretty “woke” on some issues. An <a href="https://www.pewsocialtrends.org/2019/04/09/race-in-america-2019/">overwhelming majority of white Democrats</a> said that racial discrimination was a major barrier to Black people getting ahead in America, that the police and the broader criminal justice system in America treated Black people unfairly and that the legacy of slavery still affected Black Americans today. And on issues of criminal justice and policing in particular, white and Black Democrats held fairly similar views. Surveys since Floyd’s death<a class="espn-footnote-link" data-footnote-id="1" href="#fn-1" data-footnote-content="&lt;p&gt;Floyd was killed on May 25, 2020.&lt;/p&gt;
+"><sup id="ss-1">1</sup></a> have shown even greater wokeness among white Democrats (and Americans more broadly). White Democrats now <a href="https://www.usatoday.com/story/news/politics/2020/06/06/americans-views-police-drop-significantly-amid-protests-survey/3159072001/">view the police even less favorably</a> and <a href="https://www.nytimes.com/interactive/2020/06/10/upshot/black-lives-matter-attitudes.html">the Black Lives Matter movement more favorably</a>, and they are also more likely to agree that Black people face <a href="https://fivethirtyeight.com/features/theres-still-a-huge-partisan-gap-in-how-americans-see-discrimination/">“a great deal&#8221; or “a lot&#8221; of discrimination in America today</a>.<a class="espn-footnote-link" data-footnote-id="2" href="#fn-2" data-footnote-content="&lt;p&gt;According to three waves of &lt;a href=&quot;https://www.voterstudygroup.org/nationscape&quot;&gt;Democracy Fund + UCLA Nationscape&lt;/a&gt; polls administered from April 30 to May 20, 2020, just 24 percent of white Democrats held unfavorable views of the police, compared with 44 percent of white Democrats polled after Floyd&rsquo;s death, from May 28 to June 17. In early May, about 80 percent of white Democrats said they supported the Black Lives Matter movement, &lt;a href=&quot;https://civiqs.com/results/black_lives_matter?annotations=true&amp;amp;uncertainty=true&amp;amp;zoomIn=true&amp;amp;choice=Support&amp;amp;party=Democrat&amp;amp;race=White&quot;&gt;according to Civiqs polling&lt;/a&gt;. Since Floyd&rsquo;s death, that share has increased to around 90 percent. Those same &lt;a href=&quot;https://www.voterstudygroup.org/nationscape&quot;&gt;Democracy Fund + UCLA Nationscape&lt;/a&gt; polls administered from April 30 to May 20 found that 71 percent of white Democrats believed Black Americans faced &ldquo;a great deal&rdquo; or &ldquo;a lot&rdquo; of discrimination, compared with 77 percent of white Democrats polled after Floyd&rsquo;s death.&lt;/p&gt;
+"><sup id="ss-2">2</sup></a></p>
+<p>What we don’t know yet is whether white Democrats have moved significantly on racial issues beyond policing and discrimination in general &#8212; issues that deal with more material concerns, such as school integration and wealth redistribution. Most polling since Floyd’s death has focused on policing, Confederate monuments and other topics that have been in the news.</p>
+<p><em><a href="https://fivethirtyeight.com/features/theres-still-a-huge-partisan-gap-in-how-americans-see-discrimination/?cid=_inlinerelated">[Related: There’s A Huge Gap In How Republicans And Democrats See Discrimination]</a></em></p>
+<p>But here’s what we do know right now. In polling both before and even since Floyd’s death, white Democrats have been fairly opposed to giving reparations to the descendants of enslaved people, an idea supported by a clear majority of Black Democrats. And on a wide range of other policy ideas intended to address racial inequality, white Democrats are fairly tentative. (Republicans are much more opposed to all these policies across the board, which is why we’re focusing on white Democrats here.)</p>
+<p>To look at these differences more closely, we focused on areas of American life where there is documented racial inequality. We then searched for polling on those issues. Our aim was to find the most recent polling available, in part to see whether views on major issues had changed in the wake of Floyd’s death, but for many issues, we had to rely on older polling, conducted before Floyd was killed. We found results in four major areas: income inequality, education, housing and the workplace.</p>
+<h2><b>Income Inequality </b></h2>
+<p>The <a href="https://www.epi.org/publication/black-white-wage-gaps-expand-with-rising-wage-inequality/">wage gap between Black and white Americans</a> has been rising for decades, and <a href="https://www.pewsocialtrends.org/2016/06/27/1-demographic-trends-and-economic-well-being/">this gap persists</a>, even <a href="https://www.washingtonpost.com/business/2020/06/04/economic-divide-black-households/">accounting for educational levels</a>, with white college graduates earning much more than Black college graduates. Moreover, <a href="https://www.washingtonpost.com/news/wonk/wp/2017/10/03/white-families-are-twice-as-likely-to-be-millionaires-as-a-generation-ago/">wealth</a> in the United States is <a href="https://www.annualreviews.org/doi/pdf/10.1146/annurev-soc-070513-075314">overwhelmingly concentrated</a> in the hands of white Americans. <a href="https://socialequity.duke.edu/wp-content/uploads/2019/10/what-we-get-wrong.pdf">Experts argue</a> that mere changes in individual behavior is not enough to reduce these gaps, and that the government must have a specific agenda to address <a href="https://qz.com/1368251/black-income-is-half-that-of-white-households-just-like-it-was-in-the-1950s/">racial income and wealth disparities</a>.</p>
+<p>White Democrats support increasing taxes on the incomes of very high-earning Americans as well as <a href="https://www.reuters.com/article/us-usa-election-inequality-poll/majority-of-americans-favor-wealth-tax-on-very-rich-reuters-ipsos-poll-idUSKBN1Z9141">taxing the wealth of people with a high net worth</a>, according to polls. Recent surveys suggest that white Democrats may be even more supportive of these ideas than Black Democrats.<a class="espn-footnote-link" data-footnote-id="3" href="#fn-3" data-footnote-content="&lt;p&gt;We have linked to the polls cited in this story, but many of the links do not include breakdowns of Black and white Democrats. We obtained the racial breakdowns by contacting individual pollsters or analyzing the raw data ourselves.&lt;/p&gt;
+"><sup id="ss-3">3</sup></a></p>
+<p>That said, white Democrats are much less supportive than Black Democrats of providing reparations to Black Americans as restitution for slavery or to make up for past and current discrimination that African Americans have faced. That divide, which is consistent across a number of surveys, is telling, because reparations are clearly intended to benefit Black people specifically and in a way that, for example, expanding health care through a wealth tax is not.<a class="espn-footnote-link" data-footnote-id="4" href="#fn-4" data-footnote-content="&lt;p&gt;The question wording for each poll in the table below is slightly different. The question on the wealth tax in the Reuters/Ipsos survey, conducted in December 2019, asked respondents whether they agreed or disagreed with the statement &ldquo;The very rich should contribute an extra share of their total wealth each year to support public programs.&rdquo; Those who said they &ldquo;strongly agreed&rdquo; or &ldquo;somewhat agreed&rdquo; are listed as favoring the policy. In the &lt;a href=&quot;https://www.voterstudygroup.org/nationscape&quot;&gt;Democracy Fund + UCLA Nationscape&lt;/a&gt; polls administered from June 18 to July 1 2020, respondents were asked whether they agreed or disagreed with a series of policy ideas including &ldquo;Raise taxes on families making over $600,000,&rdquo; and &ldquo;Grant reparations payments to the descendants of slaves.&rdquo; Those who said they &ldquo;agree&rdquo; are listed in the table as favoring the policies. In the AP-NORC survey, conducted in September 2019, respondents were asked, &ldquo;Do you think the U.S. federal government should or should not pay reparations for slavery and racial discrimination in this country by making cash payments to the descendants of enslaved people?&amp;#8221; Those who said &ldquo;should&rdquo; are described as favoring the idea. In &lt;a href=&quot;https://news.gallup.com/poll/261722/redress-slavery-americans-oppose-cash-reparations.aspx&quot;&gt;Gallup polling&lt;/a&gt; conducted in June and July 2019, respondents were asked, &ldquo;Do you think the government should &amp;#8212; or should not &amp;#8212; make cash payments to Black Americans who are descendants of slaves?&rdquo; Those who answered &ldquo;should&rdquo; are described as favoring the idea in the table below. In ABC News/Ipsos polling conducted in June 2020, respondents were asked, &ldquo;Do you think the federal government should or should not pay money to black Americans whose ancestors were slaves as compensation for that slavery?&rdquo; Those who said &ldquo;should&rdquo; are described as favoring the idea in the table below. In a &lt;a href=&quot;https://www.ipsos.com/en-us/news-polls/vice-brown-black-forum&quot;&gt;Vice News/Ipsos poll&lt;/a&gt; conducted in January 2020, respondents were asked if they strongly support, somewhat support, somewhat oppose or strongly oppose a series of policy ideas, including &ldquo;reparations for the descendants of slaves.&rdquo; Those who said &ldquo;strongly&rdquo; or &ldquo;somewhat&rdquo; support are described as favoring the idea in the table below. These surveys, such as Gallup&rsquo;s, generally relied on both white and Black Democrats and white and Black independents who lean Democratic, as &ldquo;leaners&rdquo; tend to have similar attitudes to those who officially say they are part of each party.&lt;/p&gt;
+"><sup id="ss-4">4</sup></a></p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">How white and Black Democrats view policies aimed at addressing racial wealth and income inequality</h5>
+<p class="subtitle">Percentage of respondents who support each policy or issue</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.8">
+<thead>
+<tr>
+<th class="text" colspan="1">Policy</th>
+<th class="text" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Pollster</th>
+<th class="rank" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Month/year of poll</th>
+<th class="number" colspan="1">White Democrats</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Democrats</th>
+<th class="heat number" colspan="1">Democratic race gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Wealth Tax</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Reuters/Ipsos</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">12/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">82%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">69%</td>
+<td class="heat number" style="color: #222222;background-color: #d8f3f4">+13</td>
+</tr>
+<tr>
+<td class="text">Wealth Tax</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Nationscape</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">6/20-7/20</td>
+<td class="number" style="padding-right: 1.1em">82</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">71</td>
+<td class="heat number" style="color: #222222;background-color: #def4f6">+11</td>
+</tr>
+</tbody>
+<thead>
+<tr>
+<th class="text" style="padding-top: 30px" colspan="1">Issue</th>
+<th class="text" style="padding-top: 30px;border-right: 1px solid #cccccc;width: 10%" colspan="1">Pollster</th>
+<th class="rank" style="padding-top: 30px;border-right: 1px solid #cccccc;width: 10%" colspan="1">Month/year of poll</th>
+<th class="number" style="padding-top: 30px" colspan="1">White Democrats</th>
+<th class="number" style="padding-top: 30px;border-right: 1px solid" colspan="1">Black Democrats</th>
+<th class="heat number" style="padding-top: 30px" colspan="1">Democratic race gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text">Reparations</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">AP-NORC</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">9/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">28%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">81%</td>
+<td class="heat number" style="color: #222222;background-color: #fc6995">-54</td>
+</tr>
+<tr>
+<td class="text">Reparations</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">6/19-7/19</td>
+<td class="number" style="padding-right: 1.1em">32</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">80</td>
+<td class="heat number" style="color: #222222;background-color: #fd7da4">-48</td>
+</tr>
+<tr>
+<td class="text">Reparations</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">ABC/Ipsos</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">6/20</td>
+<td class="number" style="padding-right: 1.1em">36</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">78</td>
+<td class="heat number" style="color: #222222;background-color: #fd8fb1">-42</td>
+</tr>
+<tr>
+<td class="text">Reparations</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Nationscape</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">6/20-7/20</td>
+<td class="number" style="padding-right: 1.1em">33</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">69</td>
+<td class="heat number" style="color: #222222;background-color: #fda1bd">-36</td>
+</tr>
+<tr>
+<td class="text">Reparations</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Vice/Ipsos</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">1/20</td>
+<td class="number" style="padding-right: 1.1em">34</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">68</td>
+<td class="heat number" style="color: #222222;background-color: #fda6c1">-34</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Each poll used slightly different question wording; respondents were counted in favor if they said they somewhat or strongly supported the idea, or if they said the policy should be enacted. The Nationscape question on taxing the wealthy specified raising taxes on households making more than $600,000 a year.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>Floyd’s death and the heightened discussion around racism that followed have not led to substantial support for reparations among white Democrats. In late April and early May this year, a quarter of white Democrats supported reparations, according to polling from <a href="https://www.voterstudygroup.org/nationscape">Democracy Fund + UCLA Nationscape</a>. In more recent polls, that support has grown to 33 percent of white Democrats. That’s a substantial increase but still nowhere near the support this policy has among Black Democrats.<a class="espn-footnote-link" data-footnote-id="5" href="#fn-5" data-footnote-content="&lt;p&gt;We analyzed three waves of a &lt;a href=&quot;https://www.voterstudygroup.org/nationscape&quot;&gt;Democracy Fund + UCLA Nationscape&lt;/a&gt; survey administered from April 30, 2020, to May 20, 2020, and compared responses with two waves administered from June 18, 2020, to July 1, 2020; the question wording was the same for all five waves of the survey.&lt;/p&gt;
+"><sup id="ss-5">5</sup></a> About two-thirds of Black Americans supported reparations both before and after Floyd’s death.<a class="espn-footnote-link" data-footnote-id="6" href="#fn-6" data-footnote-content="&lt;p&gt;Among Black Democrats, support for reparations was around 67 percent in early May and around 69 percent in late June.&lt;/p&gt;
+"><sup id="ss-6">6</sup></a></p>
+<h2><b>Education </b></h2>
+<p>Education experts <a href="https://tcf.org/content/facts/the-benefits-of-socioeconomically-and-racially-integrated-schools-and-classrooms/">generally favor</a> greater <a href="https://www.washingtonpost.com/education/2019/05/16/why-school-integration-works/">school integration</a> and argue that <a href="https://www.theatlantic.com/education/archive/2016/02/concentration-poverty-american-schools/471414/">it is an important tool</a> in ensuring black Americans get a high-quality education.</p>
+<p>White Democrats are <a href="https://news.gallup.com/poll/266756/americans-say-segregation-schools-serious-problem.aspx">fairly supportive</a> of ideas like creating <a href="https://www.publicschoolreview.com/blog/what-is-a-magnet-school">magnet schools</a> that may draw in kids from across a community and redrawing school district lines to increase racial diversity. In fact, they’re about as supportive of these policies as Black Democrats are. White Democrats are also mostly in favor of having the federal government take actions to increase school integration, a step that was <a href="https://www.theatlantic.com/education/archive/2014/05/lack-of-order-the-erosion-of-a-once-great-force-for-integration/361563/">strongly opposed</a> by many white Americans in the era after the 1954 Brown v. Board of Education Supreme Court ruling. (There are reasons to be skeptical of this polling and think that some white Democrats may be lying about their true preferences, but we&#8217;ll come back to that later.)</p>
+<p>There is division about more aggressive ideas, however. White Democrats are much less supportive than Black Democrats of forcing students to attend a school farther away from their home or in a school district outside their neighborhood to ensure schools are integrated. Those policies have some echoes of the controversial “busing” policies implemented after Brown v. Board and subsequent rulings that <a href="https://www.washingtonpost.com/national/effective-but-never-popular-court-ordered-busing-is-a-relic-few-would-revive/2019/07/07/dce439c8-9d40-11e9-b27f-ed2942f73d70_story.html">resulted in greater racial integration of schools</a> but that also angered many white Americans.<a class="espn-footnote-link" data-footnote-id="7" href="#fn-7" data-footnote-content="&lt;p&gt;The exact wording for each question in the table below is as follows: In polling conducted in &lt;a href=&quot;https://news.gallup.com/poll/266756/americans-say-segregation-schools-serious-problem.aspx&quot;&gt;July 2019 by Gallup&lt;/a&gt;, respondents were asked, as part of &ldquo;proposals to reduce racial concentration or segregation in U.S. public schools,&rdquo; &ldquo;Do you think the federal government should or should not take additional steps to reduce racial concentration or segregation in U.S. schools?&rdquo; We have described those who said it &ldquo;should&rdquo; as favoring the idea in the table below. In that same survey, Gallup asked respondents, as part of &ldquo;proposals to reduce racial concentration or segregation in U.S. public schools&rdquo; if they favored or opposed &ldquo;redrawing school district boundaries to create more racially diverse school districts,&rdquo; &ldquo;creating more regional magnet schools that offer specialized courses or curriculum&rdquo; and &ldquo;requiring school districts to bus a certain percentage of students to a neighboring school district to make schools more racially diverse.&rdquo; In a &lt;a href=&quot;https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/#whites-blacks-differ-on-the-importance-of-students-going-to-a-racially-and-ethnically-mixed-school-vs-going-to-a-school-in-their-local-community&quot;&gt;Pew survey conducted in January and February 2019&lt;/a&gt;, respondents were asked to choose whether students should &ldquo;go to schools that are racially and ethnically mixed, even if it means some students don&rsquo;t go to school in their local community&rdquo; or &ldquo;go to schools in their local community, even if it means most schools are not racially and ethnically mixed.&rdquo; Those who prioritized the former are described as favoring the idea in the table below. Pew also asked another question starting with, &ldquo;Do you think each of the following should be a major factor, minor factor, or not a factor in college admissions?&rdquo; Race and ethnicity was asked, as were other potential factors such as gender or whether a relative attended that school. We combined those who said that race and ethnicity should be a major or minor factor and described them as favoring that idea in the table below.&lt;/p&gt;
+"><sup id="ss-7">7</sup></a></p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">How white and Black Democrats view policies aimed at integrating schools</h5>
+<p class="subtitle">Percentage of respondents who favor each policy</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.2">
+<thead>
+<tr>
+<th class="text" style="width: 40%" colspan="1">Policy</th>
+<th class="text" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Pollster</th>
+<th class="rank" style="width: 5%;border-right: 1px solid #cccccc" colspan="1">Month/year of poll</th>
+<th class="number" colspan="1">White Dems</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Dems</th>
+<th class="heat number" style="width: 13%" colspan="1">Dem<br />
+Race Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 40%">Busing kids to other school districts</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">7/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">49%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">71%</td>
+<td class="heat number" style="color: #222222;background-color: #fec7d8;width: 13%">-22</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Having students attend schools outside their local community</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Pew Research</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">1/19-2/19</td>
+<td class="number" style="padding-right: 1.1em">52</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">71</td>
+<td class="heat number" style="color: #222222;background-color: #fecfdd;width: 13%">-19</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Involving the federal government in school integration</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">7/19</td>
+<td class="number" style="padding-right: 1.1em">65</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">83</td>
+<td class="heat number" style="color: #222222;background-color: #fed1df;width: 13%">-18</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Creating more magnet schools</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">7/19</td>
+<td class="number" style="padding-right: 1.1em">80</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">86</td>
+<td class="heat number" style="color: #222222;background-color: #fff0f4;width: 13%">-6</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Considering race and ethnicity in college admissions decisions</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Pew Research</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">1/19-2/19</td>
+<td class="number" style="padding-right: 1.1em">34</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">39</td>
+<td class="heat number" style="color: #222222;background-color: #fff2f6;width: 13%">-5</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Redrawing school district lines</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="width: 5%;border-right: 1px solid #cccccc">7/19</td>
+<td class="number" style="padding-right: 1.1em">75</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">77</td>
+<td class="heat number" style="color: #222222;background-color: #fffafc;width: 13%">-2</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Respondents were counted in favor if they said the policy should be enacted, they favored the proposal, or race and ethnicity should be a major or minor factor in college admissions.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>Notably, both Black and white Democrats are wary of race and ethnicity being factors in college admissions decisions, at least according to <a href="https://www.pewresearch.org/fact-tank/2019/02/25/most-americans-say-colleges-should-not-consider-race-or-ethnicity-in-admissions/">a 2019 Pew survey</a>. Schools normally take this step, in part, to <a href="https://edsource.org/2020/in-historic-reversal-university-of-california-regents-endorse-push-to-end-ban-on-affirmative-action/633751">increase the number of Black students</a> attending, so it’s somewhat surprising that this policy is not more popular among Black Democrats.</p>
+<p>In all, though, we see the same trend in education as in income: Support among white Democrats dips for more aggressive policies, particularly ones with explicit trade-offs or downsides for white people. On these education questions, the only polling we have available was conducted before Floyd’s death, so it’s possible that opinions have shifted. But if views on wealth and income policies are any guide, we might still see gaps between white and Black Democrats regardless.</p>
+<h2><b>Housing </b></h2>
+<p>Many U.S. cities have distinct areas with <a href="https://www.washingtonpost.com/graphics/2018/national/segregation-us-cities/">predominantly Black populations</a>, often because of policies created in the past to keep Black people <a href="https://www.smithsonianmag.com/history/how-federal-government-intentionally-racially-segregated-american-cities-180963494/">in certain neighborhoods and out of others</a>. Many heavily Black areas have <a href="https://www.washingtonpost.com/news/wonk/wp/2015/08/12/black-poverty-differs-from-white-poverty/">high numbers of people living in poverty</a> and relatively few amenities <a href="https://www.cnn.com/2020/06/16/business/grocery-stores-access-race-inequality/index.html">like supermarkets</a>. Some of these communities face an <a href="https://www.vox.com/2020/6/17/21292046/black-people-abolish-defund-dismantle-police-george-floyd-breonna-taylor-black-lives-matter-protest">intense and at times unwelcome police presence</a>. Therefore, <a href="https://www.startribune.com/this-area-s-been-told-for-decades-segregation-won-t-work/571429962/">racial inequality experts</a> generally want to <a href="https://tcf.org/content/report/attacking-black-white-opportunity-gap-comes-residential-segregation/">increase housing integration</a>.</p>
+<p>According to polls, white Democrats say they support efforts to <a href="https://www.cato.org/publications/survey-reports/what-americans-think-about-poverty-wealth-work#appendix-e-resentment-high-achievers-index">build more housing in their neighborhoods</a>, even <a href="https://news.gallup.com/poll/266756/americans-say-segregation-schools-serious-problem.aspx">low-income housing in suburban and upper-income areas</a>. (Again, we will come back to why you should be somewhat skeptical of these responses.) But white Democrats don’t really prioritize residential integration, according to <a href="https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/">a 2019 Pew poll</a>. Only about one-third of white Democrats said they wished their community were more racially mixed, with the vast majority (60 percent) saying they were fine with the current racial mix of their community.</p>
+<p>Black Democrats answered fairly similarly to white Democrats on these questions &#8212; favoring more housing in their neighborhoods and low-income housing in the suburbs, but most (62 percent) said they were happy with the current racial composition of their community. But, unlike with measures aimed at reducing racial inequalities in income and education, where Black and white Democrats disagreed, white Democrats, like their Black counterparts, support aggressive interventions to reduce racial inequality in housing.<a class="espn-footnote-link" data-footnote-id="8" href="#fn-8" data-footnote-content="&lt;p&gt;In the &lt;a href=&quot;https://www.cato.org/publications/survey-reports/what-americans-think-about-poverty-wealth-work#appendix-e-resentment-high-achievers-index&quot;&gt;Cato Institute survey conducted in March 2019&lt;/a&gt;, respondents were asked, &ldquo;Would you favor or oppose building more houses, condos and apartment buildings in your community? We have listed those who answered &ldquo;strongly favor&rdquo; or &ldquo;somewhat favor&rdquo; as supporting the idea in the table below. In July 2019 polling, Gallup asked respondents whether they favored or opposed &ldquo;initiating policies to promote more low-income housing in suburbs and other higher-income areas&rdquo; as part of &ldquo;proposals to reduce racial concentration or segregation in U.S. public schools.&rdquo; In a &lt;a href=&quot;https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/&quot;&gt;Pew survey conducted in January and February 2019&lt;/a&gt;, respondents were asked, &ldquo;Thinking about the community where you live, do you wish your community was more racially mixed, less racially mixed or about as racially mixed as it is?&rdquo; We have listed those who answered &ldquo;more racially mixed&rdquo; as favoring that idea.&lt;/p&gt;
+"><sup id="ss-8">8</sup></a></p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">How white and Black Democrats view policies aimed at integrating neighborhoods and their own communities</h5>
+<p class="subtitle">Percentage of respondents who favor each policy or hold each view</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.3">
+<thead>
+<tr>
+<th class="text" style="width: 35%" colspan="1">Policy or view</th>
+<th class="text" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Pollster</th>
+<th class="rank" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Month/year of poll</th>
+<th class="number" colspan="1">White Dems</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Dems</th>
+<th class="heat number" style="width: 13%" colspan="1">DEM<br />
+RACE GAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 35%">Building more houses, condos and apartments in their community</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Cato</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">3/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">66%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">70%</td>
+<td class="heat number" style="color: #222222;background-color: #fff5f8;width: 13%">-4</td>
+</tr>
+<tr>
+<td class="text" style="width: 35%">Building more low-income housing in the suburbs</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Gallup</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">7/19</td>
+<td class="number" style="padding-right: 1.1em">79</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">82</td>
+<td class="heat number" style="color: #222222;background-color: #fff7fa;width: 13%">-3</td>
+</tr>
+<tr>
+<td class="text" style="width: 35%">Saying their community is not racially diverse enough</td>
+<td class="text" style="border-right: 1px solid #cccccc;width: 10%">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">1/19-2/19</td>
+<td class="number" style="padding-right: 1.1em">36</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">31</td>
+<td class="heat number" style="color: #222222;background-color: #f0fafb;width: 13%">+5</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Cato respondents were counted in favor if they said they somewhat or strongly favored the policy. Pew Research respondents were asked whether they wished their community were more racially mixed, less racially mixed or about as racially mixed as it is.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>The finding that Black Democrats are happy with the current racial composition of their communities is not surprising. Black Democrats living in heavily Black areas may want some of the positive attributes of heavily white neighborhoods (like grocery stores and other amenities) but may not necessarily want to move to whiter neighborhoods themselves &#8212; or have more white people move to their neighborhoods and change the character of the area. Again, this data was collected before Floyd’s death, so we’ll need new polling to see whether views among white or Black Democrats have changed.</p>
+<h2><b>The workplace </b></h2>
+<p>According to polls, both white and Black Democrats overwhelmingly <a href="https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/">want racially diverse workplaces</a> and, when generally defined, <a href="https://news.gallup.com/poll/247046/americans-support-affirmative-action-programs-rises.aspx">support affirmative action</a>. Though <a href="https://www.marketwatch.com/story/that-google-engineer-isnt-alone-other-white-men-say-theyre-discriminated-against-2018-01-09">a minority of white men</a> believe that affirmative action has made it harder for them to find work, the vast majority of white and Black Democrats agree that Black people are <a href="https://www.pewsocialtrends.org/2019/04/09/race-in-america-2019/">treated less fairly than white people</a> in employment situations.</p>
+<p>But while both white and Black Democrats value workplace diversity and recognize unfairness in employment situations, neither group thinks race and ethnicity should be taken into account when making decisions about promotions or hiring, even though the objective is to increase workplace diversity. That view in some ways contradicts Black and white Democrats’ support of affirmative action and a racially diverse workplace, but nevertheless, Black Democrats share white Democrats’ reluctance to embrace a more aggressive position that might increase racial equality in the workplace.<a class="espn-footnote-link" data-footnote-id="9" href="#fn-9" data-footnote-content="&lt;p&gt;In a survey conducted in January and February 2019, Pew Research asked, &ldquo;How important, if at all, would you say it is for companies and organizations to promote racial and ethnic diversity in their workplace?&rdquo; Those who described promoting diversity as &ldquo;very important&rdquo; or &ldquo;somewhat important&rdquo; are categorized in the table below as favoring the idea. In that same Pew survey, respondents were asked, &ldquo;when it comes to decisions about hiring and promotions,&rdquo; to choose one of these two options: &ldquo;Companies and organizations should take a person&rsquo;s race and ethnicity into account, in addition to their qualifications, in order to increase diversity in the workplace&rdquo; or &ldquo;Companies and organizations should only take a person&rsquo;s qualifications into account, even if it results in less diversity in the workplace.&rdquo; Those who said race should be taken into account are listed as favoring the policy in the table below. Gallup, in a survey conducted in November and December 2018, asked Americans, &ldquo;Do you generally favor or oppose affirmative action programs for racial minorities?&rdquo;&lt;/p&gt;
+"><sup id="ss-9">9</sup></a></p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">How white and Black Democrats view policies aimed at increasing workplace diversity</h5>
+<p class="subtitle">Percentage of respondents who favor each policy or agree with each view</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.4">
+<thead>
+<tr>
+<th class="text" style="width: 35%" colspan="1">Policy or view</th>
+<th class="text" style="border-right: 1px solid #cccccc" colspan="1">Pollster</th>
+<th class="rank" style="border-right: 1px solid #cccccc;width: 10%" colspan="1">Month/year of poll</th>
+<th class="number" colspan="1">White Dems</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Dems</th>
+<th class="heat number" style="width: 13%" colspan="1">Dem<br />
+Race Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 35%">Race should be considered in hiring and promotions</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">1/19-2/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">37%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">38%</td>
+<td class="heat number" style="color: #222222;background-color: #fffcfd;width: 13%">-1</td>
+</tr>
+<tr>
+<td class="text" style="width: 35%">Affirmative action</td>
+<td class="text" style="border-right: 1px solid #cccccc">Gallup</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">11/18-12/18</td>
+<td class="number" style="padding-right: 1.1em">79</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">78</td>
+<td class="heat number" style="color: #222222;background-color: #fcfefe;width: 13%">+1</td>
+</tr>
+<tr>
+<td class="text" style="width: 35%">Companies should promote racial diversity</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc;width: 10%">1/19-2/19</td>
+<td class="number" style="padding-right: 1.1em">89</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">82</td>
+<td class="heat number" style="color: #222222;background-color: #eaf8f9;width: 13%">+7</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Respondents were counted in favor if they said the policy was very important or somewhat important to enact, they generally favored the idea, or the policy should be enacted.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>What’s going on here? Considering the <a href="https://www.vox.com/policy-and-politics/2019/2/28/18241973/workplace-discrimination-cpi-investigation-eeoc">long history of racial discrimination in employment</a>, it’s likely that Black Democrats are worried that factoring race into the job application or promotion process would <i>hurt</i> them, even if that racial factor is supposed to benefit them. Alternatively, Black Democrats and their white counterparts might be hoping that diversity can be achieved without the direct consideration of race at the individual level, therefore explaining their wariness about considering race in hiring and promotions, as well as in college admissions.</p>
+<p>That may or may not change in the wake of Floyd’s death and the national conversation about systemic racism; again, we’ll need new polls to know.</p>
+<h2><b>Does the data overstate &#8212; or understate &#8212; white Democrats’ commitment to equality? </b></h2>
+<p>The broader finding here is clear: White Democrats &#8212; definitely before Floyd was killed but most likely afterward too &#8212; are more circumspect about ideas promoting racial equality that might be disruptive to the status quo for white people. But it’s worth considering two other readings of these numbers.</p>
+<p>It’s possible that this data is <i>overstating </i>the support of white Democrats, even for more mild policy proposals to reduce racial inequality. Indeed, before the protests precipitated by Floyd’s death, the Democratic Party was increasingly <a href="https://www.vox.com/2019/3/22/18259865/great-awokening-white-liberals-race-polling-trump-2020">connected with racial justice movements</a>. So, if you identify as a Democrat or liberal, there may be pressure to say in a survey that you support ideas to address racial inequality &#8212; whether you really do or not. Experts refer to this as “<a href="https://www.pewresearch.org/2010/07/19/arent-many-millennials-just-being-politically-correct-in-answering-racial-questions/">social desirability bias</a>” and say it plagues polling around <a href="https://www.jstor.org/stable/2991824?casa_token=-K_KAugXANEAAAAA%3AxisU9557CKcdzUo_f8oN-f8zwwF-8FyaXG6ZfSRhmwaGnNSfl8rRRLNSXNYbJxF9Eoi_lkNUaqrWiUQplcuTmYC9G6RjcPPVVLxxSIJZshIaQG-nZQux&amp;seq=1#metadata_info_tab_contents">racial issues</a>, in particular.</p>
+<p><em><a href="https://fivethirtyeight.com/features/when-proof-is-not-enough/?cid=_inlinerelated">[Related: When Proof Is Not Enough]</a></em></p>
+<p>“[F]or scholars studying White liberals in this period, you must take into account [the] possibility that White liberals are responding expressively. That is, they are aware of the ‘right’ answer, understand the answer that ‘bad’ White people give, and don&#8217;t wanna be bad White ppl,” Stanford University political science professor <a href="https://politicalscience.stanford.edu/people/hakeem-j-jefferson">Hakeem Jefferson</a> wrote in <a href="https://twitter.com/hakeemjefferson/status/1112852836319023104">a Twitter thread last year,</a> raising doubts about polling results that show white liberals expressing as high or higher concerns about racial inequality than some Black Americans.</p>
+<p>“I&#8217;m not saying we ought not believe White liberals when they tell us on surveys they are racially progressive. I am, however, suggesting that we treat these data with more skepticism than we have to date,” he added.</p>
+<p>“I stand by these points and have made them again recently &#8212; the key point is that we need to think about tradeoffs and consider what happens when white folks are forced to give up their privilege,” Jefferson told us recently.</p>
+<p><em><a href="https://fivethirtyeight.com/features/if-talking-about-race-hurts-democrats-why-is-biden-so-far-ahead/?cid=_inlinerelated">[Related: How Biden Is Winning An Identity Politics Election So Far]</a></em></p>
+<p>Another reason to be skeptical of white Democrats’ commitment to addressing racial inequality is to look at their actions. In cities such as New York and <a href="http://www.citylab.com/housing/2015/07/whats-the-matter-with-san-francisco/399506/">San Francisco</a>, where <a href="https://abc7ny.com/election-2016-nyc-results-president/1598306/">white voters</a> tend to be <a href="https://sf.curbed.com/2016/12/2/13820078/final-sf-voting-results-trump-neighborhoods-clinton-sanders">Democratic-leaning</a>,<a class="espn-footnote-link" data-footnote-id="10" href="#fn-10" data-footnote-content="&lt;p&gt;We don&rsquo;t have surveys that specifically measure the partisan identification of white voters in New York or San Francisco, but Hillary Clinton won both cities overwhelmingly, and both have plenty of white voters. Both cities also have Democratic mayors: Bill de Blasio in New York and London Breed in San Francisco.&lt;/p&gt;
+"><sup id="ss-10">10</sup></a> <a href="https://www.nytimes.com/interactive/2018/05/02/nyregion/new-study-school-choice-increases-school-segregation.html">schools</a> and <a href="https://www.politico.com/states/new-york/albany/story/2018/04/23/50-years-after-fair-housing-act-new-york-city-still-struggles-with-residential-segregation-376170">neighborhoods</a> are <a href="https://www.nytimes.com/2019/04/25/us/san-francisco-school-segregation.html">very</a> <a href="https://www.sfchronicle.com/bayarea/article/The-Bay-Area-of-1970-was-less-racially-segregated-13902101.php">segregated</a>. And it’s not clear that a lot of <a href="https://www.nytimes.com/2020/02/05/us/bay-area-affordable-housing.html">elected officials</a> in these cities are <a href="https://www.nytimes.com/2019/07/16/nyregion/segregation-nyc-affordable-housing.html">trying that hard to change those dynamics</a>, which suggests that voters may have elected people they knew would maintain the racial status quo.</p>
+<p>Finally, a sizable gap remains between Black Democrats and white Democrats even on issues that would seem less fraught than, say, reparations or school integration. White Democrats, for example, are significantly less likely than Black Democrats to support taking down Confederate monuments, according to a recent <a href="https://www.ipsos.com/en-us/news-polls/abc-coronavirus-poll-wave-13">ABC News/Ipsos</a> survey.<a class="espn-footnote-link" data-footnote-id="11" href="#fn-11" data-footnote-content="&lt;p&gt;According to this poll, conducted on June 17 and June 18, 68 percent of white Democrats said they supported removing statues of Confederate leaders from public places compared with 84 percent of Black Democrats who said the same.&lt;/p&gt;
+"><sup id="ss-11">11</sup></a></p>
+<p>Indeed, on a range of policies and views that don’t fall neatly into one of the buckets we covered above, there is still a significant gap between white and Black Democrats.</p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">Where white and Black Democrats diverge on race issues</h5>
+<p class="subtitle">Percentage of respondents who favor each policy or agree with each view</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.5">
+<thead>
+<tr>
+<th class="text" style="width: 40%" colspan="1">Policy or view</th>
+<th class="text" style="border-right: 1px solid #cccccc" colspan="1">Pollster</th>
+<th class="rank" style="border-right: 1px solid #cccccc" colspan="1">month/year of poll</th>
+<th class="number" colspan="1">White Dems</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Dems</th>
+<th class="heat number" style="width: 13%" colspan="1">Dem<br />
+Race Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 40%">Police officers can generally not be trusted</td>
+<td class="text" style="border-right: 1px solid #cccccc">Data for Progress</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">33%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">71%</td>
+<td class="heat number" style="color: #222222;background-color: #fd9bb9;width: 13%">-38</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Police do only a fair or poor job of protecting people from crime</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">50</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">72</td>
+<td class="heat number" style="color: #222222;background-color: #fec7d8;width: 13%">-22</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Our country has &#8220;not gone far enough&#8221; in giving Black people equal rights with white people</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc">1/19-2/19</td>
+<td class="number" style="padding-right: 1.1em">64</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">82</td>
+<td class="heat number" style="color: #222222;background-color: #fed1df;width: 13%">-18</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Confederate monuments should be removed from public spaces</td>
+<td class="text" style="border-right: 1px solid #cccccc">ABC News/Ipsos</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">68</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">84</td>
+<td class="heat number" style="color: #222222;background-color: #fed6e3;width: 13%">-16</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">U.S. military bases named after Confederates should be renamed</td>
+<td class="text" style="border-right: 1px solid #cccccc">ABC News/Ipsos</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">63</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">73</td>
+<td class="heat number" style="color: #222222;background-color: #ffe6ed;width: 13%">-10</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Respondents were counted in favor if they said they somewhat or strongly supported the idea.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>But it’s also worth considering whether this data is understating the <i>potential</i> support of white Democrats for fairly drastic proposals to address racial inequality. After all, we have seen huge increases in the past decade in the share of white Democrats who say America <a href="https://fivethirtyeight.com/features/white-democrats-have-gotten-way-more-liberal-on-identity-issues/">must take additional steps</a> to ensure equal rights for Black people and who say they support reparations, even though it’s still less than half. These recent shifts are likely due in part to the rise of the Black Lives Matter movement &#8212; in addition, views on race and identity are now one of the <a href="https://doi.org/10.1017/S0007123419000437">major dividing lines between the two parties</a>, and <a href="https://link.springer.com/content/pdf/10.1007/s11109-019-09567-4.pdf">party rhetoric</a> on these issues is crystallizing. (Increasingly, when people who identify as Democrats see their party leaders suggest that the police are treating Black people unfairly, <a href="https://www.tandfonline.com/doi/abs/10.1080/10584609.2020.1772418">they&#8217;ll adopt that stance as well</a>, new research indicates.)</p>
+<p>And Black and white Democrats agree on many, more general, policies and views.</p>
+<section class="viz">
+<header class="viz">
+<h5 class="title">Where white and Black Democrats agree on race issues</h5>
+<p class="subtitle">Percentage of respondents who favor each policy or agree with each view</p>
+</header>
+<table class="viz full" data-carpenter-slug="conroybacon.woke-dems.6">
+<thead>
+<tr>
+<th class="text" style="width: 40%" colspan="1">Policy or view</th>
+<th class="text" style="border-right: 1px solid #cccccc" colspan="1">Pollster</th>
+<th class="rank" style="border-right: 1px solid #cccccc" colspan="1">Month/year of poll</th>
+<th class="number" colspan="1">White dems</th>
+<th class="number" style="border-right: 1px solid" colspan="1">Black Dems</th>
+<th class="heat number" style="width: 13%" colspan="1">Dem<br />
+Race Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 40%">Legacy of slavery affects the position of Black people today</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc">1/19-2/19</td>
+<td class="number" data-suffix="%" data-suffixpadding="1.1em">80%</td>
+<td class="number" style="border-right: 1px solid" data-suffix="%" data-suffixpadding="1.1em">87%</td>
+<td class="heat number" style="color: #222222;background-color: #fff0f4;width: 13%">-6</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Police do a poor job of treating racial and ethnic groups equally</td>
+<td class="text" style="border-right: 1px solid #cccccc">Data for Progress</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">48</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">46</td>
+<td class="heat number" style="color: #222222;background-color: #fffafc;width: 13%">-2</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Increase government aid to poor Americans</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc">9/19</td>
+<td class="number" style="padding-right: 1.1em">72</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">73</td>
+<td class="heat number" style="color: #222222;background-color: #fffcfd;width: 13%">-1</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Decrease spending on police</td>
+<td class="text" style="border-right: 1px solid #cccccc">Pew Research</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">43</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">42</td>
+<td class="heat number" style="color: #222222;background-color: #fcfefe;width: 13%">+1</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Redirect funding from police to education and other community services</td>
+<td class="text" style="border-right: 1px solid #cccccc">Data for Progress</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">56</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">51</td>
+<td class="heat number" style="color: #222222;background-color: #f0fafb;width: 13%">+5</td>
+</tr>
+<tr>
+<td class="text" style="width: 40%">Police killing of Black Americans is a sign of broader problems</td>
+<td class="text" style="border-right: 1px solid #cccccc">Data for Progress</td>
+<td class="rank" style="border-right: 1px solid #cccccc">6/20</td>
+<td class="number" style="padding-right: 1.1em">72</td>
+<td class="number" style="border-right: 1px solid;padding-right: 1.1em">66</td>
+<td class="heat number" style="color: #222222;background-color: #edf9fa;width: 13%">+6</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Respondents were counted in favor if they said they agreed with the statement a great deal or fair amount, they somewhat or strongly supported the idea, they said the policy should be enacted or they said spending on policing in their area should be decreased a lot or a little.<br />
+Numbers may not add up due to rounding.</p>
+</footer>
+</section>
+<p>The recent protests against systemic racism and police brutality against Black people could cause a racial awakening &#8212; a second one just in this decade &#8212; for white Democrats. People who are trying to learn more about systemic racism and what they can do to reverse it (<a href="https://www.nytimes.com/2020/06/05/books/antiracism-books-race-racism.html">books about racial equality are in high demand</a>, for example) may end up <a href="https://www.theatlantic.com/technology/archive/2020/06/why-protests-work/613420/">shifting their views</a> in ways that may not be apparent in polls right now or even three months from now. The general public may also be influenced by signaling from elites &#8212; for instance, the push by leaders of the <a href="https://www.latimes.com/california/story/2020-06-15/uc-regents-to-consider-backing-affirmative-action">University of California system</a> to allow race to once again be considered in the admissions process and a New York Times Magazine <a href="https://www.nytimes.com/interactive/2020/06/24/magazine/reparations-slavery.html?action=click&amp;module=Top%20Stories&amp;pgtype=Homepage">cover story calling for reparations</a>.</p>
+<p>Also, we may be entering a period of peak “white collective guilt,” which <a href="https://www.journals.uchicago.edu/doi/pdfplus/10.1086/703207">scholars define</a> as “remorse that a white person experiences due to her group’s actions toward black people,” not necessarily due to her individual actions. White Democrats are more likely than white Republicans to feel white collective guilt, and these feelings predict support for affirmative action and general aid for Black Americans.</p>
+<p><em><a href="https://fivethirtyeight.com/features/is-police-reform-a-fundamentally-flawed-idea/?cid=_inlinerelated">[Related: Is Police Reform A Fundamentally Flawed Idea?]</a></em></p>
+<p>“It is one thing to say one believes in the existence of systemic racism and another to do something about it,” said <a href="https://www.voterstudygroup.org/participants/robert-griffin">Robert Griffin</a>, a polling and public opinion expert who is the research director of the Democracy Fund Voter Study Group. “However, these somewhat superficial changes are still important. For the public, they create opportunities to recognize the gap between stated belief and lived action. Such recognition can result in people feeling pressured to bring the two into closer alignment.”</p>
+<p>Finally, many of these polls are asking fairly imprecise questions about racial policy ideas that aren’t totally fleshed out. Specific <a href="https://www.huffpost.com/entry/us-needs-reparations-black-americans_n_5ede5dfbc5b6fb8854dd8d00?ncid=engmodushpmg00000004">plans for reparations</a>, particularly proposals that would be funded largely by new taxes on the very wealthy or some other mechanism that does not target the incomes of most white Americans, might be fairly popular with white Democrats, or at least less unpopular than reparations defined generically and without details.</p>
+<p>To conclude, you should be skeptical of stories that suggest white Democrats are very “woke” on policy matters of substance, or even more concerned about racial inequality than Black Americans are. That doesn’t seem true &#8212; at least not yet, whether you are reading polls or visiting a public school and notice that, though it’s in a liberal-leaning area of the country, it’s still not very racially mixed. That said, however, it seems that white Democrats have dramatically shifted their views on racial issues over the past 10 years, and are recognizing racial inequalities that they hadn’t picked up on (or had even ignored) before. And so their views and priorities may keep shifting &#8212; which could translate to more substantive actions, like looking for integrated schools for their children or even supporting some kind of modest approach to reparations.</p>
+<p><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><br />
+<html><body></p>
+<div class="ornamental-rule">
+<hr>
+<p><span></span></div>
+<h3 class="video-title">FiveThirtyEight Politics Podcast: COVID-19 deaths are rising. What will the U.S. do?</h3>
+<div class="video-placeholder videoplayer abc"><iframe class="abc-player" src="https://fivethirtyeight.abcnews.go.com/video/embed/71761794?section=politics" width="100%" height="100%" allow="fullscreen" scrolling="no" data-omniture="video-on-storypage|275330|White Democrats Are Wary Of Big Ideas To Address Racial Inequality|71761794"></iframe></div>
+<div class="video-footer">
+<div class="video-footer-links"><a href="/videos/">All Videos</a><a target="_blank" href="https://www.youtube.com/FiveThirtyEight">YouTube</a></div>
+<hr>
+</div>
+<p><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6169b8cc4","applicationID":"100041457","transactionName":"bwcDZBYEW0ZVVhEMXVZNIFMQDFpbG0YMC1VUB0xWEABqU1FUERBAXRE=","queueTime":0,"applicationTime":385,"atts":"Q0AUEl4eSBkWVEdfSUUf","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html></p>
+						</div><!-- .entry-content -->
+					</article>
+				</div>
+				<div id="article-additional">
+					<div class="entry-footnotes print-only">
+	<h2>Footnotes</h2>
+	<div class="entry-footnotes-content">
+		<ol class="footnotes"><li data-wrap="false" data-footnote-id="1" id="fn-1"><span><p>Floyd was killed on May 25, 2020.</p>
+</span></li><li data-wrap="false" data-footnote-id="2" id="fn-2"><span><p>According to three waves of <a href="https://www.voterstudygroup.org/nationscape">Democracy Fund + UCLA Nationscape</a> polls administered from April 30 to May 20, 2020, just 24 percent of white Democrats held unfavorable views of the police, compared with 44 percent of white Democrats polled after Floyd’s death, from May 28 to June 17. In early May, about 80 percent of white Democrats said they supported the Black Lives Matter movement, <a href="https://civiqs.com/results/black_lives_matter?annotations=true&amp;uncertainty=true&amp;zoomIn=true&amp;choice=Support&amp;party=Democrat&amp;race=White">according to Civiqs polling</a>. Since Floyd’s death, that share has increased to around 90 percent. Those same <a href="https://www.voterstudygroup.org/nationscape">Democracy Fund + UCLA Nationscape</a> polls administered from April 30 to May 20 found that 71 percent of white Democrats believed Black Americans faced “a great deal” or “a lot” of discrimination, compared with 77 percent of white Democrats polled after Floyd’s death.</p>
+</span></li><li data-wrap="false" data-footnote-id="3" id="fn-3"><span><p>We have linked to the polls cited in this story, but many of the links do not include breakdowns of Black and white Democrats. We obtained the racial breakdowns by contacting individual pollsters or analyzing the raw data ourselves.</p>
+</span></li><li data-wrap="false" data-footnote-id="4" id="fn-4"><span><p>The question wording for each poll in the table below is slightly different. The question on the wealth tax in the Reuters/Ipsos survey, conducted in December 2019, asked respondents whether they agreed or disagreed with the statement “The very rich should contribute an extra share of their total wealth each year to support public programs.” Those who said they “strongly agreed” or “somewhat agreed” are listed as favoring the policy. In the <a href="https://www.voterstudygroup.org/nationscape">Democracy Fund + UCLA Nationscape</a> polls administered from June 18 to July 1 2020, respondents were asked whether they agreed or disagreed with a series of policy ideas including “Raise taxes on families making over $600,000,” and “Grant reparations payments to the descendants of slaves.” Those who said they “agree” are listed in the table as favoring the policies. In the AP-NORC survey, conducted in September 2019, respondents were asked, “Do you think the U.S. federal government should or should not pay reparations for slavery and racial discrimination in this country by making cash payments to the descendants of enslaved people?&#8221; Those who said “should” are described as favoring the idea. In <a href="https://news.gallup.com/poll/261722/redress-slavery-americans-oppose-cash-reparations.aspx">Gallup polling</a> conducted in June and July 2019, respondents were asked, “Do you think the government should &#8212; or should not &#8212; make cash payments to Black Americans who are descendants of slaves?” Those who answered “should” are described as favoring the idea in the table below. In ABC News/Ipsos polling conducted in June 2020, respondents were asked, “Do you think the federal government should or should not pay money to black Americans whose ancestors were slaves as compensation for that slavery?” Those who said “should” are described as favoring the idea in the table below. In a <a href="https://www.ipsos.com/en-us/news-polls/vice-brown-black-forum">Vice News/Ipsos poll</a> conducted in January 2020, respondents were asked if they strongly support, somewhat support, somewhat oppose or strongly oppose a series of policy ideas, including “reparations for the descendants of slaves.” Those who said “strongly” or “somewhat” support are described as favoring the idea in the table below. These surveys, such as Gallup’s, generally relied on both white and Black Democrats and white and Black independents who lean Democratic, as “leaners” tend to have similar attitudes to those who officially say they are part of each party.</p>
+</span></li><li data-wrap="false" data-footnote-id="5" id="fn-5"><span><p>We analyzed three waves of a <a href="https://www.voterstudygroup.org/nationscape">Democracy Fund + UCLA Nationscape</a> survey administered from April 30, 2020, to May 20, 2020, and compared responses with two waves administered from June 18, 2020, to July 1, 2020; the question wording was the same for all five waves of the survey.</p>
+</span></li><li data-wrap="false" data-footnote-id="6" id="fn-6"><span><p>Among Black Democrats, support for reparations was around 67 percent in early May and around 69 percent in late June.</p>
+</span></li><li data-wrap="false" data-footnote-id="7" id="fn-7"><span><p>The exact wording for each question in the table below is as follows: In polling conducted in <a href="https://news.gallup.com/poll/266756/americans-say-segregation-schools-serious-problem.aspx">July 2019 by Gallup</a>, respondents were asked, as part of “proposals to reduce racial concentration or segregation in U.S. public schools,” “Do you think the federal government should or should not take additional steps to reduce racial concentration or segregation in U.S. schools?” We have described those who said it “should” as favoring the idea in the table below. In that same survey, Gallup asked respondents, as part of “proposals to reduce racial concentration or segregation in U.S. public schools” if they favored or opposed “redrawing school district boundaries to create more racially diverse school districts,” “creating more regional magnet schools that offer specialized courses or curriculum” and “requiring school districts to bus a certain percentage of students to a neighboring school district to make schools more racially diverse.” In a <a href="https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/#whites-blacks-differ-on-the-importance-of-students-going-to-a-racially-and-ethnically-mixed-school-vs-going-to-a-school-in-their-local-community">Pew survey conducted in January and February 2019</a>, respondents were asked to choose whether students should “go to schools that are racially and ethnically mixed, even if it means some students don’t go to school in their local community” or “go to schools in their local community, even if it means most schools are not racially and ethnically mixed.” Those who prioritized the former are described as favoring the idea in the table below. Pew also asked another question starting with, “Do you think each of the following should be a major factor, minor factor, or not a factor in college admissions?” Race and ethnicity was asked, as were other potential factors such as gender or whether a relative attended that school. We combined those who said that race and ethnicity should be a major or minor factor and described them as favoring that idea in the table below.</p>
+</span></li><li data-wrap="false" data-footnote-id="8" id="fn-8"><span><p>In the <a href="https://www.cato.org/publications/survey-reports/what-americans-think-about-poverty-wealth-work#appendix-e-resentment-high-achievers-index">Cato Institute survey conducted in March 2019</a>, respondents were asked, “Would you favor or oppose building more houses, condos and apartment buildings in your community? We have listed those who answered “strongly favor” or “somewhat favor” as supporting the idea in the table below. In July 2019 polling, Gallup asked respondents whether they favored or opposed “initiating policies to promote more low-income housing in suburbs and other higher-income areas” as part of “proposals to reduce racial concentration or segregation in U.S. public schools.” In a <a href="https://www.pewsocialtrends.org/2019/05/08/americans-see-advantages-and-challenges-in-countrys-growing-racial-and-ethnic-diversity/">Pew survey conducted in January and February 2019</a>, respondents were asked, “Thinking about the community where you live, do you wish your community was more racially mixed, less racially mixed or about as racially mixed as it is?” We have listed those who answered “more racially mixed” as favoring that idea.</p>
+</span></li><li data-wrap="false" data-footnote-id="9" id="fn-9"><span><p>In a survey conducted in January and February 2019, Pew Research asked, “How important, if at all, would you say it is for companies and organizations to promote racial and ethnic diversity in their workplace?” Those who described promoting diversity as “very important” or “somewhat important” are categorized in the table below as favoring the idea. In that same Pew survey, respondents were asked, “when it comes to decisions about hiring and promotions,” to choose one of these two options: “Companies and organizations should take a person’s race and ethnicity into account, in addition to their qualifications, in order to increase diversity in the workplace” or “Companies and organizations should only take a person’s qualifications into account, even if it results in less diversity in the workplace.” Those who said race should be taken into account are listed as favoring the policy in the table below. Gallup, in a survey conducted in November and December 2018, asked Americans, “Do you generally favor or oppose affirmative action programs for racial minorities?”</p>
+</span></li><li data-wrap="false" data-footnote-id="10" id="fn-10"><span><p>We don’t have surveys that specifically measure the partisan identification of white voters in New York or San Francisco, but Hillary Clinton won both cities overwhelmingly, and both have plenty of white voters. Both cities also have Democratic mayors: Bill de Blasio in New York and London Breed in San Francisco.</p>
+</span></li><li data-wrap="false" data-footnote-id="11" id="fn-11"><span><p>According to this poll, conducted on June 17 and June 18, 68 percent of white Democrats said they supported removing statues of Confederate leaders from public places compared with 84 percent of Black Democrats who said the same.</p>
+</span></li></ol>	</div><!-- .entry-footnotes-content -->
+</div><!-- .entry-footnotes -->
+<div class="mini-bio">
+		<p>Meredith Conroy is an associate professor of political science at California State University, San Bernardino, and co-author of &#8220;Who Runs? The Masculine Advantage in Candidate Emergence.&#8221; <span class="twitter"><a href="https://twitter.com/sidney_b" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@sidney_b</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div class="mini-bio">
+		<p>Perry Bacon Jr. is a senior writer for FiveThirtyEight. <span class="mail"><a href="mailto:perry.bacon@fivethirtyeight.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/perrybaconjr" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@perrybaconjr</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div id="entry-comments" class="fte-expandable">
+	<h3 class="fte-expandable-title">Comments</h3>
+
+	<div class="entry-comments-content fte-expandable-content">
+		<div class="fb-comments" data-href="http://fivethirtyeight.com/?post_type=fte_features&#038;p=275330" data-numposts="5" data-colorscheme="light"
+														></div>
+	</div>
+	<!-- .entry-comments-content -->
+</div>
+<!-- .entry-comments -->
+<div id="taboola-275330" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/" data-mode="thumbnails-a" data-placement="Below Article Thumbnails"></div><div class="tags">
+	<p class="filed-under">Filed under</p>
+	<p class="tag-links"><a class="tag" href="https://fivethirtyeight.com/tag/race/">Race <span class="count">(121 posts)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/taxes/">Taxes <span class="count">(91)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/education/">Education <span class="count">(79)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/criminal-justice/">Criminal Justice <span class="count">(69)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/2020-police-protests/">2020 Police Protests <span class="count">(25)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/race-and-ethnicity/">Race and Ethnicity <span class="count">(21)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/george-floyd/">George Floyd <span class="count">(17)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/employment/">Employment <span class="count">(16)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/housing/">Housing <span class="count">(12)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/black-lives-matter/">Black Lives Matter <span class="count">(9)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/race-relations/">Race Relations <span class="count">(9)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/affirmative-action/">Affirmative Action <span class="count">(8)</span></a>
+</p>
+</div>
+				</div>
+			</div>
+			<div class="single-feature__col">
+				<div id="secondary" class="single-col vertical-col blog-col">
+
+	<div class="sidebar-feature visually-hidden"><aside id="espn-taboola-3" class="widget espn-taboola-recommendation"><div id="taboola-275330-top-recommendation" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/" data-mode="organic-text-links-a" data-placement="Organic Right Rail Links"></div></aside><aside id="dtci-a9-ad-16" class="widget a9-sidebar-ad"><div id="ad-A9InContent-1" class="ad-a9incontent" data-defer="none"></div></aside><aside id="fivethirtyeight-embed-160" class="widget flexible interactives embed "><h2 class="widget-title">Interactives</h2>
+					<iframe id="pym-fivethirtyeight_embed_160" title="How Popular Is Donald Trump?" src="https://projects.fivethirtyeight.com/trump-approval-ratings/promo.html" width="200" height="300" scrolling="no"></iframe>
+			</aside>
+
+<aside id="dtci-a9-ad-5" class="widget a9-sidebar-ad"><div id="ad-A9InContent-2" class="ad-a9incontent" data-defer="none"></div></aside>		<aside id="fivethirtyeight-newsletter-84" class="widget flexible newsletter-subscription">
+			<h2 class="widget-title">Newsletter</h2>
+			<div class="newsletter-subscribe weekly">
+	<div class="envelope"></div>
+
+	<div class="outer-wrapper">
+		<h4>Want more FiveThirtyEight? Get our weekly most popular stories newsletter.</h4>
+		<div class="subscribed hidden">
+	You are now subscribed!
+</div>
+
+<div class="newsletter-form-wrapper">
+	<div class="newsletter-form">
+		<div class="errors hidden"></div>
+		<div class="inputs">
+			<input type="hidden" name="nl" value="FiveThirtyEight_-_Top_Stories_N" data-newsletter="FiveThirtyEight Top Stories">
+			<input class="newsletter-input email-address" aria-label="Email Address" placeholder="Email address" type="email" name="email">
+			<button aria-label="Subscribe" class="subscribe-action button" type="submit" name="Sign me up">Sign me up</button>
+		</div>
+		<p class="all"><a href="https://fivethirtyeight.com/newsletters/">See all newsletters</a></p>
+		<p class="newsletter-agreement"></p>
+	</div>
+</div>
+	</div>
+</div>
+		</aside>
+		</div></div><!-- #secondary -->
+			</div>
+		</div>
+	</div><!-- .single -->
+
+	
+
+	</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+<footer id="colophon" class="site-footer">
+
+	<div class="site-wrapper footer-main-content">
+
+		<div class="footer-section-get-more">
+			Get more FiveThirtyEight		</div>
+
+		<div class="footer-section-primary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://cottonbureau.com/stores/fivethirtyeight#/shop" name="&amp;lpos=fivethirtyeightFooter&amp;lid=store">Store</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/newsletter/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=newsletter">Newsletter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=videos">Videos</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=podcasts">Podcasts</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://twitter.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=twitter">Twitter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://www.facebook.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=facebook">Facebook</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://data.fivethirtyeight.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=data">Data</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/features/fear-not-readers-we-have-rss-feeds/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=rss">RSS</a>
+				</li>
+			</ul>
+		</div><!-- .footer-primary-links -->
+
+		<div class="footer-section-social-follow">
+			<ul class="footer-menu">
+				<li class="footer-menu-item social-share-item">
+					<div class="fb-like" data-href="https://www.facebook.com/fivethirtyeight" data-layout="button_count"></div>
+				</li>
+				<li class="footer-menu-item social-share-item">
+					<a href="https://twitter.com/FiveThirtyEight" class="twitter-follow-button" data-show-count="true">Follow @FiveThirtyEight</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer-section-secondary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/contact/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=contact">Contact</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/jobs/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=jobs">Jobs</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/masthead/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=masthead">Masthead</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html" name="&amp;lpos=fivethirtyeightFooter&amp;lid=nielsen">About Nielsen Measurement</a>
+				</li>
+			</ul>
+		</div><!-- .footer-secondary-links -->
+
+		<div class="footer-section-powered-by">
+			Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=fivethirtyeight.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>		</div><!-- .powered-by -->
+
+		<div class="footer-section-tertiary-links">
+			<ul class="footer-menu">
+				<li class="menu-item">
+					<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=doNotSell" target="_blank" rel="noopener noreferrer">Do Not Sell My Info</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights" target="_blank" rel="noopener noreferrer">Your California Privacy Rights</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy" target="_blank" rel="noopener noreferrer">Children's Online Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences" target="_blank" rel="noopener noreferrer">Interest-Based Ads</a>
+				</li>
+			</ul>
+			<p>
+				&copy; 2020 ABC News Internet Ventures. All rights reserved.
+			</p>
+		</div>
+		<!-- / .footer-section-tertiary-links -->
+	</div><!-- .site-wrapper -->
+
+	<div class="footer-section-additional-info" id="footer-additional-info">
+		<div class="site-wrapper">
+			<button class="close-additional-info" id="close-additional-info" aria-label="Close"><span class="visually-hidden">Close Additional Information</span></button>
+			<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS">Terms of Use</a> and <a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy">Children's Online Privacy Policy</a> are applicable to you. © 2020 ABC News Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences">Interest-Based Ads</a>. <a href="https://disneyprivacycenter.com/cookies-policy-translations/cookies-policy/">Cookie Policy</a>.
+		</div><!-- .site-wrapper -->
+	</div><!-- .footer-section-additional-info -->
+</footer><!-- .site-footer -->
+	<div id="sharing_email" style="display: none;">
+		<form action="/features/white-democrats-are-wary-of-big-ideas-to-address-racial-inequality/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script>
+var ESPNSocial = {"fbVersion":"6.0","fbAppId":"797620670264818"};
+</script>
+<script>
+var DTCIAdConfig = {"adSlotsToRefresh":["Banner","InContent","OutStream"],"adUnitPath":"\/21783347309\/abc-news\/fivethirtyeight.com\/web\/politics","placements":{"Banner":{"out-of-page":false,"sizes":[[970,250],[970,66],[728,90],[320,50],[300,50]],"defer":"none"},"InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"A9InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"OutStream":{"out-of-page":false,"sizes":[[1,3]],"defer":"none"}},"slots":{"Banner":[],"InContent":[],"A9InContent":[],"OutStream":[]},"mappings":{"Banner":[[[1280,100],[[970,250],[970,66],[728,90]]],[[1024,100],[[970,250],[970,66],[728,90]]],[[768,100],[[728,90]]],[[0,0],[[320,50],[300,50]]]],"InContent":[[[0,0],[]],[[768,50],[300,250]]]},"targeting":{"sp":"fivethirtyeight","objid":"275330","lang":"en","devType":"desktop","tag":["2020-police-protests","affirmative-action","black-lives-matter","criminal-justice","education","employment","george-floyd","housing","race","race-and-ethnicity","race-relations","taxes"]},"referringSite":null,"referralMap":{"facebook.com":"facebook","twitter.com":"twitter","t.co":"twitter","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","www.espn.com":"espn","espn.com":"espn","instagram.com":"instagram","reddit.com":"reddit","bleacherreport.com":"bleacherreport","tumblr.com":"tumblr","t.umblr.com":"tumblr","pinterest.com":"pinterest","fivethirtyeight.com":"fivethirtyeight","grantland.com":"grantland","theundefeated.com":"theundefeated"},"useOverlay":"0","refreshSimulatenously":"1","disableInitialLoad":"1","a9id":"3899","a9Params":{"si_section":"politics","section":"story"}};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJyVkEsOwjAMRC9ECCC66AJxlnzc1iU/1Q6otycCFlEpIJbjmaexLW9JmBgYAsvkco+BpNJGqGwxig4U5wnKiAiY5EhSu2gutPUYtiNt5Apu2aB4xt65D0yPnUhOzUJn5hgqbuHUxRiMyxYesSIzo1vbiwfwJQSUgujwCjzgxDNgP3DVs3C+9IDXYH8+QNn6+qL+JdoXcPanfdMejm3T7NrxDrDfoEc='></script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"","is_stats_active":"1"};
+</script>
+<script src='https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.7.1'></script>
+<script>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202031.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'144970551',post:'275330',tz:'-4',srv:'fivethirtyeight.com'} ]);
+	_stq.push([ 'clickTrackerInit', '144970551', '275330' ]);
+</script>
+</body>
+</html>

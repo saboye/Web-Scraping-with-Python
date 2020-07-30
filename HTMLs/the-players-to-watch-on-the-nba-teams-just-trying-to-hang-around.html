@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f6169b8cc4",applicationID:"100041457"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Players To Watch On The NBA Teams Just Trying To Hang Around | FiveThirtyEight</title>
+<!-- Jetpack Site Verification Tags -->
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/decimamonopro-webfont.woff2"
+			crossorigin="anonymous">
+				<link rel='dns-prefetch' href='//cdn.registerdisney.go.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.googleadservices.com' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='stylesheet' id='all-css-0' href='https://fivethirtyeight.com/_static/??-eJxtzcEKwjAQBNAfMl2k9JCD+C1Jum0XN5vQ3Sr5ewMiSPE8M2/gVR1J4mNGhaQKM6lB5JIejinuYW+g1hiHTDL0wgX6IhUxFIPKx0qisNLiKofm4mFWBIIq2sc7RX8Z2zD3e9QqbqEn2ka7NaR1s1/qFH2pe75dJz+No/eTfwMxNk2/' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script>
+var DisneyOneID = {"config":{"clientId":"DATG-FIVETHIRTYEIGHT.WEB-PROD","langPref":"en-US","debug":false,"responderPage":"https:\/\/fivethirtyeight.com\/oneid-responder","campaignName":"FiveThirtyEight"}};
+</script>
+<script src='https://cdn.registerdisney.go.com/v2/outer/DisneyID.js'></script>
+<script>
+var ESPNTaboola = {"publisher":"abcnews-fivethirtyeight","type":"article"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJydkdFOwzAMRX+ILBpoTDwgviUkt61L6oTYadW/pxsTFASd4MmS7XNtX9spG59YwWpzrC2x2EDCmM0AEbckWutEoGJ7sYlBYTcQ73q5sQtL7GMNOBf714oyX8LVBjNQW5xirfZ9E0hmo+45pehWW1wyV0lJnlxcgY3zWNCXv5M6kSqKySUNWbf4qhRJabn4kx4pIG1BG5aP4JCKzbVQM/9TgzFJxOmA335XOaCIT+XHf2iHRfbdmoZGaEdFZ1Db6drdrxXTwYWPiU/D4/7wcHe4vT8e9/0bMvLu1g=='></script>
+<script async="async" defer="defer" src='https://platform.twitter.com/widgets.js?ver=1.0.23'></script>
+<script>
+var ABCAnalytics = {"nielsen":{"asset_id":276420,"section":"sports:nba","seg_a":"","seg_b":"","seg_c":"","debug":""},"chartbeat":{"uid":"12240","domain":"fivethirtyeight.com","path":"\/features\/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around\/","sections":"sports,features","authors":"Neil Paine","title":"The Players To Watch On The NBA Teams Just Trying To Hang Around","loadPubJS":false,"loadVidJS":true},"gtm":{"id":"GTM-KLHT6T2"},"omniture":{"pageName":"sports:features:the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around","prop1":"fivethirtyeight","prop2":"","prop5":"features","prop6":"Neil Paine","prop7":"sports","prop8":"sports:nba","prop12":"The Players To Watch On The NBA Teams Just Trying To Hang Around","prop13":"276420:The Players To Watch On The NBA Teams Just Trying To Hang Around","prop14":"","prop15":"https:\/\/fivethirtyeight.com\/features\/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around\/","prop16":"https:\/\/fivethirtyeight.com\/features\/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around\/","prop20":"Desktop","prop23":"Brooklyn Nets, Memphis Grizzlies, NBA, NBA Bubble, New Orleans Pelicans, Phoenix Suns, Portland Trail Blazers, Return Of Sports, Sacramento Kings, San Antonio Spurs, Washington Wizards","eVar5":"features","eVar6":"Neil Paine","eVar7":"sports","eVar8":"sports:nba","eVar9":"2020-07-30","eVar10":"09:00","eVar12":"The Players To Watch On The NBA Teams Just Trying To Hang Around","eVar13":"276420:The Players To Watch On The NBA Teams Just Trying To Hang Around","eVar14":"","eVar15":"https:\/\/fivethirtyeight.com\/features\/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around\/","eVar16":"https:\/\/fivethirtyeight.com\/features\/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around\/","eVar20":"Desktop","eVar21":null,"eVar22":null,"prop35":"2020-07-30"},"account":"wdgnewfivethirtyeight"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/wp-content/plugins/abc-analytics/assets/js/analytics.min.js?m=1595339959g'></script>
+<link rel='https://api.w.org/' href='https://fivethirtyeight.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fivethirtyeight.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fivethirtyeight.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='https://53eig.ht/3f8L3GA' />
+<link rel="alternate" type="application/json+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-players-to-watch-on-the-nba-teams-just-trying-to-hang-around%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-players-to-watch-on-the-nba-teams-just-trying-to-hang-around%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="amphtml" href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Players To Watch On The NBA Teams Just Trying To Hang Around" />
+<meta property="og:url" content="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/" />
+<meta property="og:description" content="Twelve NBA teams have already clinched their place in this year’s playoff field, but 10 others made the trip to the league’s Orlando bubble with the hopes of pl&#8230;" />
+<meta property="article:published_time" content="2020-07-30T13:00:48+00:00" />
+<meta property="article:modified_time" content="2020-07-30T13:00:48+00:00" />
+<meta property="og:site_name" content="FiveThirtyEight" />
+<meta property="og:image" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-16x9-1.png?w=575" />
+<meta property="og:image:width" content="575" />
+<meta property="og:image:height" content="323" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://fivethirtyeight.com/contributors/neil-paine/" />
+<meta property="article:publisher" content="https://www.facebook.com/fivethirtyeight" />
+<meta property="fb:app_id" content="797620670264818" />
+<meta property="fb:pages" content="687958677914631" />
+<meta name="twitter:site" content="FiveThirtyEight" />
+<meta name="twitter:site:id" content="2303751216" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="Neil_Paine" />
+<meta name="twitter:creator:id" content="19218763" />
+<meta name="twitter:image:src" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-16x9-1.png?w=575" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Neil Paine" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Brooklyn Nets, Memphis Grizzlies, NBA, NBA Bubble, New Orleans Pelicans, Phoenix Suns, Portland Trail Blazers, Return Of Sports, Sacramento Kings, San Antonio Spurs, Washington Wizards" />
+
+<!-- End Jetpack Open Graph Tags -->
+<meta name="DC.date.issued" content="2020-07-30T13:00:48+00:00" />
+<meta name="description" content="Twelve NBA teams have already clinched their place in this year’s playoff field, but 10 others made the trip to the league’s Orlando bubble with the hopes of pl&#8230;" />
+<meta name='author' content='Neil Paine' />
+<link rel='author' href='https://fivethirtyeight.com/contributors/neil-paine/' />
+<link rel="alternate" type="application/rss+xml" title="Posts feed for Neil Paine" href="https://fivethirtyeight.com/contributors/neil-paine/feed/">
+<link type="text/plain" rel="author" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/humans.txt" /><link rel='canonical' href='https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/' />
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/"},"headline":"The Players To Watch On The NBA Teams Just Trying To Hang Around","datePublished":"2020-07-30T09:00:48-04:00","dateModified":"2020-07-30T09:39:00-04:00","publisher":{"@type":"Organization","name":"FiveThirtyEight","logo":{"url":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rich-snippets.png","height":60,"width":546,"@type":"ImageObject"}},"author":{"@type":"Person","name":"Neil Paine"},"articleSection":"Sports","image":{"@type":"ImageObject","url":"https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=1024","width":1024,"height":768}}
+</script>
+	<link rel="mask-icon" color="#ed713a" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-black.svg?v=1.0.23">
+	<link rel="shortcut icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/favicon.ico?v=1.0.23">
+	<link rel="apple-touch-icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-touch.png?v=1.0.23">
+</head>
+<body class="fte_features-template-default single single-fte_features postid-276420 vertical-sports slug-the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around topic-slug-nba">
+<div id="ad-OutStream" class="ad-outstream" data-defer="none"></div>
+<a href="#content" class="skip-to-content-link visually-hidden">Skip to main content</a>
+<div id="masterad" class="master-ad">
+	<div id="ad-Banner" class="ad-banner" data-defer="none"></div></div><!-- #masterad -->
+<i class="header-global-bground"></i>
+<header class="header-global" id="header-global">
+	<div class="site-wrapper header-global-top">
+							<h2 class="header-global-logo">
+							<a href="/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Home" class="header-global-logo-link">
+					<span class="visually-hidden">FiveThirtyEight</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="163.451" viewBox="0 318.275 1280 163.451" class="site-logo"><path d="M0 318.275h76.009v24.323H27.363v30.403h45.606v24.323H27.363v51.687H0zm94.252 109.453h15.202v-54.727H94.252v-24.323h39.525v79.05h12.162v21.283H94.252v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm434.774 109.453h15.202v-54.727h-15.202v-24.323h39.525v79.05h12.162v21.283h-51.686v-21.283zm15.202-109.453h24.323v24.323H559.43v-24.323zm401.33 109.453h15.202v-54.727H960.76v-24.323h39.525v79.05h12.161v21.283H960.76v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm-811.781 82.09v-51.687h24.323v45.606l12.161 30.343h3.04l12.162-30.343v-45.606h24.323v51.687l-21.283 48.646h-33.444zm173.301 48.646h-41.288c-24.901 0-37.762-11.584-37.762-35.968v-27.88c0-23.016 13.074-39.525 39.525-39.525 28.367 0 39.525 15.415 39.525 42.565v21.283h-51.686v5.29c0 7.966 3.04 12.952 10.398 12.952h41.288v21.283zm-51.686-60.808h24.323v-4.713c0-7.966-3.223-16.57-12.557-16.57-8.483 0-11.766 6.689-11.766 16.57v4.713zm94.251-45.605h-30.403v-24.323h88.171v24.323h-30.404v106.413h-27.364zm234.11 106.413V348.678h24.323v12.161c3.466-7.449 11.401-12.161 21.952-12.161h8.452v24.323h-18.242c-8.635 0-12.161 2.858-12.161 11.857v64.152h-24.324zm130.736 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283h21.283v24.323H723.61l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374h10.368v21.282zm535.107 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283H1280v24.323h-21.283l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374H1280v21.282zm-506.953 32.714l14.016-28.883-23.928-52.477v-51.687h24.323v45.606l12.162 30.404h3.04l12.162-30.404v-45.606h24.323v51.687l-37.397 81.36zm90.421-163.45h76.009v24.323h-48.646v27.363h45.606v24.323h-45.606v30.404h48.646v24.323h-76.009zm161.14 145.938v-6.081h48.95c6.081 0 8.817-.547 8.817-3.861v-1.034c0-3.284-2.767-4.226-8.817-4.226h-39.829v-15.202l15.202-15.202c-16.084-4.5-24.323-16.509-24.323-33.444v-3.04c0-22.985 13.499-36.485 42.565-36.485a66.672 66.672 0 0 1 18.09 3.04l12.313-18.242 15.202 9.121-12.161 18.242c4.165 5.868 9.121 14.989 9.121 24.323v3.04c0 21.283-10.033 32.41-36.484 33.444l-9.121 12.161h18.242c17.999 0 27.363 7.966 27.363 23.35v.334c0 15.384-8.239 24.962-26.208 24.962h-39.525c-13.043.002-19.397-5.593-19.397-15.2zm57.767-76.01v-9.121c0-10.033-4.044-12.161-15.202-12.161-11.158 0-15.202 2.128-15.202 12.161v9.121c0 10.033 4.226 12.162 15.202 12.162s15.202-2.128 15.202-12.162zm72.969 60.808h-24.323V318.275h24.323v42.565c3.466-8.118 10.337-12.161 21.283-12.161 19.033 0 27.363 9.364 27.363 32.714v67.618h-24.323v-63.848c0-9.516-3.253-15.202-12.162-15.202-8.908 0-12.161 5.686-12.161 15.202v63.848zm-678.004 0h-24.323V318.275h24.323v42.565c3.466-8.118 11.888-12.161 22.772-12.161 19.033 0 25.874 9.516 25.874 32.867v67.466h-24.323v-66.888c0-9.516-3.253-13.499-12.161-13.499s-12.162 6.871-12.162 16.388v63.998z"/></svg>					<img src="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-color.svg" alt="FiveThirtyEight" width="57" height="55" class="site-logo-small" id="site-logo-small" />
+				</a>
+							</h2>
+			
+			<form action="https://fivethirtyeight.com/" method="get" id="searchform" class="search-form">
+				<label for="search-field" class="search-form-label">Search</label>
+				<div class="search-form-input-wrapper"><input type="search" name="s" id="search-field" class="search-form-input" placeholder="Search" tabindex="-1"></div>
+				<input type="submit" value="Search" class="search-form-submit" tabindex="-1">
+				<button aria-label="Search" class="search-button" id="search-button">
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+
+			<a href="https://abcnews.go.com/" rel="noopener" title="ABC News" target="_blank" class="header-espn-link" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+				<svg width="65" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M25.089 6.709c-.47-.496-.974-.798-1.322-.798h-.313v-.275h.261c.121 0 1.548.058 1.687.058.227 0 .886-.058 1.026-.058h.278l6.618 7.345V7.187c0-.921-.4-1.276-1.407-1.276h-.296v-.275h.313c.035 0 1.529.058 1.65.058.173 0 1.164-.058 1.355-.058h.192l.017.275c-.922.071-1.165.32-1.165 1.135v9.16h-.312l-7.904-8.77v6.6c0 1.384.314 1.756 1.46 1.756h.295v.296h-.331c-.243 0-1.441-.06-1.72-.06-.156 0-1.269.06-1.512.06h-.279v-.296c1.166-.107 1.41-.302 1.41-1.153v-7.93h-.001zm11.98.106c0-.691-.261-.904-1.079-.904h-.26v-.275h.678c.47 0 3.008.058 3.026.058.364 0 2.777-.058 3.296-.058h.695l.035 2.277h-.27c-.053-1.188-.58-1.667-1.795-1.667h-2.43v4.026h2.1c.816 0 1.268-.39 1.389-1.225l.31.018v3.178h-.293c-.138-.993-.642-1.383-1.857-1.383h-1.666v3.672c0 .603.296.905.885.905h1.736c1.126 0 1.944-.515 2.43-1.58h.314l-.731 2.23c-.505 0-2.898-.058-3.696-.058-.539 0-3.13.04-3.722.058h-.452v-.295h.278c.818-.017 1.08-.23 1.08-.923V6.815zm16.701 9.41h-.487l-1.984-5.511-2.035 5.512h-.47L45.4 6.975c-.26-.71-.505-.993-.957-1.08v-.26h.296c.191 0 1.149.059 1.375.059.191 0 1.182-.058 1.391-.058h.314v.275c-.505.019-.714.16-.714.443 0 .16.052.39.14.639l2.383 6.557 1.357-3.74-.887-2.516c-.383-1.081-.714-1.364-1.55-1.383v-.275h.28c.243 0 1.496.058 1.793.058.242 0 1.495-.058 1.773-.058h.417v.275h-.417c-.574 0-.852.142-.852.443 0 .16.07.444.174.727l2.314 6.522 1.827-5.53c.226-.709.33-1.17.33-1.453 0-.496-.243-.71-.782-.71h-.313v-.274h.087c.243 0 .851.058 1.217.058.173 0 .851-.058 1.18-.058h.123v.275c-.436.125-.66.443-1.007 1.525l-2.923 8.79zm4.01-2.563c.278.688.52 1.008.988 1.361.59.46 1.37.69 2.237.69 1.491 0 2.497-.796 2.497-1.946 0-.85-.486-1.31-2.282-2.175-1.74-.85-2.174-1.274-2.538-1.628-.537-.584-.762-1.114-.762-1.822 0-1.627 1.3-2.704 3.265-2.704.592 0 1.236.088 1.933.264.278.07.557.106.714.106.138 0 .209-.035.26-.153h.3l.034 2.229h-.247c-.156-.531-.26-.76-.487-1.05-.488-.585-1.254-.903-2.237-.903-1.248 0-2.064.601-2.064 1.504 0 .778.47 1.22 2.134 1.998 2.134 1.008 3.426 1.911 3.426 3.573 0 1.91-1.537 3.2-3.807 3.2a8.04 8.04 0 0 1-1.838-.229 3.676 3.676 0 0 0-.624-.089c-.209 0-.277.036-.415.2h-.295l-.035-.248c-.118-.7-.258-1.398-.418-2.09l.261-.089zM3.97 9.732c-.262 0-.51.06-.73.168-.587.291-.957.89-.955 1.546 0 .946.755 1.714 1.684 1.714.931 0 1.684-.768 1.684-1.714 0-.947-.753-1.715-1.684-1.715zm7.259 0c-.93 0-1.685.767-1.685 1.714 0 .946.754 1.714 1.685 1.714.93 0 1.684-.768 1.684-1.714 0-.947-.755-1.715-1.684-1.715z"/><path d="M18.47 14.875c-1.862 0-3.37-1.535-3.37-3.43 0-1.893 1.508-3.428 3.37-3.428 1.596 0 2.932 1.132 3.28 2.65h-1.78a1.68 1.68 0 0 0-1.5-.936c-.932 0-1.686.768-1.686 1.715 0 .946.754 1.714 1.685 1.714a1.68 1.68 0 0 0 1.502-.94l1.783-.017c-.339 1.53-1.68 2.672-3.285 2.672zm-7.241 0c-1.853 0-3.356-1.522-3.369-3.405l-.04-6.016h1.704l.01 3.228c.499-.396 1.077-.665 1.695-.665 1.86 0 3.368 1.535 3.368 3.429s-1.509 3.429-3.368 3.429zm-5.546 0l-.007-.859c-.382.389-1.043.859-1.824.859-1.86 0-3.251-1.535-3.251-3.43 0-1.893 1.508-3.428 3.368-3.428.29 0 .573.037.843.108 1.453.38 2.526 1.723 2.526 3.32v.01l.02 3.42H5.682zM11.229.017C5.027.017 0 5.134 0 11.446s5.027 11.43 11.229 11.43c6.2 0 11.228-5.118 11.228-11.43 0-6.312-5.028-11.429-11.228-11.429z"/></svg>			</a>
+
+			<span class="nav-global-toggle" id="nav-global-toggle">Menu</span>
+
+	</div>
+			<div class="single-sticky">
+									<div class="single-sticky-vertical"></div>
+				<div class="single-sticky-title">
+											The Players To Watch On The NBA Teams Just Trying To Hang Around									</div>
+				<a href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/?share=facebook" class="button share-sticky sticky-facebook">Share on Facebook</a>
+				<a href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/?share=twitter"  class="button share-sticky sticky-twitter">Share on Twitter</a>
+						</div>
+			<div class="site-wrapper header-global-bottom">
+		<nav class="nav-global" id="nav-global">
+			<ul class="nav-global-menu">
+				<li class="nav-global-menu-item menu-politics">
+					<a href="https://fivethirtyeight.com/politics/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Politics">
+						Politics					</a>
+				</li>
+				<li class="nav-global-menu-item menu-sports -current-vertical">
+					<a href="https://fivethirtyeight.com/sports/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Sports">
+						Sports					</a>
+				</li>
+				<li class="nav-global-menu-item menu-science">
+					<a href="https://fivethirtyeight.com/science/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Science">
+						Science					</a>
+				</li>
+				<li class="nav-global-menu-item menu-podcast">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Podcasts">
+						Podcasts					</a>
+				</li>
+				<li class="nav-global-menu-item menu-video">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Video">
+						Video					</a>
+				</li>
+				<li class="nav-global-menu-item menu-abcn -mobile-only">
+					<a href="https://abcnews.go.com/" rel="noopener" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+						ABC News					</a>
+				</li>
+			</ul>
+
+			
+	
+		</nav><!-- #nav-global -->
+		</div><!-- .site-wrapper -->
+</header><!-- #header-global -->
+
+
+<div class="site-main">
+	<div id="wrapper" class="site-wrapper">
+
+		
+	<div id="content" class="single single-feature" data-col="2">
+
+		
+		<div class="single-feature__row">
+			<div id="primary" class="single-feature__col">
+				<div id="article-main">
+					<article id="post-276420" class="post-276420 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-brooklyn-nets tag-memphis-grizzlies tag-nba tag-nba-bubble tag-new-orleans-pelicans tag-phoenix-suns tag-portland-trail-blazers tag-return-of-sports tag-sacramento-kings tag-san-antonio-spurs tag-washington-wizards espn_verticals-sports vertical-sports topic-slug-nba">
+
+						
+												<header class="post-info single-post-header">
+														<p class="topic single-topic">
+								<time class="datetime">Jul. 30, 2020</time>,
+								at
+								<time class="datetime updated" title="2020-07-30T13:00:48+00:00">9:00 AM</time>
+
+							</p>
+							
+							<div class="single-header">
+								<h1 class="article-title article-title-single entry-title">
+									The Players To Watch On The NBA Teams Just Trying To Hang Around								</h1>
+
+															</div>
+
+							<div class="single-header-metadata-and-share-wrap">
+								<div class="single-header-metadata-wrap">
+																			<p class="single-metadata single-byline vcard">By <a href="https://fivethirtyeight.com/contributors/neil-paine/" title="" class="author url fn" rel="author">Neil Paine</a></p>
+										
+																		<p class="single-metadata single-topic">Filed under <a href="https://fivethirtyeight.com/tag/nba/" class="term " name="">NBA</a></p>
+										
+										
+																	</div>
+								<div class="share">
+									<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-276420" class="share-facebook sd-button share-icon" href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-276420" class="share-twitter sd-button share-icon" href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="fte-email-share sd-button share-icon" href="mailto:?subject=I thought you’d like this article from FiveThirtyEight&body=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-players-to-watch-on-the-nba-teams-just-trying-to-hang-around%2F?ex_cid=538email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>								</div> <!-- .share -->
+							</div>
+
+						</header><!-- .post-info -->
+
+
+							
+<figure id="single-featured-image" class="single-featured-image">
+	<span class="has-bugs post-thumbnail">
+					<div class="bug-container">
+				<picture class="featured-picture">
+											<source media="(min-width: 768px)" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=1150 2x">
+					
+											<source srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=1150 2x">
+						<img alt="NBA-PLAYERS-TO-WATCH-2020-4&#215;3" src="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=575" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/NBA-PLAYERS-TO-WATCH-2020-4x3-1.png?w=1150 2x" class="" sizes="(max-width: 768px) 100vw, (max-width: 1080px) 66vw, 684px" />
+									</picture>
+
+				
+			</div>
+
+		
+		
+	</span><!-- .has-bugs -->
+
+	
+				<figcaption class="caption featured-image-caption">
+													<p class="credits">PHOTO ILLUSTRATION BY FIVETHIRTYEIGHT / GETTY IMAGES</p>
+							</figcaption>
+			
+</figure><!-- .single-featured-image -->
+						
+						<div class="entry-content single-post-content">
+							<p>Twelve NBA teams <a href="https://www.espn.com/nba/standings">have already clinched their place</a> in this year’s playoff field, but 10 others made the trip <a href="https://en.wikipedia.org/wiki/2020_NBA_Bubble">to the league’s Orlando bubble</a> with the hopes of playing their way into the four remaining unfilled spots. Some of those bids have a better chance than others; for instance, <a href="https://projects.fivethirtyeight.com/2020-nba-predictions/">our prediction model</a> thinks the Dallas Mavericks and Orlando Magic have effectively zero chance of missing the playoffs, no matter how the restart goes. For the other eight teams, though, there are at least <i>some </i>stakes in the prelude to the postseason, even if they’re <a href="https://fivethirtyeight.com/features/whos-who-in-the-nba-bubble-the-teams-just-along-for-the-ride/">mostly along for the ride</a>.</p>
+<p><em><a href="https://projects.fivethirtyeight.com/2020-nba-predictions/?cid=_inlinerelated">[Related: Our NBA Predictions]</a></em></p>
+<p>With that in mind, let’s highlight the players on those eight clubs &#8212; the Brooklyn Nets, Memphis Grizzlies, New Orleans Pelicans, Phoenix Suns, Portland Trail Blazers, Sacramento Kings, San Antonio Spurs and Washington Wizards &#8212; who rate highest this season according to our <a href="https://projects.fivethirtyeight.com/2020-nba-player-ratings/">RAPTOR player ratings</a><a class="espn-footnote-link" data-footnote-id="1" href="#fn-1" data-footnote-content="&lt;p&gt;Among players who&rsquo;ve played at least 800 minutes, with the exception of a &lt;a href=&quot;https://www.basketball-reference.com/players/w/willizi01.html&quot;&gt;certain high-profile rookie&lt;/a&gt; for the New Orleans Pelicans.&lt;/p&gt;
+"><sup id="ss-1">1</sup></a> and who might have the biggest impact on the pre-playoff bubble action.</p>
+<p><em><a href="https://fivethirtyeight.com/features/whos-who-in-the-nba-bubble-the-teams-just-along-for-the-ride/?cid=_inlinerelated">[Related: Who’s Who In The NBA Bubble: The Teams Just Along For The Ride]</a></em></p>
+<h2><b>Damian Lillard</b></h2>
+<p><em>PG, Portland Trail Blazers</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +5.9 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 12 percent</p>
+<p>Will the restart be <a href="https://www.youtube.com/watch?v=i5L-tYVHSgc">Dame Time</a>? RAPTOR thinks Lillard is the best player among all the playoff hopefuls,<a class="espn-footnote-link" data-footnote-id="2" href="#fn-2" data-footnote-content="&lt;p&gt;Again, excluding the Mavs and Magic.&lt;/p&gt;
+"><sup id="ss-2">2</sup></a> after yet another outstanding season that saw him <a href="https://projects.fivethirtyeight.com/2020-nba-player-ratings/">rank sixth among all NBA players</a> in RAPTOR wins above replacement (WAR). Despite maintaining a <a href="https://fivethirtyeight.com/features/how-did-basketball-end-up-with-four-versions-and-counting-of-one-stat/">usage rate</a> north of 30 percent, Lillard also <a href="https://www.basketball-reference.com/players/l/lillada01.html#advanced::8">set a new career high</a> in true shooting percentage &#8212; 61.9 percent &#8212; thanks in large part to his glossy conversion rates from 2-point (51.8 percent) and 3-point (39.4 percent) range. Add in a <a href="https://www.basketball-reference.com/players/l/lillada01.html#advanced::14">career-best assist rate</a> of 34.1 percent, and Dame is an incredible offensive machine, even if RAPTOR considers his defense (-2.0 points/100) subpar. Lillard has been hobbled in practice with a foot injury, but reports are that <a href="https://twitter.com/PDXjay/status/1288206821702828032">he should be ready</a> when the real games tip off &#8212; essential news for an offensive-minded Portland team trying to gun its way into the postseason.</p>
+<p><strong>Other Blazers to watch:</strong> C Hassan Whiteside (+3.2 RAPTOR); SG CJ McCollum (+1.4)</p>
+<h2><b>Jrue Holiday</b></h2>
+<p><em>SG, New Orleans Pelicans</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +4.8 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 45 percent</p>
+<p>What, were you expecting <a href="https://fivethirtyeight.com/features/sure-its-the-preseason-but-zion-williamsons-rookie-numbers-are-historic/">Zion Williamson</a> here? It’s true that Zion has been a revelation for the Pelicans since <a href="https://www.basketball-reference.com/boxscores/202001220NOP.html">his debut</a> on Jan. 22, posting a RAPTOR of +2.4 points/100 in 19 games. But the rookie might not hit the ground running in the restart; he <a href="https://www.espn.com/nba/story/_/id/29474441/zion-williamson-leaves-nba-bubble-due-family-matter">hasn’t been practicing</a> with his team over the past few weeks because of a family emergency (though he has now <a href="https://www.espn.com/nba/story/_/id/29554250/pelicans-zion-williamson-clears-quarantine-practice-tuesday-night">cleared quarantine in the bubble</a>). And besides, Holiday has been better according to RAPTOR anyway, with a +4.8 rating per 100. That might be surprising, but Holiday has rated better than +4.0 per 100 in each of the past three seasons, making him one of the more underappreciated two-way players in the league. Only four players this season<a class="espn-footnote-link" data-footnote-id="3" href="#fn-3" data-footnote-content="&lt;p&gt;Playing a minimum of 800 minutes.&lt;/p&gt;
+"><sup id="ss-3">3</sup></a> &#8212; Giannis Antetokounmpo, Anthony Davis, Kawhi Leonard and Holiday &#8212; have a RAPTOR offensive and defensive rating of at least +2.0 points/100. And that might actually understate the breadth of Holiday’s contributions, between his mix of efficient shooting from the field,<a class="espn-footnote-link" data-footnote-id="4" href="#fn-4" data-footnote-content="&lt;p&gt;Fifty percent on twos and 36 percent on threes.&lt;/p&gt;
+"><sup id="ss-4">4</sup></a> <a href="https://www.basketball-reference.com/play-index/psl_finder.cgi?request=1&amp;match=single&amp;per_minute_base=36&amp;per_poss_base=100&amp;type=advanced&amp;season_start=1&amp;season_end=-1&amp;lg_id=NBA&amp;age_min=0&amp;age_max=99&amp;is_playoffs=N&amp;height_min=0&amp;height_max=99&amp;year_min=2020&amp;year_max=2020&amp;birth_country_is=Y&amp;as_comp=gt&amp;as_val=0&amp;pos_is_g=Y&amp;pos_is_gf=Y&amp;pos_is_f=Y&amp;pos_is_fg=Y&amp;pos_is_fc=Y&amp;pos_is_c=Y&amp;pos_is_cf=Y&amp;qual=ast_per_g_req&amp;c1stat=tov_pct&amp;c1comp=lt&amp;c1val=15&amp;order_by=ast_pct">low-turnover playmaking</a> and <a href="https://www.thebirdwrites.com/2020/7/20/21330295/jrue-holiday-lebron-james-anthony-davis-zion-pelicans-marcus-smart-ben-simmons-beverly-bledsoe">disruptive perimeter defense</a>. Without question, the Pels need Williamson at his best to crash the playoff party, but they also need Holiday to keep up his quiet brand of all-around excellence in order to have a chance.</p>
+<p><strong>Other Pelicans to watch:</strong> C Derrick Favors (+3.4 RAPTOR); PF Zion Williamson (+2.4); F Brandon Ingram (+1.1)</p>
+<p><em><a href="https://projects.fivethirtyeight.com/nba-contracts/?cid=_inlinerelated">[Related: Which NBA Contracts Were Gems This Season, And Which Were Stinkers?]</a></em></p>
+<h2><b>Patty Mills</b></h2>
+<p><em>PG, San Antonio Spurs</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +3.5 points/100 possessions<br />
+<strong>Team playoff odds:</strong> &lt;1 percent</p>
+<p>Mills doesn’t even start for San Antonio &#8212; in <a href="https://www.basketball-reference.com/players/m/millspa02/gamelog/2020/">63 games</a>, his lone appearance in the opening lineup came in <a href="https://www.basketball-reference.com/boxscores/201911200WAS.html">late November</a>. But he has still managed to make his presence felt this season, leading San Antonio in RAPTOR WAR (4.6) despite coming off the bench. Mills has long been an unsung player for the Spurs, <a href="https://www.basketball-reference.com/boxscores/201406150SAS.html">dating back to their dynasty days</a>. But at age 31, the <a href="https://twitter.com/JMcDonald_SAEN/status/1288182666643361792">creaky veteran</a> still scores plenty (18.5 points/36 minutes), knocking down nearly 150 3-pointers this year (at a 38 percent clip) while almost never giving the ball away (7.6 percent turnover rate). The Spurs have little chance to make the playoffs, sitting four games out of the West’s No. 8 seed with four teams ahead of them and highly paid big man LaMarcus Aldridge <a href="https://www.espn.com/nba/story/_/id/29283291/san-antonio-spurs-lamarcus-aldridge-season-shoulder-surgery">out for the year</a>. But they are a <a href="https://www.basketball-reference.com/teams/SAS/2020.html#pbp::11">markedly better team</a> with Mills on the court, evidence of his value even in a down year for coach Gregg Popovich’s crew.</p>
+<p><strong>Other Spurs to watch:</strong> C Jakob Poeltl (+3.3 RAPTOR); SG Derrick White (+2.6); SF DeMar DeRozan (+0.1)</p>
+<h2><b>Jonas Valančiūnas</b></h2>
+<p><em>C, Memphis Grizzlies</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +2.7 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 34 percent</p>
+<p>Guard Ja Morant has had a fine debut season (1.8 WAR) and is <a href="https://www.espn.com/nba/story/_/id/29241967/nba-awards-predictions-should-win-season">overwhelmingly likely to win</a> Rookie of the Year honors, but the <a href="https://www.basketball-reference.com/draft/NBA_2019.html">No. 2 pick in last year’s draft</a> was not RAPTOR’s pick as the best Grizzly of 2019-20. That distinction goes to Valančiūnas, who’s enjoying an outstanding year in his second season with Memphis, posting a career-high +2.7 RAPTOR (including a +2.2 mark on defense). Valančiūnas has been at his hyper-efficient best all season, ranking <a href="http://bkref.com/tiny/kuGQv">12th in the league</a> in effective field-goal percentage while averaging 14.9 points and 11.2 rebounds per game and playing tough D. <a href="https://www.basketball-reference.com/teams/MEM/2020/on-off/">According to Basketball-Reference.com</a>, Memphis’s defense allowed 109.2 points/100 with Valančiūnas on the court, 3.0 points/100 fewer than when he sat &#8212; a big part of why Memphis is even here. (Its defense <a href="https://www.basketball-reference.com/leagues/NBA_2020.html#misc_stats::11">is exactly average</a>, while its offense has been <a href="https://www.basketball-reference.com/leagues/NBA_2020.html#misc_stats::10">1 point/100 worse than the league norm</a>.) Valančiūnas <a href="https://www.youtube.com/watch?v=z630qJPLIWY">has looked good</a> in warmup games, so watch for more efficient play from him if the Grizz are going to hang onto the eighth seed in the West.</p>
+<p><strong>Other Grizzlies to watch:</strong> PG De&#8217;Anthony Melton (+2.5 RAPTOR); C Gorgui Dieng (+2.3); PF Brandon Clarke (+1.2); PG Ja Morant (-0.8)</p>
+<p><em><a href="https://fivethirtyeight.com/features/whos-who-in-the-nba-bubble-the-inner-circle-contenders/?cid=_inlinerelated">[Related: Who’s Who In The NBA Bubble: The Inner-Circle Contenders]</a></em></p>
+<h2><b>Jarrett Allen</b></h2>
+<p><em>C, Brooklyn Nets</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +1.9 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 95 percent</p>
+<p>The Nets have been <a href="https://www.rotoworld.com/basketball/nba/teams/bkn/brooklyn-nets/injuries">absolutely devastated</a> by injuries, opt-outs and COVID-19 diagnoses, costing them Kyrie Irving, Spencer Dinwiddie, DeAndre Jordan, Taurean Prince and Wilson Chandler, among others. However, Brooklyn does have a couple of solid RAPTOR-rated starters left over in Allen (+1.9) and guard Caris LeVert (+1.3), plus a six-game buffer to work with over the No. 9 Washington Wizards to avoid being in danger of missing the playoffs. The 22-year-old Allen has been one of the most improved players in the NBA this season, following up a dreadful -4.3 RAPTOR in the 2018-19 regular season to post a rating 6.2 points/100 better this year. The improvement came mostly on defense, where Allen went from -2.8 to +2.5 points/100, with much better numbers in our player-tracking measures like <a href="https://fivethirtyeight.com/features/a-better-way-to-evaluate-nba-defense/">shot defense</a> and opposing matchup performance. Allen’s offense is still negative (-0.6 points/100), but he did improve his true shooting percentage, turnover rate, offensive rebound rate and fouls drawn per 100 shots this season. In tandem with LeVert’s scoring and passing skills and forward Joe Harris’s shooting, Allen leaves the Nets with at least some productive options in the bubble going forward.</p>
+<p><strong>Other Nets to watch:</strong> SG Caris LeVert (+1.3 RAPTOR); SF Joe Harris (-0.5)</p>
+<h2><b>Ricky Rubio</b></h2>
+<p><em>PG, Phoenix Suns</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +1.8 points/100 possessions<br />
+<strong>Team playoff odds:</strong> &lt;1 percent</p>
+<p>The Suns have a <a href="https://www.basketball-reference.com/teams/PHO/2020_start.html">good ensemble cast of starters</a>, so a few of them could make a case as Phoenix’s player to watch. But the team’s best RAPTOR rating (+1.8) belongs to Rubio, whose arrival via free agency last summer helped the Suns improve enough to even be in this position. With Rubio <a href="https://www.basketball-reference.com/teams/PHO/2020/on-off/">on the court</a>, the Suns score 6.7 more points/100 than when he sits, and they allow 3.3 fewer points/100 &#8212; meaning Phoenix’s overall performance is about 10 points/100 better when Rubio is in the game. Why? Rubio <a href="https://stats.nba.com/lineups/advanced/?Season=2019-20&amp;SeasonType=Regular%20Season&amp;GroupQuantity=2&amp;sort=NET_RATING&amp;dir=1&amp;TeamID=1610612756&amp;CF=GP*GE*40">has great chemistry</a> with running mates Devin Booker and Kelly Oubre Jr. &#8212; two strong scorers &#8212; because he is such a good facilitator, <a href="https://www.basketball-reference.com/teams/PHO/2020.html#advanced::12">leading the team</a> in assist rate (39.9 percent), and his ability to draw fouls makes him an efficient fallback option on offense. Defensively, Rubio’s RAPTOR has slipped some this year (from +1.2 last regular season to +0.1 points/100), but he still ranks <a href="https://www.basketball-reference.com/leagues/NBA_2020_leaders.html">among the league leaders</a> in steal rate (2.3 percent), long <a href="https://fivethirtyeight.com/features/the-hidden-value-of-the-nba-steal/">one of the “hidden” ways</a> Rubio’s value exceeds his reputation.</p>
+<p><strong>Other Suns to watch:</strong> SF Mikal Bridges (+1.7 RAPTOR); SG Devin Booker (+1.0); C Deandre Ayton (+0.8); SF Kelly Oubre Jr. <i>&#8212; </i><a href="https://www.azcentral.com/story/sports/nba/suns/2020/07/14/suns-kelly-oubre-jr-must-mentally-right-return-knee-injury/5439738002/"><i>if healthy</i></a> (+0.6)</p>
+<p><em><a href="https://fivethirtyeight.com/features/whos-who-in-the-nba-bubble-the-potential-party-crashers/?cid=_inlinerelated">[Related: Who’s Who In The NBA Bubble: The Potential Party-Crashers]</a></em></p>
+<h2><b>Richaun Holmes</b></h2>
+<p><em>C, Sacramento Kings</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +1.5 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 9 percent</p>
+<p>Holmes isn’t exactly a household name,<a class="espn-footnote-link" data-footnote-id="5" href="#fn-5" data-footnote-content="&lt;p&gt;Who on the Kings &lt;i&gt;is&lt;/i&gt;?&lt;/p&gt;
+"><sup id="ss-5">5</sup></a> but in the restart, he’ll lead a crop of six Kings who have played at least 1,000 minutes with a positive RAPTOR this season. Holmes had spent the previous four years of his NBA career carving out a niche as a shot-blocking big man with good finishing ability around the rim, but this year he’s upgraded his rating from -1.3 to +1.5 points/100 &#8212; a huge improvement. Fueling the change has been a <a href="https://www.basketball-reference.com/players/h/holmeri01.html#advanced::8">career-best</a> true shooting percentage (<a href="http://bkref.com/tiny/xqSks">fifth-best in the league</a>) and slightly expanded shooting range, plus improved defensive numbers in terms of both RAPTOR’s on-versus-off court and player-tracking categories. Before the season was put on hold, Holmes had just returned from an injury that <a href="https://www.basketball-reference.com/players/h/holmeri01/gamelog/2020">sidelined him from early January into March</a>; now he should be one of the best-kept secrets of the playoff chase, even if his Kings are <a href="https://projects.fivethirtyeight.com/2020-nba-predictions/">up against long odds</a> to snag the No. 8 seed and extend their season.</p>
+<p><strong>Other Kings to watch:</strong> PF Nemanja Bjelica (+0.8 RAPTOR); PG De&#8217;Aaron Fox (+0.6); SG Bogdan Bogdanovic (+0.3); SG Buddy Hield (+0.2)</p>
+<h2><b>Isaac Bonga</b></h2>
+<p><em>SF, Washington Wizards</em></p>
+<p><strong>RAPTOR plus/minus:</strong> +1.2 points/100 possessions<br />
+<strong>Team playoff odds:</strong> 5 percent</p>
+<p>With high-scoring guard Bradley Beal (+1.5 RAPTOR) <a href="https://www.rotoworld.com/basketball/nba/injury-report">sitting with a shoulder injury</a> and efficient forward Dāvis Bertāns (+2.4) <a href="https://twitter.com/wojespn/status/1275074936197885959">opting out of the bubble</a>,<a class="espn-footnote-link" data-footnote-id="6" href="#fn-6" data-footnote-content="&lt;p&gt;To say nothing of the &lt;a href=&quot;http://www.prosportstransactions.com/basketball/Search/SearchResults.php?Player=john+wall&amp;amp;Team=wizards&amp;amp;BeginDate=&amp;amp;EndDate=&amp;amp;ILChkBx=yes&amp;amp;InjuriesChkBx=yes&amp;amp;Submit=Search&amp;amp;start=25&quot;&gt;long-injured&lt;/a&gt; John Wall.&lt;/p&gt;
+"><sup id="ss-6">6</sup></a> the Wizards are running low on decently rated players for the restart. According to RAPTOR, their only above-average guys left are center Moritz Wagner (+0.6), who has logged just 707 minutes this season, and Bonga (+1.2), who may prove to be Washington’s under-the-radar MVP if it manages to overcome the Nets or Magic to make the playoffs. Bonga doesn’t produce big numbers; he’s averaging just 4.6 points per game this season. But he is efficient with what chances he gets &#8212; producing 121.4 points per 100 possessions he personally ends &#8212; and he’s been stellar when he gets corner threes, on which he’s gone <a href="https://www.basketball-reference.com/teams/WAS/2020.html#shooting::none">11-for-23</a> this season. On defense, Bonga creates havoc with both steals and blocks, and the Wizards <a href="https://www.basketball-reference.com/teams/WAS/2020/on-off/">play more like a competent NBA defense</a> with him on the court, a huge bonus for the <a href="https://www.basketball-reference.com/leagues/NBA_2020.html#misc_stats::11">league’s worst defensive team</a>.</p>
+<p><strong>Other Wizards to watch:</strong> C Moritz Wagner (+0.6 RAPTOR); PG Shabazz Napier (-0.1); C Ian Mahinmi (-0.1)</p>
+<div class='ornamental-rule'><hr /><span></span></div>
+
+<h2>Subscribe to our sports podcast, Hot Takedown</h2>
+<p>
+<div data-href="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/" class="tease-podcast js-link podcast-shortcode -horizontal post-276420 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-brooklyn-nets tag-memphis-grizzlies tag-nba tag-nba-bubble tag-new-orleans-pelicans tag-phoenix-suns tag-portland-trail-blazers tag-return-of-sports tag-sacramento-kings tag-san-antonio-spurs tag-washington-wizards espn_verticals-sports vertical-sports topic-slug-nba">
+	<div class="podcast-content js-podcast-player" data-podcast-id="276420"
+			data-podcast-duration="0"
+			data-podcast-title="The Players To Watch On The NBA Teams Just Trying To Hang Around">
+
+					<span class="vcard visually-hidden">By <a href="https://fivethirtyeight.com/contributors/neil-paine/" title="" class="author url fn" rel="author">Neil Paine</a></span>
+			
+		
+		<button class="play has-image" aria-label="Play" style="background-image: url(https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/podcasts/hot-takedown-square.svg);"></button>
+
+					<div class="podcast-data">
+		
+		
+							<div class="progress-indicator">
+					<div class="progressbar">
+						<div class="progress"></div>
+					</div>
+
+					<div class="counter">&nbsp;</div>
+
+					<audio class="audio" preload="none">
+						<source src="https://www.podtrac.com/pts/redirect.mp3/traffic.megaphone.fm/ESP5645736360.mp3">
+					</audio>
+				</div>
+			
+					</div>
+		
+	</div><!-- .podcast-content -->
+</div>
+<aside class="podcast-subscribe">
+	<div class="podcast-subscribe-link-container">
+		More: <a href="https://itunes.apple.com/us/podcast/id1456065200">Apple Podcasts</a> |
+		<span class="hide-desktop-inline"><a data-android-url="" href="http://m.espn.com/general/cast?id=26150534">ESPN App</a> |</span>
+		<a href="https://www.espn.com/espnradio/feeds/rss/podcast.xml?id=26150534">RSS</a>
+			</div>
+	</aside>
+
+<div class='ornamental-rule'><hr /><span></span></div>
+</p>
+						</div><!-- .entry-content -->
+					</article>
+				</div>
+				<div id="article-additional">
+					<div class="entry-footnotes print-only">
+	<h2>Footnotes</h2>
+	<div class="entry-footnotes-content">
+		<ol class="footnotes"><li data-wrap="false" data-footnote-id="1" id="fn-1"><span><p>Among players who’ve played at least 800 minutes, with the exception of a <a href="https://www.basketball-reference.com/players/w/willizi01.html">certain high-profile rookie</a> for the New Orleans Pelicans.</p>
+</span></li><li data-wrap="false" data-footnote-id="2" id="fn-2"><span><p>Again, excluding the Mavs and Magic.</p>
+</span></li><li data-wrap="false" data-footnote-id="3" id="fn-3"><span><p>Playing a minimum of 800 minutes.</p>
+</span></li><li data-wrap="false" data-footnote-id="4" id="fn-4"><span><p>Fifty percent on twos and 36 percent on threes.</p>
+</span></li><li data-wrap="false" data-footnote-id="5" id="fn-5"><span><p>Who on the Kings <i>is</i>?</p>
+</span></li><li data-wrap="false" data-footnote-id="6" id="fn-6"><span><p>To say nothing of the <a href="http://www.prosportstransactions.com/basketball/Search/SearchResults.php?Player=john+wall&amp;Team=wizards&amp;BeginDate=&amp;EndDate=&amp;ILChkBx=yes&amp;InjuriesChkBx=yes&amp;Submit=Search&amp;start=25">long-injured</a> John Wall.</p>
+</span></li></ol>	</div><!-- .entry-footnotes-content -->
+</div><!-- .entry-footnotes -->
+<div class="mini-bio">
+		<p>Neil Paine is a senior writer for FiveThirtyEight. <span class="mail"><a href="mailto:neil.paine@fivethirtyeight.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/Neil_Paine" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@Neil_Paine</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div id="entry-comments" class="fte-expandable">
+	<h3 class="fte-expandable-title">Comments</h3>
+
+	<div class="entry-comments-content fte-expandable-content">
+		<div class="fb-comments" data-href="http://fivethirtyeight.com/?post_type=fte_features&#038;p=276420" data-numposts="5" data-colorscheme="light"
+														></div>
+	</div>
+	<!-- .entry-comments-content -->
+</div>
+<!-- .entry-comments -->
+<div id="taboola-276420" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/" data-mode="thumbnails-a" data-placement="Below Article Thumbnails"></div><div class="tags">
+	<p class="filed-under">Filed under</p>
+	<p class="tag-links"><a class="tag" href="https://fivethirtyeight.com/tag/nba/">NBA <span class="count">(845 posts)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/san-antonio-spurs/">San Antonio Spurs <span class="count">(66)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/new-orleans-pelicans/">New Orleans Pelicans <span class="count">(31)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/return-of-sports/">Return Of Sports <span class="count">(26)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/brooklyn-nets/">Brooklyn Nets <span class="count">(23)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/portland-trail-blazers/">Portland Trail Blazers <span class="count">(17)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/memphis-grizzlies/">Memphis Grizzlies <span class="count">(15)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/sacramento-kings/">Sacramento Kings <span class="count">(15)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/washington-wizards/">Washington Wizards <span class="count">(14)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/phoenix-suns/">Phoenix Suns <span class="count">(11)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/nba-bubble/">NBA Bubble <span class="count">(3)</span></a>
+</p>
+</div>
+				</div>
+			</div>
+			<div class="single-feature__col">
+				<div id="secondary" class="single-col vertical-col blog-col">
+
+	<div class="sidebar-feature visually-hidden"><aside id="espn-taboola-3" class="widget espn-taboola-recommendation"><div id="taboola-276420-top-recommendation" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/" data-mode="organic-text-links-a" data-placement="Organic Right Rail Links"></div></aside><aside id="dtci-a9-ad-16" class="widget a9-sidebar-ad"><div id="ad-A9InContent-1" class="ad-a9incontent" data-defer="none"></div></aside><aside id="fivethirtyeight-embed-160" class="widget flexible interactives embed "><h2 class="widget-title">Interactives</h2>
+					<iframe id="pym-fivethirtyeight_embed_160" title="How Popular Is Donald Trump?" src="https://projects.fivethirtyeight.com/trump-approval-ratings/promo.html" width="200" height="300" scrolling="no"></iframe>
+			</aside>
+
+<aside id="dtci-a9-ad-5" class="widget a9-sidebar-ad"><div id="ad-A9InContent-2" class="ad-a9incontent" data-defer="none"></div></aside>		<aside id="fivethirtyeight-newsletter-84" class="widget flexible newsletter-subscription">
+			<h2 class="widget-title">Newsletter</h2>
+			<div class="newsletter-subscribe weekly">
+	<div class="envelope"></div>
+
+	<div class="outer-wrapper">
+		<h4>Want more FiveThirtyEight? Get our weekly most popular stories newsletter.</h4>
+		<div class="subscribed hidden">
+	You are now subscribed!
+</div>
+
+<div class="newsletter-form-wrapper">
+	<div class="newsletter-form">
+		<div class="errors hidden"></div>
+		<div class="inputs">
+			<input type="hidden" name="nl" value="FiveThirtyEight_-_Top_Stories_N" data-newsletter="FiveThirtyEight Top Stories">
+			<input class="newsletter-input email-address" aria-label="Email Address" placeholder="Email address" type="email" name="email">
+			<button aria-label="Subscribe" class="subscribe-action button" type="submit" name="Sign me up">Sign me up</button>
+		</div>
+		<p class="all"><a href="https://fivethirtyeight.com/newsletters/">See all newsletters</a></p>
+		<p class="newsletter-agreement"></p>
+	</div>
+</div>
+	</div>
+</div>
+		</aside>
+		</div></div><!-- #secondary -->
+			</div>
+		</div>
+	</div><!-- .single -->
+
+	
+
+	</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+<footer id="colophon" class="site-footer">
+
+	<div class="site-wrapper footer-main-content">
+
+		<div class="footer-section-get-more">
+			Get more FiveThirtyEight		</div>
+
+		<div class="footer-section-primary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://cottonbureau.com/stores/fivethirtyeight#/shop" name="&amp;lpos=fivethirtyeightFooter&amp;lid=store">Store</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/newsletter/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=newsletter">Newsletter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=videos">Videos</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=podcasts">Podcasts</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://twitter.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=twitter">Twitter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://www.facebook.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=facebook">Facebook</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://data.fivethirtyeight.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=data">Data</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/features/fear-not-readers-we-have-rss-feeds/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=rss">RSS</a>
+				</li>
+			</ul>
+		</div><!-- .footer-primary-links -->
+
+		<div class="footer-section-social-follow">
+			<ul class="footer-menu">
+				<li class="footer-menu-item social-share-item">
+					<div class="fb-like" data-href="https://www.facebook.com/fivethirtyeight" data-layout="button_count"></div>
+				</li>
+				<li class="footer-menu-item social-share-item">
+					<a href="https://twitter.com/FiveThirtyEight" class="twitter-follow-button" data-show-count="true">Follow @FiveThirtyEight</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer-section-secondary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/contact/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=contact">Contact</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/jobs/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=jobs">Jobs</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/masthead/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=masthead">Masthead</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html" name="&amp;lpos=fivethirtyeightFooter&amp;lid=nielsen">About Nielsen Measurement</a>
+				</li>
+			</ul>
+		</div><!-- .footer-secondary-links -->
+
+		<div class="footer-section-powered-by">
+			Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=fivethirtyeight.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>		</div><!-- .powered-by -->
+
+		<div class="footer-section-tertiary-links">
+			<ul class="footer-menu">
+				<li class="menu-item">
+					<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=doNotSell" target="_blank" rel="noopener noreferrer">Do Not Sell My Info</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights" target="_blank" rel="noopener noreferrer">Your California Privacy Rights</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy" target="_blank" rel="noopener noreferrer">Children's Online Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences" target="_blank" rel="noopener noreferrer">Interest-Based Ads</a>
+				</li>
+			</ul>
+			<p>
+				&copy; 2020 ABC News Internet Ventures. All rights reserved.
+			</p>
+		</div>
+		<!-- / .footer-section-tertiary-links -->
+	</div><!-- .site-wrapper -->
+
+	<div class="footer-section-additional-info" id="footer-additional-info">
+		<div class="site-wrapper">
+			<button class="close-additional-info" id="close-additional-info" aria-label="Close"><span class="visually-hidden">Close Additional Information</span></button>
+			<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS">Terms of Use</a> and <a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy">Children's Online Privacy Policy</a> are applicable to you. © 2020 ABC News Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences">Interest-Based Ads</a>. <a href="https://disneyprivacycenter.com/cookies-policy-translations/cookies-policy/">Cookie Policy</a>.
+		</div><!-- .site-wrapper -->
+	</div><!-- .footer-section-additional-info -->
+</footer><!-- .site-footer -->
+	<div id="sharing_email" style="display: none;">
+		<form action="/features/the-players-to-watch-on-the-nba-teams-just-trying-to-hang-around/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script>
+var ESPNSocial = {"fbVersion":"6.0","fbAppId":"797620670264818"};
+</script>
+<script>
+var DTCIAdConfig = {"adSlotsToRefresh":["Banner","InContent","OutStream"],"adUnitPath":"\/21783347309\/abc-news\/fivethirtyeight.com\/web\/sports","placements":{"Banner":{"out-of-page":false,"sizes":[[970,250],[970,66],[728,90],[320,50],[300,50]],"defer":"none"},"InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"A9InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"OutStream":{"out-of-page":false,"sizes":[[1,3]],"defer":"none"}},"slots":{"Banner":[],"InContent":[],"A9InContent":[],"OutStream":[]},"mappings":{"Banner":[[[1280,100],[[970,250],[970,66],[728,90]]],[[1024,100],[[970,250],[970,66],[728,90]]],[[768,100],[[728,90]]],[[0,0],[[320,50],[300,50]]]],"InContent":[[[0,0],[]],[[768,50],[300,250]]]},"targeting":{"sp":"fivethirtyeight","objid":"276420","lang":"en","devType":"desktop","tag":["brooklyn-nets","memphis-grizzlies","nba","nba-bubble","new-orleans-pelicans","phoenix-suns","portland-trail-blazers","return-of-sports","sacramento-kings","san-antonio-spurs","washington-wizards"]},"referringSite":null,"referralMap":{"facebook.com":"facebook","twitter.com":"twitter","t.co":"twitter","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","www.espn.com":"espn","espn.com":"espn","instagram.com":"instagram","reddit.com":"reddit","bleacherreport.com":"bleacherreport","tumblr.com":"tumblr","t.umblr.com":"tumblr","pinterest.com":"pinterest","fivethirtyeight.com":"fivethirtyeight","grantland.com":"grantland","theundefeated.com":"theundefeated"},"useOverlay":"0","refreshSimulatenously":"1","disableInitialLoad":"1","a9id":"3899","a9Params":{"si_section":"sports","section":"story"}};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJyVkEsOwjAMRC9EiIroogvEWfJxW5f8VDug3p4IWESlgFiOZ57GtrwlYWJgCCyTywMGkkobobLFKHpQnGcoIyJgkhNJ7aK50N5j2E+0kxu4ZYPiGXvnPjAD9iI5tQidmWOouJVTF2MwLlt4xIrMjG5rLx7BlxBQCqLHK/CIMy+Aw8hVz8r50gNeg/35AGXr64v6l+hewNmfmrY7HLu2bZrpDrDSoEA='></script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"","is_stats_active":"1"};
+</script>
+<script src='https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.7.1'></script>
+<script>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202031.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'144970551',post:'276420',tz:'-4',srv:'fivethirtyeight.com'} ]);
+	_stq.push([ 'clickTrackerInit', '144970551', '276420' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6169b8cc4","applicationID":"100041457","transactionName":"bwcDZBYEW0ZVVhEMXVZNIFMQDFpbG0YMC1VUB0xWEABqU1FUERBAXRE=","queueTime":0,"applicationTime":432,"atts":"Q0AUEl4eSBkWVEdfSUUf","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

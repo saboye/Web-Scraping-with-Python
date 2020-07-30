@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f6169b8cc4",applicationID:"100041457"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League &#8230; Again. | FiveThirtyEight</title>
+<!-- Jetpack Site Verification Tags -->
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/decimamonopro-webfont.woff2"
+			crossorigin="anonymous">
+				<link rel='dns-prefetch' href='//cdn.registerdisney.go.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.googleadservices.com' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='stylesheet' id='all-css-0' href='https://fivethirtyeight.com/_static/??-eJxtzVEKwjAQBNALmS5SKuRDPEuabpPFZBO6W0tub0AEKX7PzBs4qiH2aV9QwIvAQqIwp+KfJtG8ua2BaEs4ZOKhFy7QF76wIivUtAdigUCrqck1M++qhcGJoH68U/SX0Yi536NUNiu9UCNt2pBC1F/qFH2pR75fJzuNo7W36Q0xNE28' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script>
+var DisneyOneID = {"config":{"clientId":"DATG-FIVETHIRTYEIGHT.WEB-PROD","langPref":"en-US","debug":false,"responderPage":"https:\/\/fivethirtyeight.com\/oneid-responder","campaignName":"FiveThirtyEight"}};
+</script>
+<script src='https://cdn.registerdisney.go.com/v2/outer/DisneyID.js'></script>
+<script>
+var ESPNTaboola = {"publisher":"abcnews-fivethirtyeight","type":"article"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJydkdFOwzAMRX+ILAK0DR4Q3xKS29YldULstOrf08EEBUEneLJk+1zb13bKxidWsNoca0ssNpAwZjNAxC2J1joRqNhebGJQ2A3Eu16u7MIS+1gD3or9S0WZz+FigxmoLU6xVvu+CSSzUfeUUnSrLc6Zi6QkTy6uwMZ5LOjz30mdSBXF5JKGrFt8VYqktFz8SY8UkLagDctHcEjF5lqomf+pwZgk4nTAb7+rHFDEp/LjP7TDIvtuTUMjtKOiM6jtdO3u14rp4MLHxMfh4Xp/f7u/ORyPd/0rMwDu3Q=='></script>
+<script async="async" defer="defer" src='https://platform.twitter.com/widgets.js?ver=1.0.23'></script>
+<script>
+var ABCAnalytics = {"nielsen":{"asset_id":275724,"section":"sports:mlb","seg_a":"","seg_b":"","seg_c":"","debug":""},"chartbeat":{"uid":"12240","domain":"fivethirtyeight.com","path":"\/features\/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again\/","sections":"sports,features","authors":"Neil Paine","title":"Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League \u2026 Again.","loadPubJS":false,"loadVidJS":true},"gtm":{"id":"GTM-KLHT6T2"},"omniture":{"pageName":"sports:features:baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again","prop1":"fivethirtyeight","prop2":"","prop5":"features","prop6":"Neil Paine","prop7":"sports","prop8":"sports:mlb","prop12":"Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League \u2026 Again.","prop13":"275724:Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League \u2026 Again.","prop14":"","prop15":"https:\/\/fivethirtyeight.com\/features\/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again\/","prop16":"https:\/\/fivethirtyeight.com\/features\/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again\/","prop20":"Desktop","prop23":"American League, Boston Red Sox, Cleveland Indians, Houston Astros, Minnesota Twins, MLB, MLB Predictions, MLB Preseason Projections, New York Yankees, Oakland A's, Return Of Sports, Tampa Bay Rays","eVar5":"features","eVar6":"Neil Paine","eVar7":"sports","eVar8":"sports:mlb","eVar9":"2020-07-21","eVar10":"10:00","eVar12":"Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League \u2026 Again.","eVar13":"275724:Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League \u2026 Again.","eVar14":"","eVar15":"https:\/\/fivethirtyeight.com\/features\/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again\/","eVar16":"https:\/\/fivethirtyeight.com\/features\/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again\/","eVar20":"Desktop","eVar21":null,"eVar22":null,"prop35":"2020-07-21"},"account":"wdgnewfivethirtyeight"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??/wp-content/themes/espn-fivethirtyeight/assets/js/vendor/picturefill.min.js,/wp-content/plugins/abc-analytics/assets/js/analytics.min.js?m=1595339965j'></script>
+<link rel='https://api.w.org/' href='https://fivethirtyeight.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fivethirtyeight.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fivethirtyeight.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='https://53eig.ht/32nSpD8' />
+<link rel="alternate" type="application/json+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fbaseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fbaseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="amphtml" href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League &#8230; Again." />
+<meta property="og:url" content="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/" />
+<meta property="og:description" content="What to watch as the MLB season finally starts." />
+<meta property="article:published_time" content="2020-07-21T14:00:58+00:00" />
+<meta property="article:modified_time" content="2020-07-21T14:00:58+00:00" />
+<meta property="og:site_name" content="FiveThirtyEight" />
+<meta property="og:image" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-16x9-1.png?w=575" />
+<meta property="og:image:width" content="575" />
+<meta property="og:image:height" content="323" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://fivethirtyeight.com/contributors/neil-paine/" />
+<meta property="article:publisher" content="https://www.facebook.com/fivethirtyeight" />
+<meta property="fb:app_id" content="797620670264818" />
+<meta property="fb:pages" content="687958677914631" />
+<meta name="twitter:site" content="FiveThirtyEight" />
+<meta name="twitter:site:id" content="2303751216" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="Neil_Paine" />
+<meta name="twitter:creator:id" content="19218763" />
+<meta name="twitter:image:src" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-16x9-1.png?w=575" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Neil Paine" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="American League, Boston Red Sox, Cleveland Indians, Houston Astros, Minnesota Twins, MLB, MLB Predictions, MLB Preseason Projections, New York Yankees, Oakland A&#039;s, Return Of Sports, Tampa Bay Rays" />
+
+<!-- End Jetpack Open Graph Tags -->
+<meta name="DC.date.issued" content="2020-07-21T14:00:58+00:00" />
+<meta name="description" content="What to watch as the MLB season finally starts." />
+<meta name='author' content='Neil Paine' />
+<link rel='author' href='https://fivethirtyeight.com/contributors/neil-paine/' />
+<link rel="alternate" type="application/rss+xml" title="Posts feed for Neil Paine" href="https://fivethirtyeight.com/contributors/neil-paine/feed/">
+<link type="text/plain" rel="author" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/humans.txt" /><link rel='canonical' href='https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/' />
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/"},"headline":"Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League &#8230; Again.","datePublished":"2020-07-21T10:00:58-04:00","dateModified":"2020-07-21T10:42:48-04:00","publisher":{"@type":"Organization","name":"FiveThirtyEight","logo":{"url":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rich-snippets.png","height":60,"width":546,"@type":"ImageObject"}},"author":{"@type":"Person","name":"Neil Paine"},"articleSection":"Sports","image":{"@type":"ImageObject","url":"https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=1024","width":1024,"height":768}}
+</script>
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"Organization","url":"https://fivethirtyeight.com/","name":"FiveThirtyEight","logo":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo.png","sameAs":["https://twitter.com/FiveThirtyEight","https://www.facebook.com/fivethirtyeight","https://www.instagram.com/fivethirtyeight"]}
+</script>
+	<link rel="mask-icon" color="#ed713a" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-black.svg?v=1.0.23">
+	<link rel="shortcut icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/favicon.ico?v=1.0.23">
+	<link rel="apple-touch-icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-touch.png?v=1.0.23">
+</head>
+<body class="fte_features-template-default single single-fte_features postid-275724 vertical-sports slug-baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again long-form topic-slug-mlb">
+<div id="ad-OutStream" class="ad-outstream" data-defer="none"></div>
+<a href="#content" class="skip-to-content-link visually-hidden">Skip to main content</a>
+<div id="masterad" class="master-ad">
+	<div id="ad-Banner" class="ad-banner" data-defer="none"></div></div><!-- #masterad -->
+<i class="header-global-bground"></i>
+<header class="header-global" id="header-global">
+	<div class="site-wrapper header-global-top">
+							<h2 class="header-global-logo">
+							<a href="/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Home" class="header-global-logo-link">
+					<span class="visually-hidden">FiveThirtyEight</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="163.451" viewBox="0 318.275 1280 163.451" class="site-logo"><path d="M0 318.275h76.009v24.323H27.363v30.403h45.606v24.323H27.363v51.687H0zm94.252 109.453h15.202v-54.727H94.252v-24.323h39.525v79.05h12.162v21.283H94.252v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm434.774 109.453h15.202v-54.727h-15.202v-24.323h39.525v79.05h12.162v21.283h-51.686v-21.283zm15.202-109.453h24.323v24.323H559.43v-24.323zm401.33 109.453h15.202v-54.727H960.76v-24.323h39.525v79.05h12.161v21.283H960.76v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm-811.781 82.09v-51.687h24.323v45.606l12.161 30.343h3.04l12.162-30.343v-45.606h24.323v51.687l-21.283 48.646h-33.444zm173.301 48.646h-41.288c-24.901 0-37.762-11.584-37.762-35.968v-27.88c0-23.016 13.074-39.525 39.525-39.525 28.367 0 39.525 15.415 39.525 42.565v21.283h-51.686v5.29c0 7.966 3.04 12.952 10.398 12.952h41.288v21.283zm-51.686-60.808h24.323v-4.713c0-7.966-3.223-16.57-12.557-16.57-8.483 0-11.766 6.689-11.766 16.57v4.713zm94.251-45.605h-30.403v-24.323h88.171v24.323h-30.404v106.413h-27.364zm234.11 106.413V348.678h24.323v12.161c3.466-7.449 11.401-12.161 21.952-12.161h8.452v24.323h-18.242c-8.635 0-12.161 2.858-12.161 11.857v64.152h-24.324zm130.736 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283h21.283v24.323H723.61l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374h10.368v21.282zm535.107 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283H1280v24.323h-21.283l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374H1280v21.282zm-506.953 32.714l14.016-28.883-23.928-52.477v-51.687h24.323v45.606l12.162 30.404h3.04l12.162-30.404v-45.606h24.323v51.687l-37.397 81.36zm90.421-163.45h76.009v24.323h-48.646v27.363h45.606v24.323h-45.606v30.404h48.646v24.323h-76.009zm161.14 145.938v-6.081h48.95c6.081 0 8.817-.547 8.817-3.861v-1.034c0-3.284-2.767-4.226-8.817-4.226h-39.829v-15.202l15.202-15.202c-16.084-4.5-24.323-16.509-24.323-33.444v-3.04c0-22.985 13.499-36.485 42.565-36.485a66.672 66.672 0 0 1 18.09 3.04l12.313-18.242 15.202 9.121-12.161 18.242c4.165 5.868 9.121 14.989 9.121 24.323v3.04c0 21.283-10.033 32.41-36.484 33.444l-9.121 12.161h18.242c17.999 0 27.363 7.966 27.363 23.35v.334c0 15.384-8.239 24.962-26.208 24.962h-39.525c-13.043.002-19.397-5.593-19.397-15.2zm57.767-76.01v-9.121c0-10.033-4.044-12.161-15.202-12.161-11.158 0-15.202 2.128-15.202 12.161v9.121c0 10.033 4.226 12.162 15.202 12.162s15.202-2.128 15.202-12.162zm72.969 60.808h-24.323V318.275h24.323v42.565c3.466-8.118 10.337-12.161 21.283-12.161 19.033 0 27.363 9.364 27.363 32.714v67.618h-24.323v-63.848c0-9.516-3.253-15.202-12.162-15.202-8.908 0-12.161 5.686-12.161 15.202v63.848zm-678.004 0h-24.323V318.275h24.323v42.565c3.466-8.118 11.888-12.161 22.772-12.161 19.033 0 25.874 9.516 25.874 32.867v67.466h-24.323v-66.888c0-9.516-3.253-13.499-12.161-13.499s-12.162 6.871-12.162 16.388v63.998z"/></svg>					<img src="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-color.svg" alt="FiveThirtyEight" width="57" height="55" class="site-logo-small" id="site-logo-small" />
+				</a>
+							</h2>
+			
+			<form action="https://fivethirtyeight.com/" method="get" id="searchform" class="search-form">
+				<label for="search-field" class="search-form-label">Search</label>
+				<div class="search-form-input-wrapper"><input type="search" name="s" id="search-field" class="search-form-input" placeholder="Search" tabindex="-1"></div>
+				<input type="submit" value="Search" class="search-form-submit" tabindex="-1">
+				<button aria-label="Search" class="search-button" id="search-button">
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+
+			<a href="https://abcnews.go.com/" rel="noopener" title="ABC News" target="_blank" class="header-espn-link" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+				<svg width="65" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M25.089 6.709c-.47-.496-.974-.798-1.322-.798h-.313v-.275h.261c.121 0 1.548.058 1.687.058.227 0 .886-.058 1.026-.058h.278l6.618 7.345V7.187c0-.921-.4-1.276-1.407-1.276h-.296v-.275h.313c.035 0 1.529.058 1.65.058.173 0 1.164-.058 1.355-.058h.192l.017.275c-.922.071-1.165.32-1.165 1.135v9.16h-.312l-7.904-8.77v6.6c0 1.384.314 1.756 1.46 1.756h.295v.296h-.331c-.243 0-1.441-.06-1.72-.06-.156 0-1.269.06-1.512.06h-.279v-.296c1.166-.107 1.41-.302 1.41-1.153v-7.93h-.001zm11.98.106c0-.691-.261-.904-1.079-.904h-.26v-.275h.678c.47 0 3.008.058 3.026.058.364 0 2.777-.058 3.296-.058h.695l.035 2.277h-.27c-.053-1.188-.58-1.667-1.795-1.667h-2.43v4.026h2.1c.816 0 1.268-.39 1.389-1.225l.31.018v3.178h-.293c-.138-.993-.642-1.383-1.857-1.383h-1.666v3.672c0 .603.296.905.885.905h1.736c1.126 0 1.944-.515 2.43-1.58h.314l-.731 2.23c-.505 0-2.898-.058-3.696-.058-.539 0-3.13.04-3.722.058h-.452v-.295h.278c.818-.017 1.08-.23 1.08-.923V6.815zm16.701 9.41h-.487l-1.984-5.511-2.035 5.512h-.47L45.4 6.975c-.26-.71-.505-.993-.957-1.08v-.26h.296c.191 0 1.149.059 1.375.059.191 0 1.182-.058 1.391-.058h.314v.275c-.505.019-.714.16-.714.443 0 .16.052.39.14.639l2.383 6.557 1.357-3.74-.887-2.516c-.383-1.081-.714-1.364-1.55-1.383v-.275h.28c.243 0 1.496.058 1.793.058.242 0 1.495-.058 1.773-.058h.417v.275h-.417c-.574 0-.852.142-.852.443 0 .16.07.444.174.727l2.314 6.522 1.827-5.53c.226-.709.33-1.17.33-1.453 0-.496-.243-.71-.782-.71h-.313v-.274h.087c.243 0 .851.058 1.217.058.173 0 .851-.058 1.18-.058h.123v.275c-.436.125-.66.443-1.007 1.525l-2.923 8.79zm4.01-2.563c.278.688.52 1.008.988 1.361.59.46 1.37.69 2.237.69 1.491 0 2.497-.796 2.497-1.946 0-.85-.486-1.31-2.282-2.175-1.74-.85-2.174-1.274-2.538-1.628-.537-.584-.762-1.114-.762-1.822 0-1.627 1.3-2.704 3.265-2.704.592 0 1.236.088 1.933.264.278.07.557.106.714.106.138 0 .209-.035.26-.153h.3l.034 2.229h-.247c-.156-.531-.26-.76-.487-1.05-.488-.585-1.254-.903-2.237-.903-1.248 0-2.064.601-2.064 1.504 0 .778.47 1.22 2.134 1.998 2.134 1.008 3.426 1.911 3.426 3.573 0 1.91-1.537 3.2-3.807 3.2a8.04 8.04 0 0 1-1.838-.229 3.676 3.676 0 0 0-.624-.089c-.209 0-.277.036-.415.2h-.295l-.035-.248c-.118-.7-.258-1.398-.418-2.09l.261-.089zM3.97 9.732c-.262 0-.51.06-.73.168-.587.291-.957.89-.955 1.546 0 .946.755 1.714 1.684 1.714.931 0 1.684-.768 1.684-1.714 0-.947-.753-1.715-1.684-1.715zm7.259 0c-.93 0-1.685.767-1.685 1.714 0 .946.754 1.714 1.685 1.714.93 0 1.684-.768 1.684-1.714 0-.947-.755-1.715-1.684-1.715z"/><path d="M18.47 14.875c-1.862 0-3.37-1.535-3.37-3.43 0-1.893 1.508-3.428 3.37-3.428 1.596 0 2.932 1.132 3.28 2.65h-1.78a1.68 1.68 0 0 0-1.5-.936c-.932 0-1.686.768-1.686 1.715 0 .946.754 1.714 1.685 1.714a1.68 1.68 0 0 0 1.502-.94l1.783-.017c-.339 1.53-1.68 2.672-3.285 2.672zm-7.241 0c-1.853 0-3.356-1.522-3.369-3.405l-.04-6.016h1.704l.01 3.228c.499-.396 1.077-.665 1.695-.665 1.86 0 3.368 1.535 3.368 3.429s-1.509 3.429-3.368 3.429zm-5.546 0l-.007-.859c-.382.389-1.043.859-1.824.859-1.86 0-3.251-1.535-3.251-3.43 0-1.893 1.508-3.428 3.368-3.428.29 0 .573.037.843.108 1.453.38 2.526 1.723 2.526 3.32v.01l.02 3.42H5.682zM11.229.017C5.027.017 0 5.134 0 11.446s5.027 11.43 11.229 11.43c6.2 0 11.228-5.118 11.228-11.43 0-6.312-5.028-11.429-11.228-11.429z"/></svg>			</a>
+
+			<span class="nav-global-toggle" id="nav-global-toggle">Menu</span>
+
+	</div>
+			<div class="single-sticky">
+									<div class="single-sticky-vertical"></div>
+				<div class="single-sticky-title">
+											Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League &#8230; Again.									</div>
+				<a href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/?share=facebook" class="button share-sticky sticky-facebook">Share on Facebook</a>
+				<a href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/?share=twitter"  class="button share-sticky sticky-twitter">Share on Twitter</a>
+						</div>
+			<div class="site-wrapper header-global-bottom">
+		<nav class="nav-global" id="nav-global">
+			<ul class="nav-global-menu">
+				<li class="nav-global-menu-item menu-politics">
+					<a href="https://fivethirtyeight.com/politics/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Politics">
+						Politics					</a>
+				</li>
+				<li class="nav-global-menu-item menu-sports -current-vertical">
+					<a href="https://fivethirtyeight.com/sports/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Sports">
+						Sports					</a>
+				</li>
+				<li class="nav-global-menu-item menu-science">
+					<a href="https://fivethirtyeight.com/science/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Science">
+						Science					</a>
+				</li>
+				<li class="nav-global-menu-item menu-podcast">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Podcasts">
+						Podcasts					</a>
+				</li>
+				<li class="nav-global-menu-item menu-video">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Video">
+						Video					</a>
+				</li>
+				<li class="nav-global-menu-item menu-abcn -mobile-only">
+					<a href="https://abcnews.go.com/" rel="noopener" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+						ABC News					</a>
+				</li>
+			</ul>
+
+			
+	
+		</nav><!-- #nav-global -->
+		</div><!-- .site-wrapper -->
+</header><!-- #header-global -->
+
+
+<div class="site-main">
+	<div id="wrapper" class="site-wrapper">
+
+		
+	<div id="content" class="single single-feature" data-col="2">
+
+		
+		<div class="single-feature__row">
+			<div id="primary" class="single-feature__col">
+				<div id="article-main">
+					<article id="post-275724" class="post-275724 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-american-league tag-boston-red-sox tag-cleveland-indians tag-houston-astros tag-minnesota-twins tag-mlb tag-mlb-predictions tag-mlb-preseason-projections tag-new-york-yankees tag-oakland-as tag-return-of-sports tag-tampa-bay-rays espn_verticals-sports vertical-sports topic-slug-mlb">
+
+						
+												<header class="post-info single-post-header">
+							
+							<div class="single-header">
+								<h1 class="article-title article-title-single entry-title">
+									Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League &#8230; Again.								</h1>
+
+															</div>
+
+							<div class="single-header-metadata-and-share-wrap">
+								<div class="single-header-metadata-wrap">
+																			<p class="single-metadata single-byline vcard">By <a href="https://fivethirtyeight.com/contributors/neil-paine/" title="" class="author url fn" rel="author">Neil Paine</a></p>
+										
+																		<p class="single-metadata single-topic">Filed under <a href="https://fivethirtyeight.com/tag/mlb/" class="term " name="">MLB</a></p>
+										
+																			<p class="single-metadata single-topic single-date">
+										Published <time class="datetime updated" title="2020-07-21T14:00:58+00:00">Jul. 21, 2020</time>
+									</p>
+									
+																	</div>
+								<div class="share">
+									<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-275724" class="share-facebook sd-button share-icon" href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-275724" class="share-twitter sd-button share-icon" href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="fte-email-share sd-button share-icon" href="mailto:?subject=I thought you’d like this article from FiveThirtyEight&body=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fbaseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again%2F?ex_cid=538email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>								</div> <!-- .share -->
+							</div>
+
+						</header><!-- .post-info -->
+
+
+							
+<figure id="single-featured-image" class="single-featured-image banner">
+	<span class="has-bugs post-thumbnail">
+					<div class="bug-container">
+				<picture class="featured-picture">
+											<source media="(min-width: 768px)" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-Banner.png">
+					
+											<source srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=1150 2x">
+						<img alt="2020-AL-PREVIEW-4&#215;3" src="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=575" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-AL-PREVIEW-4x3-1.png?w=1150 2x" class="" sizes="(max-width: 768px) 100vw, (max-width: 1080px) 66vw, 684px" />
+									</picture>
+
+				
+			</div>
+
+		
+		
+	</span><!-- .has-bugs -->
+
+			<figcaption class="caption banner-caption">
+										<p class="credits">PHOTO ILLUSTRATION BY EMILY SCHERER / GETTY IMAGES</p>
+					</figcaption>
+	
+				<figcaption class="caption featured-image-caption">
+													<p class="credits">PHOTO ILLUSTRATION BY EMILY SCHERER / GETTY IMAGES</p>
+							</figcaption>
+			
+</figure><!-- .single-featured-image -->
+						
+						<div class="entry-content single-post-content">
+							<p>When Major League Baseball finally <a href="https://www.espn.com/mlb/schedule/_/date/20200723">starts its 2020 season</a> on July 23, it will be a <a href="https://fivethirtyeight.com/features/60-games-arent-enough-to-crown-the-best-mlb-team-but-neither-are-162-games/">very different kind of campaign</a> than any we’ve seen in our lifetimes. Not only will it be much shorter than usual (60 games per team instead of 162) and feature a <a href="https://www.cbssports.com/mlb/news/2020-mlb-schedule-release-full-60-game-season-unveiled-yankees-nationals-set-to-play-first-game/live/">strange mix</a> of division and interleague matchups, but it comes against the backdrop of a pandemic that <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html">continues to ravage the nation</a>, which has caused players to <a href="https://www.mlb.com/news/mike-trout-unsure-if-he-ll-play-in-2020">question the wisdom of playing</a> &#8212; or <a href="https://www.baseballamerica.com/stories/full-list-of-mlb-players-opting-out-of-2020-season/">opt out of the season entirely</a>.</p>
+<p>And yet, MLB is back &#8212; and <a href="https://projects.fivethirtyeight.com/2020-mlb-predictions/">so are our predictions</a>. To help make sense of the favorites and dark horses in this strange mini-season, we plugged the shortened schedule into <a href="https://fivethirtyeight.com/features/how-our-mlb-predictions-work/">our forecast model</a> and simulated it 100,000 times, tracking each team’s expected record and its odds of winning the division or the World Series. Here’s what our model thinks of the 2020 American League:</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>AL East</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.1">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 20%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 11%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400;width: 11%" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400;width: 9%" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 20%">Yankees</td>
+<td class="heat number" style="color: #222222;background-color: #2ba2dc;text-align: center;width: 11%">1571</td>
+<td class="number highlight" style="width: 11%">36</td>
+<td class="number" style="width: 11%">24</td>
+<td class="number" style="width: 12%">+58</td>
+<td class="heat number" style="color: #222222;background-color: #ee7540;width: 11%" data-suffix="%" data-suffixpadding="1.1em">78%</td>
+<td class="heat number" style="color: #222222;background-color: #f3a07b;width: 9%" data-suffix="%" data-suffixpadding="1.1em">56%</td>
+<td class="heat number" style="color: #222222;background-color: #fce8df;width: 15%" data-suffix="%" data-suffixpadding="1.1em">14%</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Rays</td>
+<td class="heat number" style="color: #222222;background-color: #56b5e3;text-align: center;width: 11%">1539</td>
+<td class="number highlight" style="width: 11%">33</td>
+<td class="number" style="width: 11%">27</td>
+<td class="number" style="width: 12%">+31</td>
+<td class="heat number" style="color: #222222;background-color: #f3a07b;width: 11%;padding-right: 1.1em">56</td>
+<td class="heat number" style="color: #222222;background-color: #f9d0be;width: 9%;padding-right: 1.1em">28</td>
+<td class="heat number" style="color: #222222;background-color: #fef7f4;width: 15%;padding-right: 1.1em">5</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Red Sox</td>
+<td class="heat number" style="color: #222222;background-color: #7ac4e9;text-align: center;width: 11%">1511</td>
+<td class="number highlight" style="width: 11%">30</td>
+<td class="number" style="width: 11%">30</td>
+<td class="number" style="width: 12%">+4</td>
+<td class="heat number" style="color: #222222;background-color: #f9cfbc;width: 11%;padding-right: 1.1em">29</td>
+<td class="heat number" style="color: #222222;background-color: #fcebe4;width: 9%;padding-right: 1.1em">12</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Blue Jays</td>
+<td class="heat number" style="color: #222222;background-color: #a1d6f0;text-align: center;width: 11%">1479</td>
+<td class="number highlight" style="width: 11%">27</td>
+<td class="number" style="width: 11%">33</td>
+<td class="number" style="width: 12%">-22</td>
+<td class="heat number" style="color: #222222;background-color: #fceae1;width: 11%;padding-right: 1.1em">13</td>
+<td class="heat number" style="color: #222222;background-color: #fef8f6;width: 9%;padding-right: 1.1em">4</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Orioles</td>
+<td class="heat number" style="color: #222222;background-color: #f1f9fd;text-align: center;width: 11%">1412</td>
+<td class="number highlight" style="width: 11%">21</td>
+<td class="number" style="width: 11%">39</td>
+<td class="number" style="width: 12%">-85</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 11%;padding-right: 1.1em">&lt;1</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 9%;padding-right: 1.1em">&lt;1</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>Last year’s AL East was <a href="https://fivethirtyeight.com/features/the-2019-favorites-and-breakout-picks-for-the-american-league/">supposed to see</a> a tight race between the <a href="https://fivethirtyeight.com/features/the-2018-red-sox-are-baseballs-best-champions-since-the-1998-yankees/">defending champs</a> in Boston and their <a href="https://www.youtube.com/watch?v=NMIZ5DJzU-w">bitterest of rivals</a> in the Bronx. Instead, the <b>New York Yankees</b> overcame <a href="https://fivethirtyeight.com/features/the-yankees-are-built-to-win-if-they-can-stay-healthy/">a rash of injuries</a> to pull away for the division crown <a href="https://www.thebaseballgauge.com/team.php?yearID=2019&amp;teamID=NYY&amp;tab=schedule_graphs">in the second half</a> &#8212; and our model thinks the Bombers are clear East favorites again in 2020. New York <a href="https://fivethirtyeight.com/features/free-agent-aces-like-gerrit-cole-often-deliver-the-championship-goods/">added ace Gerrit Cole</a> via free agency, which shores up a rotation that ranked just 16th in total <a href="http://m.mlb.com/glossary/advanced-stats/wins-above-replacement">wins above replacement</a>,<a class="espn-footnote-link" data-footnote-id="1" href="#fn-1" data-footnote-content="&lt;p&gt;Using &lt;a href=&quot;https://fivethirtyeight.com/features/can-we-play-nba-jam-with-mlb-teams/&quot;&gt;our JEFFBAGWELL metric&lt;/a&gt; to blend WAR from Baseball-Reference.com and FanGraphs.&lt;/p&gt;
+"><sup id="ss-1">1</sup></a> but an even bigger factor might be improved health for a club that saw players spend <a href="https://www.spotrac.com/mlb/disabled-list/2019/cumulative-team/">3,192 total days on the injured list</a> in 2019 &#8212; 36 percent more than any other team. If Aaron Judge, Giancarlo Stanton, Gary Sanchez, Aaron Hicks and Miguel Andujar can stay intact over the short schedule,<a class="espn-footnote-link" data-footnote-id="2" href="#fn-2" data-footnote-content="&lt;p&gt;And if the team gets back more recent injury victims like Masahiro Tanaka, &lt;a href=&quot;https://twitter.com/ByJamesWagner/status/1283101456657199104&quot;&gt;who is recovering from a concussion&lt;/a&gt;.&lt;/p&gt;
+"><sup id="ss-2">2</sup></a> the Yankees will be a major championship threat.</p>
+<p>The <b>Tampa Bay Rays</b> gave New York a good fight early last season and were also <a href="https://www.baseball-reference.com/postseason/2019_ALDS1.shtml">a thorn in the Houston Astros’ side</a> during the postseason. Maybe we should stop being surprised when they sneak up on <a href="https://www.baseball-reference.com/leagues/MLB/2019-misc.shtml#teams_miscellaneous::10">much more expensive</a> contenders every year! <a href="https://www.tampabay.com/sports/rays/2019/12/07/done-deal-rays-get-hunter-renfroe-trade-tommy-pham/">Losing Tommy Pham</a> will hurt some in 2020, but this remains one of the best and <a href="https://fivethirtyeight.com/features/what-do-the-rays-have-to-do-to-make-the-playoffs/">most balanced</a> teams in MLB (particularly if ace Blake Snell <a href="https://www.mlb.com/news/blake-snell-prepared-for-bounce-back-campaign">bounces back</a> to his 2018 form). We think they’ll be nearly as good as the Yankees, with a 56 percent shot at the playoffs.</p>
+<p><em><a href="https://fivethirtyeight.com/features/60-games-arent-enough-to-crown-the-best-mlb-team-but-neither-are-162-games/?cid=_inlinerelated">[Related: 60 Games Aren’t Enough To Crown The Best MLB Team. But Neither Are 162 Games.]</a></em></p>
+<p>That’s better than our outlook for the <b>Boston Red Sox</b>, who had a <a href="https://fivethirtyeight.com/features/the-red-sox-were-the-toast-of-baseball-last-year-now-theyre-just-toast/">terrible championship hangover</a> last year and figure to take another step backward after <a href="https://www.nytimes.com/2020/01/14/sports/baseball/alex-cora-fired.html">firing manager Alex Cora</a> in January, <a href="https://fivethirtyeight.com/features/mookie-betts-makes-the-dodgers-even-more-dominant/">trading star right fielder Mookie Betts</a> in February and watching ace Chris Sale <a href="https://www.mlb.com/news/chris-sale-tommy-john-surgery">undergo Tommy John surgery</a> in March. Boston still has plenty of top-end talent (Xander Bogaerts, Rafael Devers, J.D. Martinez) but also enough flaws<a class="espn-footnote-link" data-footnote-id="3" href="#fn-3" data-footnote-content="&lt;p&gt;Have you &lt;i&gt;seen&lt;/i&gt; &lt;a href=&quot;https://www.fangraphs.com/depthcharts.aspx?position=SP#24&quot;&gt;that rotation&lt;/a&gt;? Yikes.&lt;/p&gt;
+"><sup id="ss-3">3</sup></a> that a run at the Yankees and Rays looks unlikely.</p>
+<p>And the Red Sox could have competition from behind in the form of the <b>Toronto Blue Jays</b>, whose <a href="https://www.mlb.com/news/young-blue-jays-hitters-could-make-history">young core</a> of Vladimir Guerrero Jr., Cavan Biggio and Bo Bichette should keep pushing the team’s rebuild forward. After acquiring Hyun-Jin Ryu, Tanner Roark and Chase Anderson<a class="espn-footnote-link" data-footnote-id="4" href="#fn-4" data-footnote-content="&lt;p&gt;Who is now injured but &lt;a href=&quot;https://www.rotoworld.com/baseball/mlb/player/20175/chase-anderson&quot;&gt;should return in August&lt;/a&gt;.&lt;/p&gt;
+"><sup id="ss-4">4</sup></a> to improve what was a bottom-five rotation by WAR, don’t be surprised if Toronto makes a run at .500.</p>
+<p>Finally, the <b>Baltimore Orioles</b> should bring up the rear for a <a href="https://www.baseball-reference.com/teams/BAL/">fourth straight season</a>. With Jonathan Villar and Dylan Bundy now gone, the biggest question might be whether they’ll crack 20 wins in 60 games against the toughest schedule in baseball &#8212; we project them at just 21 wins for the season, the fewest of any team.</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>AL Central</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.2">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 20%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 11%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400;width: 11%" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400;width: 9%" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 20%">Twins</td>
+<td class="heat number" style="color: #222222;background-color: #4fb2e2;text-align: center;width: 11%">1544</td>
+<td class="number highlight" style="width: 11%">35</td>
+<td class="number" style="width: 11%">25</td>
+<td class="number" style="width: 12%">+42</td>
+<td class="heat number" style="color: #222222;background-color: #f08b5e;width: 11%" data-suffix="%" data-suffixpadding="1.1em">67%</td>
+<td class="heat number" style="color: #222222;background-color: #f5ae8f;width: 9%" data-suffix="%" data-suffixpadding="1.1em">48%</td>
+<td class="heat number" style="color: #222222;background-color: #fef3ef;width: 15%" data-suffix="%" data-suffixpadding="1.1em">7%</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Indians</td>
+<td class="heat number" style="color: #222222;background-color: #63bae5;text-align: center;width: 11%">1529</td>
+<td class="number highlight" style="width: 11%">33</td>
+<td class="number" style="width: 11%">27</td>
+<td class="number" style="width: 12%">+29</td>
+<td class="heat number" style="color: #222222;background-color: #f3a27d;width: 11%;padding-right: 1.1em">55</td>
+<td class="heat number" style="color: #222222;background-color: #f8c6b0;width: 9%;padding-right: 1.1em">34</td>
+<td class="heat number" style="color: #222222;background-color: #fef8f6;width: 15%;padding-right: 1.1em">4</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">White Sox</td>
+<td class="heat number" style="color: #222222;background-color: #8ccdec;text-align: center;width: 11%">1496</td>
+<td class="number highlight" style="width: 11%">30</td>
+<td class="number" style="width: 11%">30</td>
+<td class="number" style="width: 12%">+1</td>
+<td class="heat number" style="color: #222222;background-color: #f9d0be;width: 11%;padding-right: 1.1em">28</td>
+<td class="heat number" style="color: #222222;background-color: #fce8df;width: 9%;padding-right: 1.1em">14</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Royals</td>
+<td class="heat number" style="color: #222222;background-color: #c6e6f6;text-align: center;width: 11%">1448</td>
+<td class="number highlight" style="width: 11%">25</td>
+<td class="number" style="width: 11%">35</td>
+<td class="number" style="width: 12%">-43</td>
+<td class="heat number" style="color: #222222;background-color: #fef7f4;width: 11%;padding-right: 1.1em">5</td>
+<td class="heat number" style="color: #222222;background-color: #fffcfa;width: 9%;padding-right: 1.1em">2</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Tigers</td>
+<td class="heat number" style="color: #222222;background-color: #d5ecf8;text-align: center;width: 11%">1436</td>
+<td class="number highlight" style="width: 11%">24</td>
+<td class="number" style="width: 11%">36</td>
+<td class="number" style="width: 12%">-53</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 11%;padding-right: 1.1em">3</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 9%;padding-right: 1.1em">1</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>The <b>Minnesota Twins </b>were <a href="https://fivethirtyeight.com/features/the-yankees-always-have-the-twins-number-will-this-postseason-be-different/">one of baseball’s best stories</a> in 2019, winning the AL Central as <a href="https://fivethirtyeight.com/features/the-2019-favorites-and-breakout-picks-for-the-american-league/">preseason underdogs</a> and <a href="https://www.twincities.com/2019/08/31/twins-break-home-run-record-with-268-but-tigers-end-their-winning-streak/">breaking the all-time single-season home run record</a> in the process. Can they do it again? Well, we won’t know about the home run part without more information about <a href="https://www.espn.com/mlb/story/_/id/29449022/mlb-roundtable-ball-juiced-other-key-home-run-questions-2020">how “juiced” the 2020 ball is</a>. But in terms of division odds, Minnesota is still the favorite, if by a somewhat slim margin. The Twins didn’t rest on their offseason laurels, adding the likes of Josh Donaldson, Kenta Maeda and Homer Bailey without losing too much of note. But they will also probably regress to the mean after an <a href="https://fivethirtyeight.com/features/the-yankees-are-built-to-win-if-they-can-stay-healthy/">unusually healthy season</a> that saw their record improve by a whopping 23 games.<a class="espn-footnote-link" data-footnote-id="5" href="#fn-5" data-footnote-content="&lt;p&gt;In full seasons since schedules expanded in 1961, the average team that improved by between 20 and 25 games in one season got worse by 7.7 games the following year.&lt;/p&gt;
+"><sup id="ss-5">5</sup></a> The question will be how well the offseason activity &#8212; and 2020’s easiest schedule &#8212; helps counterbalance that regression.</p>
+<p>Fighting to reclaim their <a href="https://fivethirtyeight.com/features/the-indians-are-contenders-but-could-they-get-away-with-a-little-tanking/">old spot atop the division</a> will be the <b>Cleveland Indians</b>, who let the Central slip away after three straight first-place finishes. The 2019 Indians <a href="https://www.baseball-reference.com/teams/CLE/2019.shtml">weren’t bad</a>, but they weren’t the elite club they’d been <a href="https://fivethirtyeight.com/features/amazingly-the-indians-are-even-better-than-they-seem/">just a few years earlier</a>; despite a star-filled lineup, they <a href="https://www.baseball-reference.com/leagues/AL/2019.shtml#teams_standard_batting::3">scored fewer runs</a> than the AL average and <a href="https://www.thebaseballgauge.com/team.php?yearID=2019&amp;teamID=CLE&amp;tab=schedule_graphs&amp;type=record&amp;lg=AL&amp;division=C&amp;game_range=15#form">never mounted a big charge</a> after briefly catching the Twins in August. Our model thinks the Tribe still has a 34 percent shot at the division crown, despite losing World Series-era mainstays Corey Kluber, Jason Kipnis and Danny Salazar <a href="https://www.mlb.com/indians/news/indians-offseason-needs-and-moves">over the offseason</a>, but the <a href="https://www.mlbtraderumors.com/2020/03/indians-francisco-lindor-halt-extension-talks.html">window might be closing</a> on the Francisco Lindor era soon.</p>
+<p><em><a href="https://projects.fivethirtyeight.com/2020-mlb-predictions/?cid=_inlinerelated">[Related: Our 2020 MLB Predictions]</a></em></p>
+<p>The <b>Chicago White Sox</b> are a <a href="https://www.mlb.com/news/white-sox-can-be-the-breakout-team-for-2020">hot breakout pick</a> heading into 2020, primarily because all the young talent they’ve accumulated over the years has finally arrived. Third baseman Yoan Moncada and starter Lucas Giolito took big leaps last season, while <a href="https://www.mlb.com/news/30-mlb-players-poised-to-make-leap-2020">left fielder Eloy Jiménez</a> and maybe even <a href="https://www.nbcsports.com/chicago/white-sox/more-luis-robert-hype-cuban-uber-prospect-baseball-americas-latest-cover">highly touted Cuban prospect</a> Luis Robert seem poised to do the same this year. Add in offseason additions Yasmani Grandal and Edwin Encarnacion, and the Pale Hose should improve a lot on their .447 winning percentage from a season ago, even if it might not translate to a playoff berth quite yet.</p>
+<p>As for the <b>Kansas City Royals </b>and <b>Detroit Tigers</b>, both clubs figure to be deep in rebuilding mode yet again this year. Detroit actually made some <a href="https://www.mlb.com/tigers/news/tigers-offseason-needs-and-moves">offseason additions</a> &#8212; Ivan Nova, Cameron Maybin, Jonathan Schoop, C.J. Cron, Austin Romine &#8212; that could lead to greater respectability this year. (Then again, it would have been <a href="https://fivethirtyeight.com/features/remember-those-2003-tigers-this-years-team-might-be-even-worse/">hard to be <i>less </i>respectable</a> than the <a href="https://www.baseball-reference.com/teams/DET/2019.shtml">2019 Tigers</a> were.) For their part, the Royals <a href="https://kingsofkauffman.com/2020/01/12/kc-royals-last-quiet-winter/">mostly treaded water</a>. But our forecast thinks both teams should avoid challenging the Orioles for the mantle of MLB’s worst team, which is a <a href="https://www.baseball-reference.com/leagues/MLB/2019.shtml#teams_standard_pitching::4">welcome improvement from 2019</a>, even if true contention is still <a href="https://www.milb.com/news/farm-system-rankings-21-and-under-talent-312866238">far off in the future</a>.</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>AL West</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.3">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 20%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 11%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400;width: 11%" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400;width: 9%" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 20%">Astros</td>
+<td class="heat number" style="color: #222222;background-color: #2ca2dc;text-align: center;width: 11%">1570</td>
+<td class="number highlight" style="width: 11%">36</td>
+<td class="number" style="width: 11%">24</td>
+<td class="number" style="width: 12%">+55</td>
+<td class="heat number" style="color: #222222;background-color: #ee7743;width: 11%" data-suffix="%" data-suffixpadding="1.1em">77%</td>
+<td class="heat number" style="color: #222222;background-color: #f29a73;width: 9%" data-suffix="%" data-suffixpadding="1.1em">59%</td>
+<td class="heat number" style="color: #222222;background-color: #fce8df;width: 15%" data-suffix="%" data-suffixpadding="1.1em">14%</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Athletics</td>
+<td class="heat number" style="color: #222222;background-color: #65bce6;text-align: center;width: 11%">1527</td>
+<td class="number highlight" style="width: 11%">32</td>
+<td class="number" style="width: 11%">28</td>
+<td class="number" style="width: 12%">+19</td>
+<td class="heat number" style="color: #222222;background-color: #f6b598;width: 11%;padding-right: 1.1em">44</td>
+<td class="heat number" style="color: #222222;background-color: #fadbcc;width: 9%;padding-right: 1.1em">22</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%;padding-right: 1.1em">3</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Angels</td>
+<td class="heat number" style="color: #222222;background-color: #84c9eb;text-align: center;width: 11%">1503</td>
+<td class="number highlight" style="width: 11%">29</td>
+<td class="number" style="width: 11%">31</td>
+<td class="number" style="width: 12%">-5</td>
+<td class="heat number" style="color: #222222;background-color: #fad7c8;width: 11%;padding-right: 1.1em">24</td>
+<td class="heat number" style="color: #222222;background-color: #fdede6;width: 9%;padding-right: 1.1em">11</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Rangers</td>
+<td class="heat number" style="color: #222222;background-color: #9bd3ef;text-align: center;width: 11%">1484</td>
+<td class="number highlight" style="width: 11%">28</td>
+<td class="number" style="width: 11%">32</td>
+<td class="number" style="width: 12%">-18</td>
+<td class="heat number" style="color: #222222;background-color: #fce5da;width: 11%;padding-right: 1.1em">16</td>
+<td class="heat number" style="color: #222222;background-color: #fef5f1;width: 9%;padding-right: 1.1em">6</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+<tr>
+<td class="text" style="width: 20%">Mariners</td>
+<td class="heat number" style="color: #222222;background-color: #c9e7f6;text-align: center;width: 11%">1446</td>
+<td class="number highlight" style="width: 11%">24</td>
+<td class="number" style="width: 11%">36</td>
+<td class="number" style="width: 12%">-53</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 11%;padding-right: 1.1em">3</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 9%;padding-right: 1.1em">1</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>Remember the <b>Houston Astros</b>? Sure, a lot of more important things have happened in the country since it was revealed that Houston <a href="https://www.espn.com/mlb/story/_/id/28476282/everything-need-know-mlb-sign-stealing-scandal">engaged in a systematic sign-stealing scheme</a> that left their 2017 title <a href="https://www.espn.com/mlb/story/_/id/28649899/aj-hinch-fair-question-astros-2017-world-series-title-tainted-scandal">tainted</a>, their manager and GM <a href="https://www.espn.com/mlb/story/_/id/28476780/astros-jeff-luhnow-aj-hinch-fired-sign-stealing">fired</a> and the entire baseball world <a href="https://www.espn.com/mlb/story/_/id/28477018/players-react-mlb-punishes-houston-astros-sign-stealing">vowing revenge</a>. But the Astros’ scandal hasn’t gone anywhere &#8212; and <a href="https://fivethirtyeight.com/features/the-astros-scandal-isnt-going-away-neither-are-the-astros/">neither have the Astros themselves</a>. Houston is still MLB’s third-most talented team according to our Elo ratings, <a href="https://www.fangraphs.com/depthcharts.aspx?position=ALL&amp;teamid=21">headlined by</a> the usual suspects: Justin Verlander, Alex Bregman, George Springer, Jose Altuve, Yordan Alvarez, Michael Brantley, Zack Greinke, etc., etc. They also have a <a href="https://www.nytimes.com/2020/01/29/sports/baseball/dusty-baker-astros-manager.html">steady hand at the helm</a> in veteran manager Dusty Baker. Although the Astros probably had the <a href="https://www.baseballamerica.com/stories/which-mlb-team-had-the-most-disappointing-offseason-in-2020/">roughest offseason</a> of any team (maybe <i>ever</i>?), losing Cole and <a href="https://www.mlb.com/astros/news/astros-offseason-needs-and-moves">several other key contributors</a> on top of the cheating fallout, we give them a 77 percent chance of returning to the postseason, a 59 percent chance of winning the AL West and a 14 percent World Series probability &#8212; tied with the Yankees for the second-best of any team.</p>
+<p>But if Houston does take a step back, the <b>Oakland Athletics</b> are right there waiting in the wings. Oakland won 97 games for the <a href="https://www.baseball-reference.com/teams/OAK/">second straight season</a> in 2019 on the strength of superstar performances from Marcus Semien and Matt Chapman &#8212; the rare pair of 7+ WAR teammates <a href="https://fivethirtyeight.com/features/when-mlbs-season-finally-starts-these-are-the-guys-we-cant-wait-to-watch/">in MLB history</a> &#8212; the solid play of Matt Olson, and unheralded contributions from the likes of Mark Canha, Ramon Laureano and Liam Hendrix. All of those guys <a href="https://www.fangraphs.com/roster-resource/depth-charts/athletics">will return</a> for 2020, and while Brett Anderson, Bailey and Roark departed in the offseason, a <a href="https://www.baseballamerica.com/teams/1014/oakland-athletics/organizational/?year=2020&amp;type=P">talent pipeline</a> that includes starters Jesus Luzardo and A.J. Puk and catcher Sean Murphy should help the A’s once again vie for a playoff appearance.</p>
+<p><em><a href="https://fivethirtyeight.com/features/how-our-mlb-predictions-work/?cid=_inlinerelated">[Related: How Our MLB Predictions Work]</a></em></p>
+<p>Coming up behind them, the <b>Los Angeles Angels</b> are one of 2020’s most intriguing teams. <a href="https://www.youtube.com/watch?v=0mnm7rqH-L0">We all know about Mike Trout</a>, but the offseason additions of ex-Cubs manager Joe Maddon, third baseman Anthony Rendon &#8212; perhaps <a href="https://fivethirtyeight.com/features/anthony-rendon-is-instantly-mike-trouts-best-teammate/">Trout’s best-ever teammate</a> &#8212; and pitchers Bundy and Julio Teheran, plus Shohei Ohtani’s <a href="https://www.mlb.com/news/shohei-ohtani-ready-to-return-to-two-way-player">return to two-way play</a>, give Los Angeles plenty of upside. (<a href="https://twitter.com/RhettBollinger/status/1280980029602541569">Health permitting</a> <a href="https://www.mlb.com/angels/news/shohei-ohtani-experiences-stiff-back">for some</a>, obviously.) We still give the Halos just a 24 percent chance at the postseason, in part because they’ll face MLB’s ninth-hardest schedule, but they do <a href="https://www.fangraphs.com/depthcharts.aspx?position=Team">have the talent</a> to potentially make some noise.</p>
+<p>Speaking of which, the <b>Texas Rangers</b> are another team capable of making the contenders work for every victory. Last year, the club <a href="https://www.baseball-reference.com/teams/TEX/2019.shtml">won 78 games</a> under new manager Chris Woodward and <a href="https://www.thebaseballgauge.com/team.php?yearID=2019&amp;teamID=TEX&amp;tab=schedule_graphs">hung around the playoff race</a> for a half-season, despite one of its best players (Joey Gallo) missing 92 games. Then Texas spent the offseason adding <a href="https://www.mlb.com/rangers/news/rangers-offseason-needs-and-moves">a few potentially useful names</a> &#8212; Corey Kluber, Robinson Chirinos, Todd Frazier, etc. &#8212; to help christen a <a href="https://fivethirtyeight.com/features/mlbs-newest-ballpark-is-a-shift-away-from-retro-era-stadiums/">new ballpark</a>. Of course, the 2019 Rangers also got very lucky, both in terms of <a href="https://www.thebaseballgauge.com/year.php?yearID=2019&amp;tab=teams&amp;lgID=All&amp;division=All&amp;sort=SeqLuck_a#teams">beating their underlying stats</a> and getting <a href="https://www.thebaseballgauge.com/team.php?yearID=2019&amp;teamID=TEX&amp;tab=est_level&amp;pos=All&amp;rook=&amp;age_low=16&amp;age_high=59&amp;bats=All&amp;throws=All&amp;sort=yr1_a#metric">unexpectedly great years</a> from 30-something starters Mike Minor and Lance Lynn. We rank them fourth in the division, though they are an <i>interesting </i>fourth at least.</p>
+<p>And the <b>Seattle Mariners</b> are projected for last place, which is also <a href="https://www.baseball-reference.com/teams/SEA/2019.shtml">where they ended up</a> last season after cooling from an <a href="https://www.mlb.com/news/mariners-hot-start-makes-history">inexplicably red-hot start</a>. Seattle has suffered from <a href="https://fivethirtyeight.com/features/can-the-mariners-finally-end-their-playoff-drought/">tremendously bad luck</a> in its MLB-leading <a href="https://en.wikipedia.org/wiki/List_of_Major_League_Baseball_franchise_postseason_droughts#Longest_current_postseason_droughts">18-year playoff drought</a>, but our model gives that streak little chance of ending anytime soon. The joy and (mostly) tragedy of Seattle baseball was well-documented by SB Nation’s Jon Bois and Alex Rubenstein in their <a href="https://www.youtube.com/watch?v=6pkVu6Kw00M&amp;list=PLUXSZMIiUfFQua1LlKNMg1IOqAn15RkUT">excellent six-part video series</a> this year about the team’s history; it will probably end up being the highlight of 2020 for the Mariners and their fans.</p>
+<div class='ornamental-rule'><hr /><span></span></div>
+
+<h2>Subscribe to our sports podcast, Hot Takedown</h2>
+<p>
+<div data-href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/" class="tease-podcast js-link podcast-shortcode -horizontal post-275724 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-american-league tag-boston-red-sox tag-cleveland-indians tag-houston-astros tag-minnesota-twins tag-mlb tag-mlb-predictions tag-mlb-preseason-projections tag-new-york-yankees tag-oakland-as tag-return-of-sports tag-tampa-bay-rays espn_verticals-sports vertical-sports topic-slug-mlb">
+	<div class="podcast-content js-podcast-player" data-podcast-id="275724"
+			data-podcast-duration="0"
+			data-podcast-title="Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League ... Again.">
+
+					<span class="vcard visually-hidden">By <a href="https://fivethirtyeight.com/contributors/neil-paine/" title="" class="author url fn" rel="author">Neil Paine</a></span>
+			
+		
+		<button class="play has-image" aria-label="Play" style="background-image: url(https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/podcasts/hot-takedown-square.svg);"></button>
+
+					<div class="podcast-data">
+		
+		
+							<div class="progress-indicator">
+					<div class="progressbar">
+						<div class="progress"></div>
+					</div>
+
+					<div class="counter">&nbsp;</div>
+
+					<audio class="audio" preload="none">
+						<source src="https://www.podtrac.com/pts/redirect.mp3/traffic.megaphone.fm/ESP8211252018.mp3">
+					</audio>
+				</div>
+			
+					</div>
+		
+	</div><!-- .podcast-content -->
+</div>
+<aside class="podcast-subscribe">
+	<div class="podcast-subscribe-link-container">
+		More: <a href="https://itunes.apple.com/us/podcast/id1456065200">Apple Podcasts</a> |
+		<span class="hide-desktop-inline"><a data-android-url="" href="http://m.espn.com/general/cast?id=26150534">ESPN App</a> |</span>
+		<a href="https://www.espn.com/espnradio/feeds/rss/podcast.xml?id=26150534">RSS</a>
+			</div>
+	</aside>
+
+<div class='ornamental-rule'><hr /><span></span></div>
+</p>
+						</div><!-- .entry-content -->
+					</article>
+				</div>
+				<div id="article-additional">
+					<div class="entry-footnotes print-only">
+	<h2>Footnotes</h2>
+	<div class="entry-footnotes-content">
+		<ol class="footnotes"><li data-wrap="false" data-footnote-id="1" id="fn-1"><span><p>Using <a href="https://fivethirtyeight.com/features/can-we-play-nba-jam-with-mlb-teams/">our JEFFBAGWELL metric</a> to blend WAR from Baseball-Reference.com and FanGraphs.</p>
+</span></li><li data-wrap="false" data-footnote-id="2" id="fn-2"><span><p>And if the team gets back more recent injury victims like Masahiro Tanaka, <a href="https://twitter.com/ByJamesWagner/status/1283101456657199104">who is recovering from a concussion</a>.</p>
+</span></li><li data-wrap="false" data-footnote-id="3" id="fn-3"><span><p>Have you <i>seen</i> <a href="https://www.fangraphs.com/depthcharts.aspx?position=SP#24">that rotation</a>? Yikes.</p>
+</span></li><li data-wrap="false" data-footnote-id="4" id="fn-4"><span><p>Who is now injured but <a href="https://www.rotoworld.com/baseball/mlb/player/20175/chase-anderson">should return in August</a>.</p>
+</span></li><li data-wrap="false" data-footnote-id="5" id="fn-5"><span><p>In full seasons since schedules expanded in 1961, the average team that improved by between 20 and 25 games in one season got worse by 7.7 games the following year.</p>
+</span></li></ol>	</div><!-- .entry-footnotes-content -->
+</div><!-- .entry-footnotes -->
+<div class="mini-bio">
+		<p>Neil Paine is a senior writer for FiveThirtyEight. <span class="mail"><a href="mailto:neil.paine@fivethirtyeight.com"><i class="icon icon-mail"></i></a></span> <span class="twitter"><a href="https://twitter.com/Neil_Paine" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@Neil_Paine</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div id="entry-comments" class="fte-expandable">
+	<h3 class="fte-expandable-title">Comments</h3>
+
+	<div class="entry-comments-content fte-expandable-content">
+		<div class="fb-comments" data-href="http://fivethirtyeight.com/?post_type=fte_features&#038;p=275724" data-numposts="5" data-colorscheme="light"
+														></div>
+	</div>
+	<!-- .entry-comments-content -->
+</div>
+<!-- .entry-comments -->
+<div id="taboola-275724" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/" data-mode="thumbnails-a" data-placement="Below Article Thumbnails"></div><div class="tags">
+	<p class="filed-under">Filed under</p>
+	<p class="tag-links"><a class="tag" href="https://fivethirtyeight.com/tag/mlb/">MLB <span class="count">(581 posts)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/new-york-yankees/">New York Yankees <span class="count">(63)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/houston-astros/">Houston Astros <span class="count">(51)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/boston-red-sox/">Boston Red Sox <span class="count">(46)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/cleveland-indians/">Cleveland Indians <span class="count">(36)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/return-of-sports/">Return Of Sports <span class="count">(26)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/minnesota-twins/">Minnesota Twins <span class="count">(14)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/mlb-predictions/">MLB Predictions <span class="count">(13)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/american-league/">American League <span class="count">(12)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/oakland-as/">Oakland A&#039;s <span class="count">(11)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/tampa-bay-rays/">Tampa Bay Rays <span class="count">(11)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/mlb-preseason-projections/">MLB Preseason Projections <span class="count">(5)</span></a>
+</p>
+</div>
+				</div>
+			</div>
+			<div class="single-feature__col">
+							</div>
+		</div>
+	</div><!-- .single -->
+
+	
+
+	</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+<footer id="colophon" class="site-footer">
+
+	<div class="site-wrapper footer-main-content">
+
+		<div class="footer-section-get-more">
+			Get more FiveThirtyEight		</div>
+
+		<div class="footer-section-primary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://cottonbureau.com/stores/fivethirtyeight#/shop" name="&amp;lpos=fivethirtyeightFooter&amp;lid=store">Store</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/newsletter/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=newsletter">Newsletter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=videos">Videos</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=podcasts">Podcasts</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://twitter.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=twitter">Twitter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://www.facebook.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=facebook">Facebook</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://data.fivethirtyeight.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=data">Data</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/features/fear-not-readers-we-have-rss-feeds/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=rss">RSS</a>
+				</li>
+			</ul>
+		</div><!-- .footer-primary-links -->
+
+		<div class="footer-section-social-follow">
+			<ul class="footer-menu">
+				<li class="footer-menu-item social-share-item">
+					<div class="fb-like" data-href="https://www.facebook.com/fivethirtyeight" data-layout="button_count"></div>
+				</li>
+				<li class="footer-menu-item social-share-item">
+					<a href="https://twitter.com/FiveThirtyEight" class="twitter-follow-button" data-show-count="true">Follow @FiveThirtyEight</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer-section-secondary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/contact/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=contact">Contact</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/jobs/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=jobs">Jobs</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/masthead/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=masthead">Masthead</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html" name="&amp;lpos=fivethirtyeightFooter&amp;lid=nielsen">About Nielsen Measurement</a>
+				</li>
+			</ul>
+		</div><!-- .footer-secondary-links -->
+
+		<div class="footer-section-powered-by">
+			Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=fivethirtyeight.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>		</div><!-- .powered-by -->
+
+		<div class="footer-section-tertiary-links">
+			<ul class="footer-menu">
+				<li class="menu-item">
+					<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=doNotSell" target="_blank" rel="noopener noreferrer">Do Not Sell My Info</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights" target="_blank" rel="noopener noreferrer">Your California Privacy Rights</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy" target="_blank" rel="noopener noreferrer">Children's Online Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences" target="_blank" rel="noopener noreferrer">Interest-Based Ads</a>
+				</li>
+			</ul>
+			<p>
+				&copy; 2020 ABC News Internet Ventures. All rights reserved.
+			</p>
+		</div>
+		<!-- / .footer-section-tertiary-links -->
+	</div><!-- .site-wrapper -->
+
+	<div class="footer-section-additional-info" id="footer-additional-info">
+		<div class="site-wrapper">
+			<button class="close-additional-info" id="close-additional-info" aria-label="Close"><span class="visually-hidden">Close Additional Information</span></button>
+			<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS">Terms of Use</a> and <a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy">Children's Online Privacy Policy</a> are applicable to you. © 2020 ABC News Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences">Interest-Based Ads</a>. <a href="https://disneyprivacycenter.com/cookies-policy-translations/cookies-policy/">Cookie Policy</a>.
+		</div><!-- .site-wrapper -->
+	</div><!-- .footer-section-additional-info -->
+</footer><!-- .site-footer -->
+	<div id="sharing_email" style="display: none;">
+		<form action="/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script>
+var ESPNSocial = {"fbVersion":"6.0","fbAppId":"797620670264818"};
+</script>
+<script>
+var DTCIAdConfig = {"adSlotsToRefresh":["Banner","InContent","OutStream"],"adUnitPath":"\/21783347309\/abc-news\/fivethirtyeight.com\/web\/sports","placements":{"Banner":{"out-of-page":false,"sizes":[[970,250],[970,66],[728,90],[320,50],[300,50]],"defer":"none"},"InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"A9InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"OutStream":{"out-of-page":false,"sizes":[[1,3]],"defer":"none"}},"slots":{"Banner":[],"InContent":[],"A9InContent":[],"OutStream":[]},"mappings":{"Banner":[[[1280,100],[[970,250],[970,66],[728,90]]],[[1024,100],[[970,250],[970,66],[728,90]]],[[768,100],[[728,90]]],[[0,0],[[320,50],[300,50]]]],"InContent":[[[0,0],[]],[[768,50],[300,250]]]},"targeting":{"sp":"fivethirtyeight","objid":"275724","lang":"en","devType":"desktop","tag":["american-league","boston-red-sox","cleveland-indians","houston-astros","minnesota-twins","mlb","mlb-predictions","mlb-preseason-projections","new-york-yankees","oakland-as","return-of-sports","tampa-bay-rays"]},"referringSite":null,"referralMap":{"facebook.com":"facebook","twitter.com":"twitter","t.co":"twitter","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","www.espn.com":"espn","espn.com":"espn","instagram.com":"instagram","reddit.com":"reddit","bleacherreport.com":"bleacherreport","tumblr.com":"tumblr","t.umblr.com":"tumblr","pinterest.com":"pinterest","fivethirtyeight.com":"fivethirtyeight","grantland.com":"grantland","theundefeated.com":"theundefeated"},"useOverlay":"0","refreshSimulatenously":"1","disableInitialLoad":"1","a9id":"3899","a9Params":{"si_section":"sports","section":"story"}};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJyFkEsOwjAMRC9ECEV00QXiLPm4rUt+qh1Qb08ELKJSYDmeeRrb8p6EiYEhsEwuDxhIKm2Eyhaj6EFxnqGMiIBJTiS1i+ZKe49hP9FObuCWDYpX7JP7wgzYi+TUInRmjqHiVk5djMG4bOEZKzIzuq29eARfQkApiB5vwCPOvAAOI1c9K+dHD3gN9u8DlK2vL+pNXPy5abvjqWvb5jA9AFiPjlg='></script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"","is_stats_active":"1"};
+</script>
+<script src='https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.7.1'></script>
+<script>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202031.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'144970551',post:'275724',tz:'-4',srv:'fivethirtyeight.com'} ]);
+	_stq.push([ 'clickTrackerInit', '144970551', '275724' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6169b8cc4","applicationID":"100041457","transactionName":"bwcDZBYEW0ZVVhEMXVZNIFMQDFpbG0YMC1VUB0xWEABqU1FUERBAXRE=","queueTime":0,"applicationTime":370,"atts":"Q0AUEl4eSBkWVEdfSUUf","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

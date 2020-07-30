@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"f6169b8cc4",applicationID:"100041457"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Dodgers Lead Our National League Predictions, But Don&#8217;t Count Out The Nats Or &#8230; Reds? | FiveThirtyEight</title>
+<!-- Jetpack Site Verification Tags -->
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2"
+			crossorigin="anonymous">
+					<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="wp-content/themes/espn-fivethirtyeight/assets/fonts/decimamonopro-webfont.woff2"
+			crossorigin="anonymous">
+				<link rel='dns-prefetch' href='//cdn.registerdisney.go.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//pagead2.googlesyndication.com' />
+<link rel='dns-prefetch' href='//tpc.googlesyndication.com' />
+<link rel='dns-prefetch' href='//securepubads.g.doubleclick.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//www.googleadservices.com' />
+<link rel='dns-prefetch' href='//adservice.google.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='stylesheet' id='all-css-0' href='https://fivethirtyeight.com/_static/??-eJxtzVEKwjAQBNALmS5SKuRDPEuabpPFZBO6W0tub0AEKX7PzBs4qiH2aV9QwIvAQqIwp+KfJtG8ua2BaEs4ZOKhFy7QF76wIivUtAdigUCrqck1M++qhcGJoH68U/SX0Yi536NUNiu9UCNt2pBC1F/qFH2pR75fJzuNo7W36Q0xNE28' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<script>
+var DisneyOneID = {"config":{"clientId":"DATG-FIVETHIRTYEIGHT.WEB-PROD","langPref":"en-US","debug":false,"responderPage":"https:\/\/fivethirtyeight.com\/oneid-responder","campaignName":"FiveThirtyEight"}};
+</script>
+<script src='https://cdn.registerdisney.go.com/v2/outer/DisneyID.js'></script>
+<script>
+var ESPNTaboola = {"publisher":"abcnews-fivethirtyeight","type":"article"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJydkVFOxDAMRC9ENgJUVnwgzhKSaeuSOiF2WvX2W2AFBUFX8GXJ9hvbYztn4xMrWG2OtSMWG0gYixkh4tZEZ50IVOwgNjEoHEbiwyBXdmWJfawBb8XhpaIs53CxwYzUFafYqn3fBJLZqHtKKbrNFufMRVKSJxc3YOs8VvT576TOpIpicklj1j2+KkVSWi/+pCcKSHvQjuUTOKRicy3ULv/UYMwS8XrAb7+rHFDEp/LjP7THKvtuTUsTtKeiC6jrdevu14rp4cLHxMfx4bq5v21u7o7HZjgBMvru2g=='></script>
+<script async="async" defer="defer" src='https://platform.twitter.com/widgets.js?ver=1.0.23'></script>
+<script>
+var ABCAnalytics = {"nielsen":{"asset_id":275861,"section":"sports:mlb","seg_a":"","seg_b":"","seg_c":"","debug":""},"chartbeat":{"uid":"12240","domain":"fivethirtyeight.com","path":"\/features\/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds\/","sections":"sports,features","authors":"Travis Sawchik","title":"The Dodgers Lead Our National League Predictions, But Don\u2019t Count Out The Nats Or \u2026 Reds?","loadPubJS":false,"loadVidJS":true},"gtm":{"id":"GTM-KLHT6T2"},"omniture":{"pageName":"sports:features:the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds","prop1":"fivethirtyeight","prop2":"","prop5":"features","prop6":"Travis Sawchik","prop7":"sports","prop8":"sports:mlb","prop12":"The Dodgers Lead Our National League Predictions, But Don\u2019t Count Out The Nats Or \u2026 Reds?","prop13":"275861:The Dodgers Lead Our National League Predictions, But Don\u2019t Count Out The Nats Or \u2026 Reds?","prop14":"","prop15":"https:\/\/fivethirtyeight.com\/features\/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds\/","prop16":"https:\/\/fivethirtyeight.com\/features\/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds\/","prop20":"Desktop","prop23":"Atlanta Braves, Cincinnati Reds, Los Angeles Dodgers, MLB, MLB Predictions, National League, New York Mets, Return Of Sports, Washington Nationals","eVar5":"features","eVar6":"Travis Sawchik","eVar7":"sports","eVar8":"sports:mlb","eVar9":"2020-07-22","eVar10":"10:00","eVar12":"The Dodgers Lead Our National League Predictions, But Don\u2019t Count Out The Nats Or \u2026 Reds?","eVar13":"275861:The Dodgers Lead Our National League Predictions, But Don\u2019t Count Out The Nats Or \u2026 Reds?","eVar14":"","eVar15":"https:\/\/fivethirtyeight.com\/features\/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds\/","eVar16":"https:\/\/fivethirtyeight.com\/features\/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds\/","eVar20":"Desktop","eVar21":null,"eVar22":null,"prop35":"2020-07-22"},"account":"wdgnewfivethirtyeight"};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??/wp-content/themes/espn-fivethirtyeight/assets/js/vendor/picturefill.min.js,/wp-content/plugins/abc-analytics/assets/js/analytics.min.js?m=1595339965j'></script>
+<link rel='https://api.w.org/' href='https://fivethirtyeight.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://fivethirtyeight.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fivethirtyeight.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='https://53eig.ht/2WDOheu' />
+<link rel="alternate" type="application/json+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://fivethirtyeight.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="amphtml" href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Dodgers Lead Our National League Predictions, But Don&#8217;t Count Out The Nats Or &#8230; Reds?" />
+<meta property="og:url" content="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/" />
+<meta property="og:description" content="What to watch as the MLB season finally starts." />
+<meta property="article:published_time" content="2020-07-22T14:00:31+00:00" />
+<meta property="article:modified_time" content="2020-07-22T14:00:31+00:00" />
+<meta property="og:site_name" content="FiveThirtyEight" />
+<meta property="og:image" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-16x9-1.png?w=575" />
+<meta property="og:image:width" content="575" />
+<meta property="og:image:height" content="323" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="https://fivethirtyeight.com/contributors/travis-sawchik/" />
+<meta property="article:publisher" content="https://www.facebook.com/fivethirtyeight" />
+<meta property="fb:app_id" content="797620670264818" />
+<meta property="fb:pages" content="687958677914631" />
+<meta name="twitter:site" content="FiveThirtyEight" />
+<meta name="twitter:site:id" content="2303751216" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="Travis_Sawchik" />
+<meta name="twitter:creator:id" content="104633982" />
+<meta name="twitter:image:src" content="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-16x9-1.png?w=575" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Travis Sawchik" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Atlanta Braves, Cincinnati Reds, Los Angeles Dodgers, MLB, MLB Predictions, National League, New York Mets, Return Of Sports, Washington Nationals" />
+
+<!-- End Jetpack Open Graph Tags -->
+<meta name="DC.date.issued" content="2020-07-22T14:00:31+00:00" />
+<meta name="description" content="What to watch as the MLB season finally starts." />
+<meta name='author' content='Travis Sawchik' />
+<link rel='author' href='https://fivethirtyeight.com/contributors/travis-sawchik/' />
+<link rel="alternate" type="application/rss+xml" title="Posts feed for Travis Sawchik" href="https://fivethirtyeight.com/contributors/travis-sawchik/feed/">
+<link type="text/plain" rel="author" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/humans.txt" /><link rel='canonical' href='https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/' />
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/"},"headline":"The Dodgers Lead Our National League Predictions, But Don&#8217;t Count Out The Nats Or &#8230; Reds?","datePublished":"2020-07-22T10:00:31-04:00","dateModified":"2020-07-22T11:16:30-04:00","publisher":{"@type":"Organization","name":"FiveThirtyEight","logo":{"url":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-rich-snippets.png","height":60,"width":546,"@type":"ImageObject"}},"author":{"@type":"Person","name":"Travis Sawchik"},"articleSection":"Sports","image":{"@type":"ImageObject","url":"https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=1024","width":1024,"height":768}}
+</script>
+<script type='application/ld+json'>
+{"@context":"http://schema.org","@type":"Organization","url":"https://fivethirtyeight.com/","name":"FiveThirtyEight","logo":"https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo.png","sameAs":["https://twitter.com/FiveThirtyEight","https://www.facebook.com/fivethirtyeight","https://www.instagram.com/fivethirtyeight"]}
+</script>
+	<link rel="mask-icon" color="#ed713a" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-black.svg?v=1.0.23">
+	<link rel="shortcut icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/favicon.ico?v=1.0.23">
+	<link rel="apple-touch-icon" href="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/fivethirtyeight-logo-touch.png?v=1.0.23">
+</head>
+<body class="fte_features-template-default single single-fte_features postid-275861 vertical-sports slug-the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds long-form topic-slug-mlb">
+<div id="ad-OutStream" class="ad-outstream" data-defer="none"></div>
+<a href="#content" class="skip-to-content-link visually-hidden">Skip to main content</a>
+<div id="masterad" class="master-ad">
+	<div id="ad-Banner" class="ad-banner" data-defer="none"></div></div><!-- #masterad -->
+<i class="header-global-bground"></i>
+<header class="header-global" id="header-global">
+	<div class="site-wrapper header-global-top">
+							<h2 class="header-global-logo">
+							<a href="/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Home" class="header-global-logo-link">
+					<span class="visually-hidden">FiveThirtyEight</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="163.451" viewBox="0 318.275 1280 163.451" class="site-logo"><path d="M0 318.275h76.009v24.323H27.363v30.403h45.606v24.323H27.363v51.687H0zm94.252 109.453h15.202v-54.727H94.252v-24.323h39.525v79.05h12.162v21.283H94.252v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm434.774 109.453h15.202v-54.727h-15.202v-24.323h39.525v79.05h12.162v21.283h-51.686v-21.283zm15.202-109.453h24.323v24.323H559.43v-24.323zm401.33 109.453h15.202v-54.727H960.76v-24.323h39.525v79.05h12.161v21.283H960.76v-21.283zm15.202-109.453h24.323v24.323h-24.323v-24.323zm-811.781 82.09v-51.687h24.323v45.606l12.161 30.343h3.04l12.162-30.343v-45.606h24.323v51.687l-21.283 48.646h-33.444zm173.301 48.646h-41.288c-24.901 0-37.762-11.584-37.762-35.968v-27.88c0-23.016 13.074-39.525 39.525-39.525 28.367 0 39.525 15.415 39.525 42.565v21.283h-51.686v5.29c0 7.966 3.04 12.952 10.398 12.952h41.288v21.283zm-51.686-60.808h24.323v-4.713c0-7.966-3.223-16.57-12.557-16.57-8.483 0-11.766 6.689-11.766 16.57v4.713zm94.251-45.605h-30.403v-24.323h88.171v24.323h-30.404v106.413h-27.364zm234.11 106.413V348.678h24.323v12.161c3.466-7.449 11.401-12.161 21.952-12.161h8.452v24.323h-18.242c-8.635 0-12.161 2.858-12.161 11.857v64.152h-24.324zm130.736 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283h21.283v24.323H723.61l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374h10.368v21.282zm535.107 0h-14.715c-21.617 0-30.89-11.219-30.89-33.9v-42.109h-18.242v-24.323h18.242v-21.283h24.323v21.283H1280v24.323h-21.283l-.213 42.353c0 6.75 2.828 12.374 11.128 12.374H1280v21.282zm-506.953 32.714l14.016-28.883-23.928-52.477v-51.687h24.323v45.606l12.162 30.404h3.04l12.162-30.404v-45.606h24.323v51.687l-37.397 81.36zm90.421-163.45h76.009v24.323h-48.646v27.363h45.606v24.323h-45.606v30.404h48.646v24.323h-76.009zm161.14 145.938v-6.081h48.95c6.081 0 8.817-.547 8.817-3.861v-1.034c0-3.284-2.767-4.226-8.817-4.226h-39.829v-15.202l15.202-15.202c-16.084-4.5-24.323-16.509-24.323-33.444v-3.04c0-22.985 13.499-36.485 42.565-36.485a66.672 66.672 0 0 1 18.09 3.04l12.313-18.242 15.202 9.121-12.161 18.242c4.165 5.868 9.121 14.989 9.121 24.323v3.04c0 21.283-10.033 32.41-36.484 33.444l-9.121 12.161h18.242c17.999 0 27.363 7.966 27.363 23.35v.334c0 15.384-8.239 24.962-26.208 24.962h-39.525c-13.043.002-19.397-5.593-19.397-15.2zm57.767-76.01v-9.121c0-10.033-4.044-12.161-15.202-12.161-11.158 0-15.202 2.128-15.202 12.161v9.121c0 10.033 4.226 12.162 15.202 12.162s15.202-2.128 15.202-12.162zm72.969 60.808h-24.323V318.275h24.323v42.565c3.466-8.118 10.337-12.161 21.283-12.161 19.033 0 27.363 9.364 27.363 32.714v67.618h-24.323v-63.848c0-9.516-3.253-15.202-12.162-15.202-8.908 0-12.161 5.686-12.161 15.202v63.848zm-678.004 0h-24.323V318.275h24.323v42.565c3.466-8.118 11.888-12.161 22.772-12.161 19.033 0 25.874 9.516 25.874 32.867v67.466h-24.323v-66.888c0-9.516-3.253-13.499-12.161-13.499s-12.162 6.871-12.162 16.388v63.998z"/></svg>					<img src="https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/logo-fox-head-color.svg" alt="FiveThirtyEight" width="57" height="55" class="site-logo-small" id="site-logo-small" />
+				</a>
+							</h2>
+			
+			<form action="https://fivethirtyeight.com/" method="get" id="searchform" class="search-form">
+				<label for="search-field" class="search-form-label">Search</label>
+				<div class="search-form-input-wrapper"><input type="search" name="s" id="search-field" class="search-form-input" placeholder="Search" tabindex="-1"></div>
+				<input type="submit" value="Search" class="search-form-submit" tabindex="-1">
+				<button aria-label="Search" class="search-button" id="search-button">
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+
+			<a href="https://abcnews.go.com/" rel="noopener" title="ABC News" target="_blank" class="header-espn-link" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+				<svg width="65" height="23" xmlns="http://www.w3.org/2000/svg"><path d="M25.089 6.709c-.47-.496-.974-.798-1.322-.798h-.313v-.275h.261c.121 0 1.548.058 1.687.058.227 0 .886-.058 1.026-.058h.278l6.618 7.345V7.187c0-.921-.4-1.276-1.407-1.276h-.296v-.275h.313c.035 0 1.529.058 1.65.058.173 0 1.164-.058 1.355-.058h.192l.017.275c-.922.071-1.165.32-1.165 1.135v9.16h-.312l-7.904-8.77v6.6c0 1.384.314 1.756 1.46 1.756h.295v.296h-.331c-.243 0-1.441-.06-1.72-.06-.156 0-1.269.06-1.512.06h-.279v-.296c1.166-.107 1.41-.302 1.41-1.153v-7.93h-.001zm11.98.106c0-.691-.261-.904-1.079-.904h-.26v-.275h.678c.47 0 3.008.058 3.026.058.364 0 2.777-.058 3.296-.058h.695l.035 2.277h-.27c-.053-1.188-.58-1.667-1.795-1.667h-2.43v4.026h2.1c.816 0 1.268-.39 1.389-1.225l.31.018v3.178h-.293c-.138-.993-.642-1.383-1.857-1.383h-1.666v3.672c0 .603.296.905.885.905h1.736c1.126 0 1.944-.515 2.43-1.58h.314l-.731 2.23c-.505 0-2.898-.058-3.696-.058-.539 0-3.13.04-3.722.058h-.452v-.295h.278c.818-.017 1.08-.23 1.08-.923V6.815zm16.701 9.41h-.487l-1.984-5.511-2.035 5.512h-.47L45.4 6.975c-.26-.71-.505-.993-.957-1.08v-.26h.296c.191 0 1.149.059 1.375.059.191 0 1.182-.058 1.391-.058h.314v.275c-.505.019-.714.16-.714.443 0 .16.052.39.14.639l2.383 6.557 1.357-3.74-.887-2.516c-.383-1.081-.714-1.364-1.55-1.383v-.275h.28c.243 0 1.496.058 1.793.058.242 0 1.495-.058 1.773-.058h.417v.275h-.417c-.574 0-.852.142-.852.443 0 .16.07.444.174.727l2.314 6.522 1.827-5.53c.226-.709.33-1.17.33-1.453 0-.496-.243-.71-.782-.71h-.313v-.274h.087c.243 0 .851.058 1.217.058.173 0 .851-.058 1.18-.058h.123v.275c-.436.125-.66.443-1.007 1.525l-2.923 8.79zm4.01-2.563c.278.688.52 1.008.988 1.361.59.46 1.37.69 2.237.69 1.491 0 2.497-.796 2.497-1.946 0-.85-.486-1.31-2.282-2.175-1.74-.85-2.174-1.274-2.538-1.628-.537-.584-.762-1.114-.762-1.822 0-1.627 1.3-2.704 3.265-2.704.592 0 1.236.088 1.933.264.278.07.557.106.714.106.138 0 .209-.035.26-.153h.3l.034 2.229h-.247c-.156-.531-.26-.76-.487-1.05-.488-.585-1.254-.903-2.237-.903-1.248 0-2.064.601-2.064 1.504 0 .778.47 1.22 2.134 1.998 2.134 1.008 3.426 1.911 3.426 3.573 0 1.91-1.537 3.2-3.807 3.2a8.04 8.04 0 0 1-1.838-.229 3.676 3.676 0 0 0-.624-.089c-.209 0-.277.036-.415.2h-.295l-.035-.248c-.118-.7-.258-1.398-.418-2.09l.261-.089zM3.97 9.732c-.262 0-.51.06-.73.168-.587.291-.957.89-.955 1.546 0 .946.755 1.714 1.684 1.714.931 0 1.684-.768 1.684-1.714 0-.947-.753-1.715-1.684-1.715zm7.259 0c-.93 0-1.685.767-1.685 1.714 0 .946.754 1.714 1.685 1.714.93 0 1.684-.768 1.684-1.714 0-.947-.755-1.715-1.684-1.715z"/><path d="M18.47 14.875c-1.862 0-3.37-1.535-3.37-3.43 0-1.893 1.508-3.428 3.37-3.428 1.596 0 2.932 1.132 3.28 2.65h-1.78a1.68 1.68 0 0 0-1.5-.936c-.932 0-1.686.768-1.686 1.715 0 .946.754 1.714 1.685 1.714a1.68 1.68 0 0 0 1.502-.94l1.783-.017c-.339 1.53-1.68 2.672-3.285 2.672zm-7.241 0c-1.853 0-3.356-1.522-3.369-3.405l-.04-6.016h1.704l.01 3.228c.499-.396 1.077-.665 1.695-.665 1.86 0 3.368 1.535 3.368 3.429s-1.509 3.429-3.368 3.429zm-5.546 0l-.007-.859c-.382.389-1.043.859-1.824.859-1.86 0-3.251-1.535-3.251-3.43 0-1.893 1.508-3.428 3.368-3.428.29 0 .573.037.843.108 1.453.38 2.526 1.723 2.526 3.32v.01l.02 3.42H5.682zM11.229.017C5.027.017 0 5.134 0 11.446s5.027 11.43 11.229 11.43c6.2 0 11.228-5.118 11.228-11.43 0-6.312-5.028-11.429-11.228-11.429z"/></svg>			</a>
+
+			<span class="nav-global-toggle" id="nav-global-toggle">Menu</span>
+
+	</div>
+			<div class="single-sticky">
+									<div class="single-sticky-vertical"></div>
+				<div class="single-sticky-title">
+											The Dodgers Lead Our National League Predictions, But Don&#8217;t Count Out The Nats Or &#8230; Reds?									</div>
+				<a href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/?share=facebook" class="button share-sticky sticky-facebook">Share on Facebook</a>
+				<a href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/?share=twitter"  class="button share-sticky sticky-twitter">Share on Twitter</a>
+						</div>
+			<div class="site-wrapper header-global-bottom">
+		<nav class="nav-global" id="nav-global">
+			<ul class="nav-global-menu">
+				<li class="nav-global-menu-item menu-politics">
+					<a href="https://fivethirtyeight.com/politics/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Politics">
+						Politics					</a>
+				</li>
+				<li class="nav-global-menu-item menu-sports -current-vertical">
+					<a href="https://fivethirtyeight.com/sports/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Sports">
+						Sports					</a>
+				</li>
+				<li class="nav-global-menu-item menu-science">
+					<a href="https://fivethirtyeight.com/science/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Science">
+						Science					</a>
+				</li>
+				<li class="nav-global-menu-item menu-podcast">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Podcasts">
+						Podcasts					</a>
+				</li>
+				<li class="nav-global-menu-item menu-video">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeight&amp;lid=Header Video">
+						Video					</a>
+				</li>
+				<li class="nav-global-menu-item menu-abcn -mobile-only">
+					<a href="https://abcnews.go.com/" rel="noopener" name="&amp;lpos=fivethirtyeightHeader&amp;lid=Header ABC News">
+						ABC News					</a>
+				</li>
+			</ul>
+
+			
+	
+		</nav><!-- #nav-global -->
+		</div><!-- .site-wrapper -->
+</header><!-- #header-global -->
+
+
+<div class="site-main">
+	<div id="wrapper" class="site-wrapper">
+
+		
+	<div id="content" class="single single-feature" data-col="2">
+
+		
+		<div class="single-feature__row">
+			<div id="primary" class="single-feature__col">
+				<div id="article-main">
+					<article id="post-275861" class="post-275861 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-atlanta-braves tag-cincinnati-reds tag-los-angeles-dodgers tag-mlb tag-mlb-predictions tag-national-league tag-new-york-mets tag-return-of-sports tag-washington-nationals espn_verticals-sports vertical-sports topic-slug-mlb">
+
+						
+												<header class="post-info single-post-header">
+							
+							<div class="single-header">
+								<h1 class="article-title article-title-single entry-title">
+									The Dodgers Lead Our National League Predictions, But Don&#8217;t Count Out The Nats Or &#8230; Reds?								</h1>
+
+															</div>
+
+							<div class="single-header-metadata-and-share-wrap">
+								<div class="single-header-metadata-wrap">
+																			<p class="single-metadata single-byline vcard">By <a href="https://fivethirtyeight.com/contributors/travis-sawchik/" title="" class="author url fn" rel="author">Travis Sawchik</a></p>
+										
+																		<p class="single-metadata single-topic">Filed under <a href="https://fivethirtyeight.com/tag/mlb/" class="term " name="">MLB</a></p>
+										
+																			<p class="single-metadata single-topic single-date">
+										Published <time class="datetime updated" title="2020-07-22T14:00:31+00:00">Jul. 22, 2020</time>
+									</p>
+									
+																	</div>
+								<div class="share">
+									<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-275861" class="share-facebook sd-button share-icon" href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-275861" class="share-twitter sd-button share-icon" href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="fte-email-share sd-button share-icon" href="mailto:?subject=I thought you’d like this article from FiveThirtyEight&body=https%3A%2F%2Ffivethirtyeight.com%2Ffeatures%2Fthe-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds%2F?ex_cid=538email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>								</div> <!-- .share -->
+							</div>
+
+						</header><!-- .post-info -->
+
+
+							
+<figure id="single-featured-image" class="single-featured-image banner">
+	<span class="has-bugs post-thumbnail">
+					<div class="bug-container">
+				<picture class="featured-picture">
+											<source media="(min-width: 768px)" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-Banner.png">
+					
+											<source srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=1150 2x">
+						<img alt="2020-NL-PREVIEW-4&#215;3" src="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=575" srcset="https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=575 1x, https://fivethirtyeight.com/wp-content/uploads/2020/07/2020-NL-PREVIEW-4x3-1.png?w=1150 2x" class="" sizes="(max-width: 768px) 100vw, (max-width: 1080px) 66vw, 684px" />
+									</picture>
+
+				
+			</div>
+
+		
+		
+	</span><!-- .has-bugs -->
+
+			<figcaption class="caption banner-caption">
+										<p class="credits">PHOTO ILLUSTRATION BY EMILY SCHERER / GETTY IMAGES</p>
+					</figcaption>
+	
+				<figcaption class="caption featured-image-caption">
+													<p class="credits">PHOTO ILLUSTRATION BY EMILY SCHERER / GETTY IMAGES</p>
+							</figcaption>
+			
+</figure><!-- .single-featured-image -->
+						
+						<div class="entry-content single-post-content">
+							<p>Welcome to the second part of our 2020 baseball season breakdown, based on our <a href="https://projects.fivethirtyeight.com/2020-mlb-predictions/">MLB prediction model</a>. To help make sense of the contenders and also-rans of this strange season, we plugged the shortened schedule into <a href="https://fivethirtyeight.com/features/how-our-mlb-predictions-work/">our forecast model</a> and simulated it 100,000 times, tracking each team’s expected record and its odds of winning the division or the World Series. Here’s what our model thinks of the 2020 National League. (And don’t miss the <a href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/">American League preview</a>.)</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>NL East</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.4">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 15%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 13%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 15%">Nationals</td>
+<td class="heat number" style="color: #222222;background-color: #4aafe1;text-align: center;width: 13%">1548</td>
+<td class="number highlight" style="width: 11%">34</td>
+<td class="number" style="width: 11%">26</td>
+<td class="number" style="width: 12%">+36</td>
+<td class="heat number" style="color: #222222;background-color: #f2976e" data-suffix="%" data-suffixpadding="1.1em">61%</td>
+<td class="heat number" style="color: #222222;background-color: #f6b99d" data-suffix="%" data-suffixpadding="1.1em">42%</td>
+<td class="heat number" style="color: #222222;background-color: #fef3ef;width: 15%" data-suffix="%" data-suffixpadding="1.1em">7%</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Mets</td>
+<td class="heat number" style="color: #222222;background-color: #63bae5;text-align: center;width: 13%">1529</td>
+<td class="number highlight" style="width: 11%">32</td>
+<td class="number" style="width: 11%">28</td>
+<td class="number" style="width: 12%">+15</td>
+<td class="heat number" style="color: #222222;background-color: #f6baa0;padding-right: 1.1em">41</td>
+<td class="heat number" style="color: #222222;background-color: #fad9ca;padding-right: 1.1em">23</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%;padding-right: 1.1em">3</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Braves</td>
+<td class="heat number" style="color: #222222;background-color: #64bbe5;text-align: center;width: 13%">1528</td>
+<td class="number highlight" style="width: 11%">32</td>
+<td class="number" style="width: 11%">28</td>
+<td class="number" style="width: 12%">+15</td>
+<td class="heat number" style="color: #222222;background-color: #f6baa0;padding-right: 1.1em">41</td>
+<td class="heat number" style="color: #222222;background-color: #fadbcc;padding-right: 1.1em">22</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%;padding-right: 1.1em">3</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Phillies</td>
+<td class="heat number" style="color: #222222;background-color: #84c9eb;text-align: center;width: 13%">1503</td>
+<td class="number highlight" style="width: 11%">29</td>
+<td class="number" style="width: 11%">31</td>
+<td class="number" style="width: 12%">-7</td>
+<td class="heat number" style="color: #222222;background-color: #fadbcc;padding-right: 1.1em">22</td>
+<td class="heat number" style="color: #222222;background-color: #fdeee8;padding-right: 1.1em">10</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">1</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Marlins</td>
+<td class="heat number" style="color: #222222;background-color: #bce1f4;text-align: center;width: 13%">1457</td>
+<td class="number highlight" style="width: 11%">25</td>
+<td class="number" style="width: 11%">35</td>
+<td class="number" style="width: 12%">-46</td>
+<td class="heat number" style="color: #222222;background-color: #fef7f4;padding-right: 1.1em">5</td>
+<td class="heat number" style="color: #222222;background-color: #fffcfa;padding-right: 1.1em">2</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>The reigning champion <b>Washington Nationals </b>remain in a strong position entering the shortened 2020 season. Staff ace Max Scherzer has enjoyed seven-straight <a href="https://www.baseball-reference.com/players/s/scherma01.shtml">top-five Cy Young finishes</a> and shows little sign of slowing. Last season, in his age-34 campaign, <a href="https://www.baseball-reference.com/players/s/scherma01.shtml">he led the NL</a> and posted personal bests in fielding-independent pitching (2.45) and strikeouts per nine innings (12.7). Scherzer is backed by fellow elite starters Stephen Strasburg &#8212; whom the Nationals retained for what was <a href="https://fivethirtyeight.com/features/how-mlbs-hot-stove-got-hot-again/">briefly a record deal for a pitcher</a> &#8212; and Patrick Corbin, a 2019 free agent signee who outproduced departed star Bryce Harper last season (<a href="https://www.fangraphs.com/players/patrick-corbin/9323/stats?position=P">4.8 wins above replacement</a> to <a href="https://www.fangraphs.com/players/bryce-harper/11579/stats?position=OF">4.6</a>). They give the Nationals what projects to be one of <a href="https://www.fangraphs.com/depthcharts.aspx?position=SP">the top rotations</a> in the NL. While the Nationals did <a href="https://fivethirtyeight.com/features/anthony-rendon-is-instantly-mike-trouts-best-teammate/">lose star Anthony Rendon</a> to free agency, Juan Soto could be on the cusp of becoming the most feared hitter in the league: Last year, he <a href="https://fivethirtyeight.com/features/who-needs-bryce-harper-when-youve-got-juan-soto/">became the first batter</a> in MLB history to post an on-base percentage of at least .400 in his age-19 and -20 seasons. The Nationals aren’t without their question marks, particularly their bullpen, which struggled mightily last season &#8212; though they did add right-handed reliever Will Harris in <a href="https://www.mlbtraderumors.com/2020/01/nationals-to-sign-will-harris.html">free agency</a>.</p>
+<p>The <b>New York Mets</b> do not lack for elite pitching, with Jacob deGrom coming off <a href="https://www.baseball-reference.com/players/d/degroja01.shtml">back-to-back Cy Young Awards</a>. DeGrom’s combination of velocity, command and assortment of <a href="https://www.fangraphs.com/players/jacob-degrom/10954/stats?position=P">three plus pitches</a> is just about peerless. For three straight seasons, Michael Conforto’s sweet left-handed swing has produced at least a <a href="https://www.fangraphs.com/players/michael-conforto/16376/stats?position=OF">120 weighted runs created plus</a>, which adjusts for the ballpark and the run-scoring environment in any given year, meaning that he’s been 20 percent better than league-average offensive performance. But the Mets still have a number of question marks. Can Brandon Nimmo enjoy a full season and flirt with a .400 OBP? Can Robinson Cano bounce back at age 37 after his worst season <a href="https://www.baseball-reference.com/players/c/canoro01.shtml">since 2008</a>? Can Edwin Diaz rediscover the success he had with the Seattle Mariners? And, after <a href="https://www.espn.com/mlb/story/_/id/29476136/jacob-degrom-back-plans-pitch-opening-day-mets-not-sure">an injury scare for deGrom</a>, the biggest question might be: Can everyone stay healthy?</p>
+<p><em><a href="https://fivethirtyeight.com/features/baseball-will-be-weird-this-year-but-the-astros-and-yankees-are-favorites-in-the-american-league-again/?cid=_inlinerelated">[Related: Baseball Will Be Weird This Year. But The Astros And Yankees Are Favorites In The American League … Again.]</a></em></p>
+<p>While we consider the <b>Atlanta Braves</b> to be a postseason contender, other projection systems see the Braves as a <a href="https://www.fangraphs.com/depthcharts.aspx?position=Standings">favorite to win the NL East</a>. The team has the strongest position-player group in the division, according to FanGraphs, and <a href="https://www.fangraphs.com/depthcharts.aspx?position=Team">trails only the Los Angeles Dodgers</a> in projected position-player production. Braves MVP candidate Ronald Acuña Jr. just missed a <a href="https://www.baseball-reference.com/players/a/acunaro01.shtml">40-40 season a year ago</a>; Acuña, Freddie Freeman and Ozzie Albies each provided more than <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=bat&amp;lg=all&amp;qual=0&amp;type=8&amp;season=2019&amp;month=0&amp;season1=2019&amp;ind=0&amp;team=16&amp;rost=0&amp;age=0">4 wins above replacement</a> for the season. As for pitching, Atlanta should have a <a href="https://www.fangraphs.com/depthcharts.aspx?position=ALL&amp;teamid=16">quality rotation</a>, though given his modest strikeout rate, it’s not clear if Mike Soroka can <a href="https://www.fangraphs.com/players/mike-soroka/18383/stats?position=P">repeat his 2019 performance</a>.</p>
+<p>The <b>Philadelphia Phillies</b> loaded up on stars before the 2019 season, with their signing of Bryce Harper to <a href="https://www.espn.com/mlb/story/_/id/26105394/sources-phillies-land-harper-13-years-330m#:~:text=Manager%20Gabe%20Kapler%20heard%20the,ESPN's%20Jeff%20Passan%20on%20Thursday.">a record contract</a> as the centerpiece. What they got was a disappointing <a href="https://www.baseball-reference.com/teams/PHI/2019.shtml">81-81 record</a> and a fourth-place finish. Harper ended up posting a mark of 4.6 WAR, good for <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=bat&amp;lg=all&amp;qual=y&amp;type=8&amp;season=2019&amp;month=0&amp;season1=2019&amp;ind=0&amp;team=0&amp;rost=0&amp;age=0&amp;filter=&amp;players=0&amp;startdate=2019-01-01&amp;enddate=2019-12-31&amp;sort=21,d">26th in MLB</a>, but Philadelphia might worry that <a href="https://fivethirtyeight.com/features/bryce-harper-may-already-be-past-his-prime/">his best seasons are behind him</a>: His <a href="https://www.fangraphs.com/players/bryce-harper/11579/stats?position=OF">strikeout rate</a> has inched up for three consecutive seasons, and he’s now five years removed from truly elite production when <a href="https://www.mlb.com/news/nationals-bryce-harper-wins-nl-mvp-award/c-157684172">he won the NL MVP in 2015</a>. J.T. Realmuto is still projected as one of the <a href="https://www.fangraphs.com/depthcharts.aspx?position=C">best catchers in baseball</a>, and he was last year in his first year with the Phillies, but staff ace Aaron Nola took a <a href="https://www.fangraphs.com/players/aaron-nola/16149/stats?position=P">step backward last season</a>, and it’s not clear how Andrew McCutchen will perform coming off knee surgery. The Phillies will also be looking to get more from free agent signee Zack Wheeler’s raw tools (<a href="https://baseballsavant.mlb.com/savant-player/zack-wheeler-554430?stats=statcast-r-pitching-mlb">elite velocity and above-average spin rate</a>) than the Mets did.</p>
+<p>The <b>Miami Marlins,</b> in the midst of a deep rebuild with what we project to be the second-worst run differential in the NL, have <a href="https://www.mlb.com/news/2020-farm-system-rankings">improved their farm system</a>, which had been one of the worst in baseball. The Marlins also roster some intriguing major league talent they hope can show growth. Second baseman Isan Diaz has a <a href="https://twitter.com/mlbpipeline/status/1101150867770826753">swing that resembles</a> <a href="https://theathletic.com/847195/2019/03/04/a-young-robinson-cano-marlins-prospect-isan-diaz-wants-to-follow-the-path-of-his-baseball-idol/">his idol Robinson Cano</a>. He hit .305 with <a href="https://www.fangraphs.com/players/isan-diaz/17922/stats?position=2B">26 home runs</a> in 102 Triple-A games last year. Pitcher Caleb Smith has <a href="https://baseballsavant.mlb.com/savant-player/caleb-smith-592761?stats=statcast-r-pitching-mlb">elite spin and movement</a>, allowing him to strike out better than a batter per inning for his three-year career. The speedy and versatile Jonathan Villar is moving to the outfield and could be a <a href="https://www.mlb.com/news/trade-candidates-every-mlb-team-2020">trade candidat</a>e. And catcher Jorge Alfaro is just one year removed from a <a href="https://www.fangraphs.com/players/jorge-alfaro/12180/stats?position=C">3-WAR season</a>.</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>NL Central</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.5">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 15%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 13%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 15%">Reds</td>
+<td class="heat number" style="color: #222222;background-color: #6cbee7;text-align: center;width: 13%">1522</td>
+<td class="number highlight" style="width: 11%">32</td>
+<td class="number" style="width: 11%">28</td>
+<td class="number" style="width: 12%">+18</td>
+<td class="heat number" style="color: #222222;background-color: #f6b598" data-suffix="%" data-suffixpadding="1.1em">44%</td>
+<td class="heat number" style="color: #222222;background-color: #f9d2c1" data-suffix="%" data-suffixpadding="1.1em">27%</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%" data-suffix="%" data-suffixpadding="1.1em">3%</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Cubs</td>
+<td class="heat number" style="color: #222222;background-color: #69bde6;text-align: center;width: 13%">1524</td>
+<td class="number highlight" style="width: 11%">32</td>
+<td class="number" style="width: 11%">28</td>
+<td class="number" style="width: 12%">+16</td>
+<td class="heat number" style="color: #222222;background-color: #f6baa0;padding-right: 1.1em">41</td>
+<td class="heat number" style="color: #222222;background-color: #fad5c5;padding-right: 1.1em">25</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%;padding-right: 1.1em">3</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Brewers</td>
+<td class="heat number" style="color: #222222;background-color: #6cbee7;text-align: center;width: 13%">1522</td>
+<td class="number highlight" style="width: 11%">31</td>
+<td class="number" style="width: 11%">29</td>
+<td class="number" style="width: 12%">+13</td>
+<td class="heat number" style="color: #222222;background-color: #f7bca2;padding-right: 1.1em">40</td>
+<td class="heat number" style="color: #222222;background-color: #fad9ca;padding-right: 1.1em">23</td>
+<td class="heat number" style="color: #222222;background-color: #fefaf8;width: 15%;padding-right: 1.1em">3</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Cardinals</td>
+<td class="heat number" style="color: #222222;background-color: #76c3e8;text-align: center;width: 13%">1514</td>
+<td class="number highlight" style="width: 11%">31</td>
+<td class="number" style="width: 11%">29</td>
+<td class="number" style="width: 12%">+11</td>
+<td class="heat number" style="color: #222222;background-color: #f7c1a9;padding-right: 1.1em">37</td>
+<td class="heat number" style="color: #222222;background-color: #fbdccf;padding-right: 1.1em">21</td>
+<td class="heat number" style="color: #222222;background-color: #fffcfa;width: 15%;padding-right: 1.1em">2</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Pirates</td>
+<td class="heat number" style="color: #222222;background-color: #aedcf2;text-align: center;width: 13%">1468</td>
+<td class="number highlight" style="width: 11%">26</td>
+<td class="number" style="width: 11%">34</td>
+<td class="number" style="width: 12%">-33</td>
+<td class="heat number" style="color: #222222;background-color: #fdf2ed;padding-right: 1.1em">8</td>
+<td class="heat number" style="color: #222222;background-color: #fef8f6;padding-right: 1.1em">4</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>The NL Central race figures to be one of the most wide-open contests in baseball this year, with our model projecting four teams finishing within a game of first place. The team with the best chance of winning the division (at 27 percent) is the <b>Cincinnati Reds</b>, who haven’t appeared in the postseason since their <a href="http://www.espn.com/mlb/history/teams/_/team/Cin">2013 wild-card game loss</a>. Emerging homegrown ace Luis Castillo, one of the <a href="https://baseballsavant.mlb.com/savant-player/luis-castillo-622491?stats=statcast-r-pitching-mlb">top strikeout pitchers</a> in the game, was joined last year by Sonny Gray and Trevor Bauer to form a potential quality rotation. While Bauer struggled last year, he is just one season removed from <a href="https://www.baseball-reference.com/players/b/bauertr01.shtml">finishing sixth in AL Cy Young voting</a>. Gray enjoyed his best season <a href="https://www.fangraphs.com/players/sonny-gray/12768/stats?position=P">by WAR</a> under pitching coaches Derek Johnson and Caleb Cotham, leaning on an excellent curveball and slider &#8212; <a href="https://www.fangraphs.com/players/sonny-gray/12768/stats?position=P">both of which were well above average</a>. Offensively, while Joey Votto looks to be in decline, the Reds have one of the more underrated players in the game in third base slugger Eugenio Suárez, who <a href="https://www.fangraphs.com/players/eugenio-suarez/12552/stats?position=3B">crushed 49 home runs last year</a> and has had three straight years of 3.9 WAR or better. Suárez <a href="https://www.stltoday.com/sports/columns/jeff-gordon/tipsheet-while-cards-and-cubs-suffer-setbacks-retooled-reds-get-stronger-as-season-nears/article_2d86d3ae-e925-521f-a691-63518fa65a21.html">is fully recovered</a> from a late winter shoulder injury.</p>
+<p>The <b>Chicago Cubs</b> once looked as if they were on the <a href="https://fivethirtyeight.com/features/did-the-cubs-miss-their-chance-to-be-a-dynasty/">cusp of a dynasty</a>, winning the 2016 title with a young, elite core of position players. While that group remains strong, the Cubs have struggled to develop <a href="https://fivethirtyeight.com/features/the-cardinals-develop-young-pitchers-the-cubs-dont-which-team-is-going-to-the-playoffs/">their own pitching</a>. The team spent heavily &#8212; in dollars and prospects &#8212; to put together its rotation: Yu Darvish, Tyler Chatwood, Jose Quintana (acquired in a deal that sent <a href="https://www.espn.com/mlb/story/_/id/28725750/white-sox-eloy-jimenez-hopes-improve-solid-rookie-year">Eloy Jimenez across town</a>) and Jon Lester were all acquired via trade or free agency. Chicago’s rotation projects as just the <a href="https://www.fangraphs.com/depthcharts.aspx?position=SP">17th best in baseball</a>, and only Darvish projects to post a sub-4.00 ERA. The Cubs will try to bounce back from last season’s <a href="https://www.baseball-reference.com/leagues/NL/2019.shtml">disappointing finish</a> under a new manager, former <a href="https://www.espn.com/mlb/story/_/id/27909976/cubs-hire-david-ross-manager-3-year-deal">Chicago catcher David Ross</a>, who replaced Joe Maddon <a href="https://www.espn.com/mlb/story/_/id/28670937/joe-maddon-opens-leaving-chicago-cubs-returning-la-angels">after he and the club parted ways</a> and he then joined the Angels.</p>
+<p><em><a href="https://projects.fivethirtyeight.com/2020-mlb-predictions/?cid=_inlinerelated">[Related: Our 2020 MLB Predictions]</a></em></p>
+<p>The <b>Milwaukee Brewers </b>have enjoyed Christian Yelich’s growth into a superstar, changing from an <a href="https://www.fangraphs.com/players/christian-yelich/11477/stats?position=OF">extreme ground-ball hitter</a> to one who more often lifts pitches and slugs them. And the club is hoping that another star-caliber player emerges in second-year second baseman Keston Hiura. He has a number of tools that include <a href="https://www.youtube.com/watch?v=Tdkpv4BEeyU">incredible bat speed</a>, though he also had some swing-and-miss issues last season as a rookie. The Brewers added former top Padres prospect Luis Urias in <a href="https://www.reuters.com/article/us-baseball-mlb-sd-mil-urias-grisham/brewers-acquire-urias-send-grisham-to-padres-idUSKBN1Y12IZ#:~:text=The%20Padres%20and%20Brewers%20completed,and%20right%2Dhander%20Zach%20Davies.">an offseason trade</a> and could end up with one of the best young middle infields in baseball &#8212; though they have to hope that Urias’s first underwhelming <a href="https://www.fangraphs.com/players/luis-urias/16622/stats?position=2B/SS">300 plate appearances in the majors</a> will be his worst after a stellar minor league career in which he demonstrated all five tools.</p>
+<p>The <b>St. Louis Cardinals</b> have developed a new ace in Jack Flaherty, who produced the <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=pit&amp;lg=all&amp;qual=y&amp;type=8&amp;season=2019&amp;month=31&amp;season1=2019&amp;ind=0&amp;team=0&amp;rost=0&amp;age=0&amp;filter=&amp;players=0&amp;startdate=2019-01-01&amp;enddate=2019-12-31&amp;sort=16,a">lowest ERA in the majors</a> in the second half of last season (0.91). The 24-year-old has <a href="https://www.fangraphs.com/players/jack-flaherty/17479/stats?position=P">three plus pitches</a> in his four-seam and two-seam fastballs and breaking ball. However, the Cardinals were just <a href="https://www.espn.com/mlb/stats/team/_/teams/8/table/batting/sort/runs/dir/desc">10th in the NL in runs scored last season</a>, and with key contributors Paul Goldshmidt, Yadier Molina and Matt Carpenter all on the <a href="https://www.baseball-reference.com/teams/STL/2019.shtml#all_team_batting">wrong side of 30</a>, it’s not clear how much upside resides in the group. Only the Brewers and Giants had older <a href="https://www.baseball-reference.com/leagues/NL/2019.shtml">position players last season</a>.</p>
+<p>Every NL Central team appears to have a shot at the division, save for the <b>Pittsburgh Pirates</b> and their new regime led by general manager Ben Cherington and manager Derek Shelton. The Pirates appear headed for a retooling season in part because their starting rotation is depleted. Jameson Taillon is still rehabbing from Tommy John surgery, and Chris Archer, acquired in what is shaping up to be one of the worst trades <a href="https://www.thebiglead.com/posts/pirates-chris-archer-trade-injury-rays-worst-in-history-01e9x909f0s4">in recent memory</a>, is <a href="https://www.espn.com/mlb/story/_/id/29260137/pirates-chris-archer-2021-surgery">also out for the season</a>.</p>
+<section class="viz">
+<header class="viz">
+<p class="subtitle">How Elo is forecasting the <b>NL West</b> race</p>
+</header>
+<table class="viz full" data-carpenter-slug="paine-sawchik.2020-mlb-preview.6">
+<thead>
+<tr>
+<th class="upper" style="border-right: 10px solid #ffffff" colspan="2"></th>
+<th class="upper upper-text" style="border-right: 10px solid #ffffff" colspan="3">Avg. Simulated Season</th>
+<th class="upper upper-text" colspan="3">Chance to…</th>
+</tr>
+<tr>
+<th class="no-parent text" style="width: 15%" colspan="1">Team</th>
+<th class="no-parent heat number" style="text-align: center;width: 13%" colspan="1">Elo Rating</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Wins</th>
+<th class="number" style="font-weight: 400;width: 11%" colspan="1">Losses</th>
+<th class="number" style="font-weight: 400;width: 12%" colspan="1">Run Diff.</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Make Playoffs</th>
+<th class="heat number" style="font-weight: 400" colspan="1">Win Division</th>
+<th class="heat number" style="font-weight: 400;width: 15%" colspan="1">Win World Series</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text" style="width: 15%">Dodgers</td>
+<td class="heat number" style="color: #222222;background-color: #1899d9;text-align: center;width: 13%">1584</td>
+<td class="number highlight" style="width: 11%">37</td>
+<td class="number" style="width: 11%">23</td>
+<td class="number" style="width: 12%">+68</td>
+<td class="heat number" style="color: #222222;background-color: #ed713a" data-suffix="%" data-suffixpadding="1.1em">85%</td>
+<td class="heat number" style="color: #222222;background-color: #ef8151" data-suffix="%" data-suffixpadding="1.1em">72%</td>
+<td class="heat number" style="color: #222222;background-color: #fbded1;width: 15%" data-suffix="%" data-suffixpadding="1.1em">20%</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">D-backs</td>
+<td class="heat number" style="color: #222222;background-color: #78c4e9;text-align: center;width: 13%">1512</td>
+<td class="number highlight" style="width: 11%">30</td>
+<td class="number" style="width: 11%">30</td>
+<td class="number" style="width: 12%">+3</td>
+<td class="heat number" style="color: #222222;background-color: #f9cfbc;padding-right: 1.1em">29</td>
+<td class="heat number" style="color: #222222;background-color: #fdede6;padding-right: 1.1em">11</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">1</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Padres</td>
+<td class="heat number" style="color: #222222;background-color: #85c9eb;text-align: center;width: 13%">1502</td>
+<td class="number highlight" style="width: 11%">30</td>
+<td class="number" style="width: 11%">30</td>
+<td class="number" style="width: 12%">-3</td>
+<td class="heat number" style="color: #222222;background-color: #fad5c5;padding-right: 1.1em">25</td>
+<td class="heat number" style="color: #222222;background-color: #fdeee8;padding-right: 1.1em">10</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">1</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Rockies</td>
+<td class="heat number" style="color: #222222;background-color: #95d0ee;text-align: center;width: 13%">1489</td>
+<td class="number highlight" style="width: 11%">28</td>
+<td class="number" style="width: 11%">32</td>
+<td class="number" style="width: 12%">-17</td>
+<td class="heat number" style="color: #222222;background-color: #fce5da;padding-right: 1.1em">16</td>
+<td class="heat number" style="color: #222222;background-color: #fef7f4;padding-right: 1.1em">5</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+<tr>
+<td class="text" style="width: 15%">Giants</td>
+<td class="heat number" style="color: #222222;background-color: #bfe3f5;text-align: center;width: 13%">1454</td>
+<td class="number highlight" style="width: 11%">25</td>
+<td class="number" style="width: 11%">35</td>
+<td class="number" style="width: 12%">-48</td>
+<td class="heat number" style="color: #222222;background-color: #fef8f6;padding-right: 1.1em">4</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;padding-right: 1.1em">1</td>
+<td class="heat number" style="color: #222222;background-color: #fffdfd;width: 15%;padding-right: 1.1em">&lt;1</td>
+</tr>
+</tbody>
+</table>
+<footer class="viz">
+<p class="notes">Based on 100,000 simulations of the 2020 MLB season.</p>
+<p class="source">Sources: Baseball prospectus, Fangraphs, Clay Davenport</p>
+</footer>
+</section>
+<p>Even with David Price <a href="https://www.espn.com/mlb/story/_/id/29410895/dodgers-pitcher-david-price-says-play-season">sitting out the season</a> because of concerns amid the coronavirus pandemic, the <b>Los Angeles Dodgers</b> are clear favorites according to our projections. The Dodgers, <a href="https://www.baseball-reference.com/bullpen/NL_West_Division">winners of seven-straight division titles</a> and two of the last <a href="https://www.baseball-almanac.com/ws/wsmenu.shtml">three NL pennants</a>, return a lineup with stalwarts like Cody Bellinger, Max Muncy, Justin Turner and Corey Seager, and they added a star <a href="https://fivethirtyeight.com/features/mookie-betts-makes-the-dodgers-even-more-dominant/">in a trade for Mookie Betts</a>. Los Angeles also has a deep system with potential future stars ready to contribute, like infielder Gavin Lux, one of the <a href="https://www.fangraphs.com/prospects/the-board/2020-in-season-prospect-list/summary">top prospects in the game</a>, and catcher Will Smith, who hit 35 combined home runs between Triple-A and the majors <a href="https://www.fangraphs.com/players/will-smith/19197/stats?position=C">last season</a>. Only the Astros project to produce more position player wins above replacement <a href="https://www.fangraphs.com/depthcharts.aspx?position=Team">than the Dodgers</a>. And despite the free agent departure of Hyun-Jin Ryu, <a href="https://www.mlb.com/news/blue-jays-excited-to-learn-from-hyun-jin-ryu">who left L.A. for Toronto</a>, the Dodgers have plenty of firepower in their rotation in long-time ace Clayton Kershaw and an emerging No. 1 pitcher in Walker Buehler. Among all starting pitchers in the <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=pit&amp;lg=all&amp;qual=y&amp;type=8&amp;season=2019&amp;month=30&amp;season1=2019&amp;ind=0&amp;team=0&amp;rost=0&amp;age=0&amp;filter=&amp;players=0&amp;startdate=2019-01-01&amp;enddate=2019-12-31&amp;sort=17,a">second half of last season</a>, only Scherzer had a superior FIP mark than that of electric-armed Buehler. The Dodgers project to produce the <a href="https://www.fangraphs.com/depthcharts.aspx?position=Team">fourth most pitching value</a> in this shortened season.</p>
+<p>The <b>Arizona Diamondbacks</b> were in the wild-card hunt a year ago and added Madison Bumgarner, Starling Marte and Kole Calhoun in the offseason to bolster their rotation and lineup. Bumgarner posted <a href="https://www.fangraphs.com/players/madison-bumgarner/5524/stats?position=P">3.2 WAR</a> last year with the Giants after <a href="https://www.usatoday.com/story/sports/mlb/giants/2018/03/23/giants-madison-bumgarner-fractures-left-hand/454530002/">two injury-shortened seasons</a>, and he could give the team a No. 1 pitching option. <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=pit&amp;lg=all&amp;qual=0&amp;type=8&amp;season=2019&amp;month=0&amp;season1=2019&amp;ind=0&amp;team=15&amp;rost=0&amp;age=0&amp;filter=&amp;players=0&amp;startdate=2019-01-01&amp;enddate=2019-12-31&amp;sort=8,d">Strikeout artists</a> Robbie Ray and Zac Gallen provide the Diamondbacks with a deep rotation.</p>
+<p><em><a href="https://fivethirtyeight.com/features/how-our-mlb-predictions-work/?cid=_inlinerelated">[Related: How Our MLB Predictions Work]</a></em></p>
+<p>The <b>San Diego Padres</b> are a young team on the rise, one that could exceed expectations. The Padres had the youngest position-player group in the NL last season, <a href="https://www.baseball-reference.com/leagues/NL/2019.shtml">with an average age of 26.2 years old</a>, and they boast the top <a href="https://www.mlb.com/news/2020-farm-system-rankings">farm system in the NL</a> &#8212; even after the graduation of Fernando Tatis Jr. last season. Tatis Jr. looks like a potential superstar: In his debut year, he produced an offensive performance that was 50 percent above league average, <a href="https://www.fangraphs.com/players/fernando-tatis-jr/19709/stats?position=SS">with a 150 wRC+ mark</a>. He belted 22 homers and stole 16 bases in a partial season while displaying a <a href="https://twitter.com/Padres/status/1147972864529723392">powerful arm at shortstop</a>. A sleeper NL Cy Young candidate is ace Chris Paddack, who was limited to 140 ⅔ innings as a rookie last season by the cautious Padres. Paddack employed excellent command of a swing-and-miss changeup and fastball and <a href="https://www.fangraphs.com/leaders.aspx?pos=all&amp;stats=pit&amp;lg=all&amp;qual=100&amp;type=c,4,5,11,7,8,13,-1,36,37,40,43,44,48,51,-1,6,45,62,-1,59,217&amp;season=2019&amp;month=0&amp;season1=2019&amp;ind=0&amp;team=0&amp;rost=0&amp;age=0&amp;filter=&amp;players=0&amp;startdate=2019-01-01&amp;enddate=2019-12-31&amp;sort=20,d">finished 17th in strikeout minus walk percentage</a> among all pitchers who tossed at least 100 innings. If an <a href="https://blogs.fangraphs.com/pitch-design-straightening-out-chris-paddacks-curveball/#:~:text=San%20Diego%20Padres%20right%2Dhander,ERA%20and%20a%203.95%20FIP.&amp;text=Paddack%20also%20has%20a%20curveball,eclipsed%2015%25%20in%20any%20count.">improved curveball</a> becomes a better option for him, Paddack could ascend from being very good to great.</p>
+<p>The <b>Colorado Rockies</b> were a wild-card team in 2018, but their pitching fell off last season: Their ERA+, which adjusts for ballpark factors and league scoring environment, was an above-average 109 <a href="https://www.baseball-reference.com/teams/COL/2018-pitching.shtml">in 2018</a> but a below-average 94 <a href="https://www.baseball-reference.com/teams/COL/2019-pitching.shtml">last season</a>. Even at mile-high altitude, pitching will be key to any success for the Rockies, given that they project to have some of the poorest production in the majors at <a href="https://www.fangraphs.com/depthcharts.aspx?position=C">catcher</a>, <a href="https://www.fangraphs.com/depthcharts.aspx?position=1B">first base</a>, <a href="https://www.fangraphs.com/depthcharts.aspx?position=LF">left field</a> and <a href="https://www.fangraphs.com/depthcharts.aspx?position=CF">center field</a>, according to FanGraphs.</p>
+<p>While the majority of the NL West will attempt to be competitive in 2020, the <b>San Francisco Giants</b> are still in retooling mode, with a new manager in Gabe Kapler. The Giants will also be without the longtime face of their franchise in Buster Posey, who is electing to sit out the season due to COVID-19 concerns <a href="https://www.espn.com/mlb/story/_/id/29440601/giants-buster-posey-opts-2020-season-citing-newborns-health">related to his family</a>. Top catching prospect Joey Bart, a former No. 2 overall pick, is the heir apparent to Posey; he has <a href="https://www.nbcsports.com/bayarea/giants/giants-gabe-kapler-praises-joey-bart-his-approach-summer-camp">had a good summer camp</a>, but he may not get much, if any, major league time in 2020.</p>
+<div class='ornamental-rule'><hr /><span></span></div>
+
+<h2>Subscribe to our sports podcast, Hot Takedown</h2>
+<p>
+<div data-href="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/" class="tease-podcast js-link podcast-shortcode -horizontal post-275861 fte_features type-fte_features status-publish has-post-thumbnail hentry tag-atlanta-braves tag-cincinnati-reds tag-los-angeles-dodgers tag-mlb tag-mlb-predictions tag-national-league tag-new-york-mets tag-return-of-sports tag-washington-nationals espn_verticals-sports vertical-sports topic-slug-mlb">
+	<div class="podcast-content js-podcast-player" data-podcast-id="275861"
+			data-podcast-duration="0"
+			data-podcast-title="The Dodgers Lead Our National League Predictions, But Don&#039;t Count Out The Nats Or ... Reds?">
+
+					<span class="vcard visually-hidden">By <a href="https://fivethirtyeight.com/contributors/travis-sawchik/" title="" class="author url fn" rel="author">Travis Sawchik</a></span>
+			
+		
+		<button class="play has-image" aria-label="Play" style="background-image: url(https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/images/podcasts/hot-takedown-square.svg);"></button>
+
+					<div class="podcast-data">
+		
+		
+							<div class="progress-indicator">
+					<div class="progressbar">
+						<div class="progress"></div>
+					</div>
+
+					<div class="counter">&nbsp;</div>
+
+					<audio class="audio" preload="none">
+						<source src="https://www.podtrac.com/pts/redirect.mp3/traffic.megaphone.fm/ESP3890195464.mp3">
+					</audio>
+				</div>
+			
+					</div>
+		
+	</div><!-- .podcast-content -->
+</div>
+<aside class="podcast-subscribe">
+	<div class="podcast-subscribe-link-container">
+		More: <a href="https://itunes.apple.com/us/podcast/id1456065200">Apple Podcasts</a> |
+		<span class="hide-desktop-inline"><a data-android-url="" href="http://m.espn.com/general/cast?id=26150534">ESPN App</a> |</span>
+		<a href="https://www.espn.com/espnradio/feeds/rss/podcast.xml?id=26150534">RSS</a>
+			</div>
+	</aside>
+
+<div class='ornamental-rule'><hr /><span></span></div>
+</p>
+						</div><!-- .entry-content -->
+					</article>
+				</div>
+				<div id="article-additional">
+					<div class="mini-bio">
+		<p>Travis Sawchik is a sportswriter for FiveThirtyEight. <span class="twitter"><a href="https://twitter.com/Travis_Sawchik" target="_blank"><i class="icon icon-twitter"></i> <span class="twitter-username">@Travis_Sawchik</span></a></span></p>
+</div>
+<!-- .post-author -->
+<div id="entry-comments" class="fte-expandable">
+	<h3 class="fte-expandable-title">Comments</h3>
+
+	<div class="entry-comments-content fte-expandable-content">
+		<div class="fb-comments" data-href="http://fivethirtyeight.com/?post_type=fte_features&#038;p=275861" data-numposts="5" data-colorscheme="light"
+														></div>
+	</div>
+	<!-- .entry-comments-content -->
+</div>
+<!-- .entry-comments -->
+<div id="taboola-275861" class="taboola-placeholder taboola-recommendations" data-src="https://fivethirtyeight.com/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/" data-mode="thumbnails-a" data-placement="Below Article Thumbnails"></div><div class="tags">
+	<p class="filed-under">Filed under</p>
+	<p class="tag-links"><a class="tag" href="https://fivethirtyeight.com/tag/mlb/">MLB <span class="count">(581 posts)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/los-angeles-dodgers/">Los Angeles Dodgers <span class="count">(54)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/new-york-mets/">New York Mets <span class="count">(43)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/return-of-sports/">Return Of Sports <span class="count">(26)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/washington-nationals/">Washington Nationals <span class="count">(26)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/atlanta-braves/">Atlanta Braves <span class="count">(15)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/mlb-predictions/">MLB Predictions <span class="count">(13)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/cincinnati-reds/">Cincinnati Reds <span class="count">(10)</span></a>
+<a class="tag" href="https://fivethirtyeight.com/tag/national-league/">National League <span class="count">(6)</span></a>
+</p>
+</div>
+				</div>
+			</div>
+			<div class="single-feature__col">
+							</div>
+		</div>
+	</div><!-- .single -->
+
+	
+
+	</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+<footer id="colophon" class="site-footer">
+
+	<div class="site-wrapper footer-main-content">
+
+		<div class="footer-section-get-more">
+			Get more FiveThirtyEight		</div>
+
+		<div class="footer-section-primary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://cottonbureau.com/stores/fivethirtyeight#/shop" name="&amp;lpos=fivethirtyeightFooter&amp;lid=store">Store</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/newsletter/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=newsletter">Newsletter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/videos/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=videos">Videos</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/podcasts/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=podcasts">Podcasts</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://twitter.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=twitter">Twitter</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://www.facebook.com/fivethirtyeight" name="&amp;lpos=fivethirtyeightFooter&amp;lid=facebook">Facebook</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://data.fivethirtyeight.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=data">Data</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/features/fear-not-readers-we-have-rss-feeds/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=rss">RSS</a>
+				</li>
+			</ul>
+		</div><!-- .footer-primary-links -->
+
+		<div class="footer-section-social-follow">
+			<ul class="footer-menu">
+				<li class="footer-menu-item social-share-item">
+					<div class="fb-like" data-href="https://www.facebook.com/fivethirtyeight" data-layout="button_count"></div>
+				</li>
+				<li class="footer-menu-item social-share-item">
+					<a href="https://twitter.com/FiveThirtyEight" class="twitter-follow-button" data-show-count="true">Follow @FiveThirtyEight</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer-section-secondary-links">
+			<ul class="footer-menu">
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/contact/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=contact">Contact</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/jobs/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=jobs">Jobs</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="https://fivethirtyeight.com/masthead/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=masthead">Masthead</a>
+				</li>
+				<li class="footer-menu-item">
+					<a href="http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html" name="&amp;lpos=fivethirtyeightFooter&amp;lid=nielsen">About Nielsen Measurement</a>
+				</li>
+			</ul>
+		</div><!-- .footer-secondary-links -->
+
+		<div class="footer-section-powered-by">
+			Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=fivethirtyeight.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>		</div><!-- .powered-by -->
+
+		<div class="footer-section-tertiary-links">
+			<ul class="footer-menu">
+				<li class="menu-item">
+					<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=doNotSell" target="_blank" rel="noopener noreferrer">Do Not Sell My Info</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights" target="_blank" rel="noopener noreferrer">Your California Privacy Rights</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy" target="_blank" rel="noopener noreferrer">Children's Online Privacy Policy</a>
+				</li>
+				<li class="menu-item">
+					<a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences" target="_blank" rel="noopener noreferrer">Interest-Based Ads</a>
+				</li>
+			</ul>
+			<p>
+				&copy; 2020 ABC News Internet Ventures. All rights reserved.
+			</p>
+		</div>
+		<!-- / .footer-section-tertiary-links -->
+	</div><!-- .site-wrapper -->
+
+	<div class="footer-section-additional-info" id="footer-additional-info">
+		<div class="site-wrapper">
+			<button class="close-additional-info" id="close-additional-info" aria-label="Close"><span class="visually-hidden">Close Additional Information</span></button>
+			<a href="https://disneytermsofuse.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyTOS">Terms of Use</a> and <a href="https://disneyprivacycenter.com/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=disneyPrivacy">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=californiaPrivacyRights">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/" name="&amp;lpos=fivethirtyeightFooter&amp;lid=childrensPrivacy">Children's Online Privacy Policy</a> are applicable to you. © 2020 ABC News Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads" name="&amp;lpos=fivethirtyeightFooter&amp;lid=adPreferences">Interest-Based Ads</a>. <a href="https://disneyprivacycenter.com/cookies-policy-translations/cookies-policy/">Cookie Policy</a>.
+		</div><!-- .site-wrapper -->
+	</div><!-- .footer-section-additional-info -->
+</footer><!-- .site-footer -->
+	<div id="sharing_email" style="display: none;">
+		<form action="/features/the-dodgers-lead-our-national-league-predictions-but-dont-count-out-the-nats-or-reds/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script>
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script>
+var ESPNSocial = {"fbVersion":"6.0","fbAppId":"797620670264818"};
+</script>
+<script>
+var DTCIAdConfig = {"adSlotsToRefresh":["Banner","InContent","OutStream"],"adUnitPath":"\/21783347309\/abc-news\/fivethirtyeight.com\/web\/sports","placements":{"Banner":{"out-of-page":false,"sizes":[[970,250],[970,66],[728,90],[320,50],[300,50]],"defer":"none"},"InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"A9InContent":{"out-of-page":false,"sizes":[[300,250],[300,600]],"defer":"none"},"OutStream":{"out-of-page":false,"sizes":[[1,3]],"defer":"none"}},"slots":{"Banner":[],"InContent":[],"A9InContent":[],"OutStream":[]},"mappings":{"Banner":[[[1280,100],[[970,250],[970,66],[728,90]]],[[1024,100],[[970,250],[970,66],[728,90]]],[[768,100],[[728,90]]],[[0,0],[[320,50],[300,50]]]],"InContent":[[[0,0],[]],[[768,50],[300,250]]]},"targeting":{"sp":"fivethirtyeight","objid":"275861","lang":"en","devType":"desktop","tag":["atlanta-braves","cincinnati-reds","los-angeles-dodgers","mlb","mlb-predictions","national-league","new-york-mets","return-of-sports","washington-nationals"]},"referringSite":null,"referralMap":{"facebook.com":"facebook","twitter.com":"twitter","t.co":"twitter","google.com":"google","bing.com":"bing","yahoo.com":"yahoo","www.espn.com":"espn","espn.com":"espn","instagram.com":"instagram","reddit.com":"reddit","bleacherreport.com":"bleacherreport","tumblr.com":"tumblr","t.umblr.com":"tumblr","pinterest.com":"pinterest","fivethirtyeight.com":"fivethirtyeight","grantland.com":"grantland","theundefeated.com":"theundefeated"},"useOverlay":"0","refreshSimulatenously":"1","disableInitialLoad":"1","a9id":"3899","a9Params":{"si_section":"sports","section":"story"}};
+</script>
+<script type='text/javascript' src='https://fivethirtyeight.com/_static/??-eJyFkEsOwjAMRC9ECKB20QXiLPm4rUt+qh1Qb08ELKJSYDmeeRrb8p6EiYEhsEwuDxhIKm2Eyhaj6EFxnqGMiIBJTiS1i+ZKe49hP9FObuCWDYpX7JP7wgzYi+TUInRmjqHiVk5djMG4bOEZKzIzuq29eARfQkApiB5vwCPOvAAOI1c9K+dHD3gN9u8DlK2vL+pNXPz52HanpmvbQzM9AFiUjls='></script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"","is_stats_active":"1"};
+</script>
+<script src='https://fivethirtyeight.com/wp-content/mu-plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.7.1'></script>
+<script>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202031.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'144970551',post:'275861',tz:'-4',srv:'fivethirtyeight.com'} ]);
+	_stq.push([ 'clickTrackerInit', '144970551', '275861' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f6169b8cc4","applicationID":"100041457","transactionName":"bwcDZBYEW0ZVVhEMXVZNIFMQDFpbG0YMC1VUB0xWEABqU1FUERBAXRE=","queueTime":0,"applicationTime":306,"atts":"Q0AUEl4eSBkWVEdfSUUf","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
