@@ -1,4 +1,9 @@
-
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 ### <h1 align="center" style="color:blue;" id="heading">Web Scraping with Python</h1>
 ### <h1 align="center" style="color:blue;" id="heading">What The Polls Say About Impeachment </h1>
@@ -56,7 +61,7 @@ TODO:
 <!-- Contributing -->
 #### 🤝 Contributing <a name="contributing"></a> 
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/saboye/web_Scraping/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/saboye/Web-Scraping-with-Python/issues).
   
 ***
 <!-- support -->
@@ -66,9 +71,8 @@ Give a ⭐️ if this project helped you!
 ***
 <!-- License -->
 #### 📝 License <a name="license"></a> 
-
-Copyright © 2021 [saboye](https://github.com/saboye).<br />
-This project is [MIT](https://github.com/saboye/web_Scraping/blob/master/LICENSE) licensed.
+  
+Distributed under the [MIT](https://github.com/saboye/Web-Scraping-with-Python/blob/master/LICENSE) License. See `LICENSE` for more information.
   
 ***  
 <!-- ACKNOWLEDGEMENTS -->
@@ -77,5 +81,17 @@ This project is [MIT](https://github.com/saboye/web_Scraping/blob/master/LICENSE
 * [https://fivethirtyeight.com](https://fivethirtyeight.com)
 
 ***
-  
+[contributors-shield]: https://img.shields.io/github/contributors/saboye/Web-Scraping-with-Python?style=for-the-badge
+[contributors-url]: https://github.com/saboye/Web-Scraping-with-Python/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/saboye/Web-Scraping-with-Python?style=for-the-badge
+[forks-url]: https://github.com/saboye/Web-Scraping-with-Python/network/members
+[stars-shield]: https://img.shields.io/github/stars/saboye/Web-Scraping-with-Python?style=for-the-badge
+[stars-url]: https://github.com/saboye/Web-Scraping-with-Python/stargazers
+[issues-shield]: https://img.shields.io/github/issues/saboye/Web-Scraping-with-Python?style=for-the-badge
+[issues-url]: https://github.com/saboye/Web-Scraping-with-Python/issues
+[license-shield]: https://img.shields.io/github/license/saboye/Web-Scraping-with-Python?style=for-the-badge
+[license-url]: https://github.com/saboye/Web-Scraping-with-Python/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/samuelaboye
+[product-screenshot]: images/screenshot.png  
  
