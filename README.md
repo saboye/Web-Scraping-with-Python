@@ -10,7 +10,7 @@
 ![GitHub](https://img.shields.io/github/license/saboye/web_Scraping?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/saboye/web_Scraping?style=for-the-badge)
 
-### <h1 align="center" style="color:blue;" id="heading">WEB SCRAPING</h1>
+### <h1 align="center" style="color:blue;" id="heading">Web Scraping with Python</h1>
 ### <h1 align="center" style="color:blue;" id="heading">What The Polls Say About Impeachment </h1>
 ### <h1 align="center" style="color:blue;" id="heading">Before The First Public Hearing</h1>
 <!-- PROJECT LOGO -->
