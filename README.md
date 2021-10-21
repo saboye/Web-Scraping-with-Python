@@ -1,14 +1,3 @@
-# 
-
-
-
-
-
-![GitHub contributors](https://img.shields.io/github/contributors/saboye/web_Scraping?color=blue&logo=github&style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/saboye/web_Scraping?logo=github&style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues-raw/saboye/web_Scraping?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/saboye/web_Scraping?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/saboye/web_Scraping?style=for-the-badge)
 
 ### <h1 align="center" style="color:blue;" id="heading">Web Scraping with Python</h1>
 ### <h1 align="center" style="color:blue;" id="heading">What The Polls Say About Impeachment </h1>
@@ -26,13 +15,12 @@
 1. [About The Project](#About_The_Project)
 2. [Objective](#objective)
 3. [Data Dictionary](#Data_Dictionar_)
-4. [Analysis](#Analysis)
-5. [Summary](#Summary)
-6. [Author](#author)
-7. [Contributing](#contributing)
-8. [Support](#support)
-9. [License](#license)
-10. [Acknowledgements](#Acknowledgements)
+4. [Summary](#Summary)
+5. [Author](#author)
+6. [Contributing](#contributing)
+7. [Support](#support)
+8. [License](#license)
+9. [Acknowledgements](#Acknowledgements)
 
 ***
 
