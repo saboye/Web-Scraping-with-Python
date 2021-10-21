@@ -85,7 +85,7 @@ This project is [MIT](https://github.com/saboye/web_Scraping/blob/master/LICENSE
 <!-- ACKNOWLEDGEMENTS -->
 ### Acknowledgements <a name="Acknowledgements"></a>
   
-* [https://www.kaggle.com](https://fivethirtyeight.com)
+* [https://fivethirtyeight.com](https://fivethirtyeight.com)
 
 
 ***
